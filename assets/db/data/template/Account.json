@@ -1,0 +1,45 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "Padding",
+    "padding": 10,
+    "child": {
+      "flutterType": "CustomScrollView",
+      "includeBottomOffset": true,
+      "onStateDataUpdate": true,
+      "appBar": {
+        "flutterType": "SliverAppBar",
+        "title": {
+          "flutterType": "Text",
+          "label": "Аккаунт",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontSize": 17
+          }
+        }
+      },
+      "children": [
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "ChildrenExtension": "StateDataSwitch",
+          "key": "SwitchKey",
+          "children": [
+            {
+              "case": "default",
+              "flutterType": "Template",
+              "src": "AccountSignIn"
+            },
+            {
+              "case": "auth",
+              "flutterType": "Template",
+              "src": "AccountSignOut"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

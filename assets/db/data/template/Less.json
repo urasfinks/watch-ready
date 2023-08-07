@@ -1,0 +1,98 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "Padding",
+    "padding": 10,
+    "child": {
+      "flutterType": "CustomScrollView",
+      "includeBottomOffset": true,
+      "onStateDataUpdate": true,
+      "appBar": {
+        "flutterType": "SliverAppBar",
+        "title": {
+          "flutterType": "Text",
+          "label": "${container(inputData,data.label,WatchReady)}",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontSize": 17
+          }
+        }
+      },
+      "children": [
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "flutterType": "Row",
+          "children": [
+            {
+              "flutterType": "Expanded",
+              "child": {
+                "flutterType": "Button",
+                "minimumSize": "9999,44",
+                "backgroundColor": "blue",
+                "onPressed": {
+                  "jsInvoke": "Less.js",
+                  "args": {
+                    "includeAll": true,
+                    "switch": "startExEng"
+                  }
+                },
+                "child": {
+                  "flutterType": "Text",
+                  "label": "Тренировать English",
+                  "textAlign": "center",
+                  "style": {
+                    "flutterType": "TextStyle",
+                    "fontSize": 14,
+                    "color": "white"
+                  }
+                }
+              }
+            },
+            {
+              "flutterType": "SizedBox",
+              "width": 20
+            },
+            {
+              "flutterType": "Expanded",
+              "child": {
+                "flutterType": "Button",
+                "minimumSize": "9999,44",
+                "backgroundColor": "blue",
+                "onPressed": {
+                  "jsInvoke": "Less.js",
+                  "args": {
+                    "includeAll": true,
+                    "switch": "startExRus"
+                  }
+                },
+                "child": {
+                  "flutterType": "Text",
+                  "label": "Тренировать Русский",
+                  "textAlign": "center",
+                  "style": {
+                    "flutterType": "TextStyle",
+                    "fontSize": 14,
+                    "color": "white"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "ChildrenExtension": "Iterator",
+          "dataType": "state",
+          "key": "list",
+          "theme": "ButtonGroup"
+        }
+      ]
+    }
+  }
+}

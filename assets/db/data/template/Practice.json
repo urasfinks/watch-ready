@@ -1,0 +1,84 @@
+{
+  "flutterType": "Center",
+  "child": {
+    "flutterType": "Container",
+    "width": 200,
+    "height": 200,
+    "child": {
+      "flutterType": "SwipableStack",
+      "roll": true,
+      "viewFraction": 0,
+      "key": "SwipableStack1",
+      "directions": ["left","right"],
+      "overlay": {
+        "flutterType": "Opacity",
+        "opacity": "${state(SwipableStack1.overlayOpacity)}",
+        "child": {
+          "flutterType": "Text",
+          "textAlign": "end",
+          "label": "${state(SwipableStack1.overlayDirection)|map(right,Знаю,left,Не знаю)}"
+        }
+      },
+      "children": [
+        {
+          "ChildrenExtension": "Iterator",
+          "dataType": "list",
+          "list": [
+            {
+              "template": {
+                "flutterType": "FlipCard",
+                "key": "x1",
+                "front": {
+                  "flutterType": "Container",
+                  "width": 200,
+                  "height": 200,
+                  "color": "red",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Front ${state(SwipableStack1.index)} ${state.angle}"
+                  }
+                },
+                "back": {
+                  "flutterType": "Container",
+                  "width": 200,
+                  "height": 200,
+                  "color": "red",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Back ${state(SwipableStack1.index)} ${state.angle}"
+                  }
+                }
+              }
+            },
+            {
+              "template": {
+                "flutterType": "FlipCard",
+                "key": "x2",
+                "front": {
+                  "flutterType": "Container",
+                  "width": 200,
+                  "height": 200,
+                  "color": "red",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Front ${state(SwipableStack1.index)} ${state.angle}"
+                  }
+                },
+                "back": {
+                  "flutterType": "Container",
+                  "width": 200,
+                  "height": 200,
+                  "color": "red",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "Back ${state(SwipableStack1.index)} ${state.angle}"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
