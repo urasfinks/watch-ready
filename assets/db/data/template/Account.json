@@ -6,6 +6,7 @@
     "child": {
       "flutterType": "CustomScrollView",
       "includeBottomOffset": true,
+      "extraBottomOffset": 20,
       "onStateDataUpdate": true,
       "appBar": {
         "flutterType": "SliverAppBar",

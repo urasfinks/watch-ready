@@ -52,15 +52,49 @@ if (bridge.args["switch"] == "GetCode") {
     });
 }
 
-if (bridge.args["switch"] == "GetCodeResponse") {
-    bridge.call("Hide", {"case": "customLoader"});
-    bridge.log(bridge.args);
+function checkHttpResponse() {
     if (bridge.args["httpResponse"]["status"] == false) {
         bridge.call("Alert", {
             "duration": 7000,
-            "label": bridge.args["httpResponse"]["error"]
+            "label": mapError(bridge.args["httpResponse"]["error"])
         });
-    } else {
+        return false;
+    }
+    return true;
+}
+
+function mapError(error) {
+    bridge.log(error);
+    var map = [
+        {
+            error: "$.mail: is missing but it is required",
+            display: "E-mail не может быть пустым"
+        },
+        {
+            error: "$.mail: does not match",
+            display: "E-mail введён не корректно"
+        },
+        {
+            error: "RangeError (end): Invalid value:",
+            display: "Неизвестная ошибка от сервера"
+        },
+        {
+            error: "Request timeout",
+            display: "Сервер не ответил за отведённое время"
+        }
+    ];
+    for (var i = 0; i < map.length; i++) {
+        if (error == map[i]["error"] || error.startsWith(map[i]["error"])) {
+            return map[i]["display"]
+        }
+    }
+    return error;
+}
+
+if (bridge.args["switch"] == "GetCodeResponse") {
+    bridge.call("Hide", {"case": "customLoader"});
+    //bridge.log(bridge.args);
+    if (checkHttpResponse()) {
         bridge.call("NavigatorPush", {
             "type": "BottomSheet",
             "mail": bridge.state["EmailValue"],
@@ -90,20 +124,16 @@ if (bridge.args["switch"] == "ConfirmCode") {
 }
 
 if (bridge.args["switch"] == "ConfirmCodeResponse") {
-    bridge.log(bridge.args);
-    if (bridge.args["body"]["status"] == false) {
-        bridge.call("Alert", {
-            "duration": 7000,
-            "label": bridge.args["body"]["exception"].join(", ")
-        });
-    } else {
+    //bridge.log(bridge.args);
+    if (checkHttpResponse()) {
         bridge.call('SetStorage', {
             "key": "isAuth",
             "value": "true"
         });
         bridge.call('SetStorage', {
-            "key": "mail",
-            "value": bridge.pageArgs["mail"]
+            "map": {
+                "mail": bridge.pageArgs["mail"]
+            }
         });
         bridge.call("NavigatorPop", {
             "reloadParent": true

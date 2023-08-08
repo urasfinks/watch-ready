@@ -76,8 +76,8 @@
         "height": 20
       },
       {
-        "flutterType": "MaterialButton",
-        "height": 44,
+        "flutterType": "Button",
+        "backgroundColor": "blue",
         "onPressed": {
           "jsInvoke": "Account.js",
           "args": {
@@ -89,15 +89,12 @@
         "child": {
           "flutterType": "Text",
           "label": "Подтвердить",
+          "textAlign": "center",
           "style": {
             "flutterType": "TextStyle",
             "fontSize": 14,
             "color": "white"
           }
-        },
-        "shape": {
-          "flutterType": "RoundedRectangleBorder",
-          "borderRadius": 10
         }
       }
     ]
