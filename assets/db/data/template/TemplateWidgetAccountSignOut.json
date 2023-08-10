@@ -49,7 +49,7 @@
         },
         {
           "label": "Дата последней синхронизации",
-          "labelStatistic": "${storage(lastSync,0)|timestampToDate(dd.MM.yyyy HH:mm:ss)}",
+          "labelStatistic": "${storage(lastSync,0)|timeSoFar(dd.MM.yyyy HH:mm:ss)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
             "labelStatistic"

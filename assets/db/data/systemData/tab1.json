@@ -23,6 +23,14 @@
       "args": {
         "switch": "constructor"
       }
+    },
+    "onActive": {
+      "jsInvoke": "Account.js",
+      "args": {
+        "includeStateData": true,
+        "includePageArgument": true,
+        "switch": "onActive"
+      }
     }
   }
 }

@@ -159,3 +159,10 @@ if (bridge.args["switch"] == "Logout") {
         "case": "current"
     });
 }
+
+if (bridge.args["switch"] == "onActive") {
+    bridge.log("onActive");
+    bridge.call('PageReload', {
+        "case": "current"
+    });
+}
