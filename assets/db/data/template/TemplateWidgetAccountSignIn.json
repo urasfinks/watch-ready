@@ -13,7 +13,7 @@
         "flutterType": "Container",
         "width": 999,
         "padding": 5,
-        "child":{
+        "child": {
           "flutterType": "Text",
           "label1": "Вы не авторизованы, пройдите авторизацию:",
           "label": "Введите адрес электронной почты, чтобы иметь возможность восстановить доступ к аккаунту:",
@@ -29,7 +29,9 @@
       },
       {
         "flutterType": "TextField",
-        "onChangedNotify": false,
+        "onChangedSetStateNotify": false,
+        "onRebuildSetStateNotify": false,
+        "setStateInit": true,
         "keyboardType": "emailAddress",
         "textCapitalization": "none",
         "style": {
@@ -44,6 +46,7 @@
           }
         },
         "name": "EmailValue",
+        "data": "${storage(lastMail,)}",
         "decoration": {
           "flutterType": "InputDecoration",
           "hintText": "E-mail",
@@ -126,7 +129,7 @@
       {
         "flutterType": "Padding",
         "padding": 10,
-        "child":{
+        "child": {
           "flutterType": "Text",
           "label1": "Авторизация даст возможность сохранять ваши данные в облаке, для использования на разных устройствах.",
           "label": "Сохранение данных в облаке, для использования на разных устройствах",

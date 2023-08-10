@@ -73,6 +73,13 @@ if (typeof Bridge == 'undefined') {
             }
             bridge.call('Http', args);
         }
+
+        getStorage(key, def){
+            return bridge.call('GetStorage', {
+                "key": key,
+                "default": def
+            })[key];
+        }
     }
 
     var bridge = new Bridge();

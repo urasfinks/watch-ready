@@ -5,7 +5,7 @@
   "children": [
     {
       "flutterType": "Container",
-      "margin": "22,0,22,20",
+      "margin": "5,0,22,20",
       "child": {
         "flutterType": "Text",
         "label": "Личная информация",
@@ -32,7 +32,7 @@
           ]
         },
         {
-          "label": "Загружено данных",
+          "label": "Всегог загружено данных",
           "labelStatistic": "${state(countAllData)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
@@ -40,16 +40,8 @@
           ]
         },
         {
-          "label": "Личная информация",
-          "labelStatistic": "${state(countPersonData)}",
-          "templateWidgetSrc": "TextStatistic",
-          "templateArguments": [
-            "labelStatistic"
-          ]
-        },
-        {
-          "label": "Не синхронизировано",
-          "labelStatistic": "${state(countSyncData)}",
+          "label": "Личная информация/ ожидает",
+          "labelStatistic": "${state(countPersonData)}/${state(countNotSyncData)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
             "labelStatistic"
@@ -57,7 +49,7 @@
         },
         {
           "label": "Дата последней синхронизации",
-          "labelStatistic": "${timestamp()|timestampToDate(dd.MM.yyyy hh:mm:ss)}",
+          "labelStatistic": "${storage(lastSync,0)|timestampToDate(dd.MM.yyyy HH:mm:ss)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
             "labelStatistic"
@@ -79,7 +71,14 @@
           "iconSrc": "exit_to_app",
           "iconSize": 20,
           "iconColor": "schema:inversePrimary",
-          "templateWidgetSrc": "ButtonIcon"
+          "templateWidgetSrc": "ButtonIcon",
+          "onTap": {
+            "jsInvoke": "Account.js",
+            "args": {
+              "includeStateAll": true,
+              "switch": "Logout"
+            }
+          }
         }
       ]
     }

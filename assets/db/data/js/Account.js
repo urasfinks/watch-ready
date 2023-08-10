@@ -1,8 +1,5 @@
 if (bridge.args["switch"] == "constructor") {
-    let isAuth = bridge.call('GetStorage', {
-        "key": "isAuth",
-        "default": "false"
-    })["isAuth"];
+    let isAuth = bridge.getStorage("isAuth", "false");
 
     bridge.log("Hello constructor: " + isAuth);
 
@@ -13,7 +10,9 @@ if (bridge.args["switch"] == "constructor") {
     });
 
     bridge.call('DbQuery', {
-        "sql": "select count(*) as count from data UNION ALL select count(*) as count from data where type_data = ? UNION ALL select count(*) as count from data where type_data = ? and revision_data = 0",
+        "sql": "SELECT count(*) as count FROM data" +
+            " UNION ALL SELECT count(*) as count FROM data where type_data = ?" +
+            " UNION ALL SELECT count(*) as count FROM data where type_data = ? and revision_data = 0",
         "args": ["userDataRSync", "userDataRSync"],
         "onFetch": {
             "jsInvoke": "Account.js",
@@ -29,7 +28,7 @@ if (bridge.args["switch"] == "onFetchCountAllData") {
         "map": {
             "countAllData": bridge.args["fetchDb"][0]["count"],
             "countPersonData": bridge.args["fetchDb"][1]["count"],
-            "countSyncData": bridge.args["fetchDb"][1]["count"]
+            "countNotSyncData": bridge.args["fetchDb"][2]["count"]
         }
     });
 }
@@ -81,6 +80,10 @@ function mapError(error) {
         {
             error: "Request timeout",
             display: "Сервер не ответил за отведённое время"
+        },
+        {
+            error: "Sending the email to the following server failed",
+            display: "Не удалось отправить письмо"
         }
     ];
     for (var i = 0; i < map.length; i++) {
@@ -127,8 +130,9 @@ if (bridge.args["switch"] == "ConfirmCodeResponse") {
     //bridge.log(bridge.args);
     if (checkHttpResponse()) {
         bridge.call('SetStorage', {
-            "key": "isAuth",
-            "value": "true"
+            "map": {
+                "isAuth": "true"
+            }
         });
         bridge.call('SetStorage', {
             "map": {
@@ -139,4 +143,19 @@ if (bridge.args["switch"] == "ConfirmCodeResponse") {
             "reloadParent": true
         });
     }
+}
+
+if (bridge.args["switch"] == "Logout") {
+    bridge.log("Logout");
+    let mail = bridge.getStorage("mail", "");
+    bridge.call('SetStorage', {
+        "map": {
+            "lastMail": mail,
+            "mail": "",
+            "isAuth": "false"
+        }
+    });
+    bridge.call('PageReload', {
+        "case": "current"
+    });
 }
