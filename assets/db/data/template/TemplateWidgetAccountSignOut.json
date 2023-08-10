@@ -26,7 +26,7 @@
           "label": "${storage(mail)|partHideEmail()}",
           "iconSrc": "mail_outline",
           "iconSize": 20,
-          "templateWidgetSrc": "ButtonIcon",
+          "templateWidgetSrc": "Text",
           "templateArguments": [
             "label"
           ]
@@ -48,7 +48,7 @@
           ]
         },
         {
-          "label": "Дата последней синхронизации",
+          "label": "Последняя синхронизация",
           "labelStatistic": "${storage(lastSync,0)|timeSoFar(dd.MM.yyyy HH:mm:ss)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
@@ -71,12 +71,21 @@
           "iconSrc": "exit_to_app",
           "iconSize": 20,
           "iconColor": "schema:inversePrimary",
-          "templateWidgetSrc": "ButtonIcon",
+          "templateWidgetSrc": "Text",
+          "textAlign": "center",
           "onTap": {
-            "jsInvoke": "Account.js",
+            "sysInvoke": "Alert",
             "args": {
-              "includeStateAll": true,
-              "switch": "Logout"
+              "confirmRemove": true,
+              "actionLabel": "Выйти",
+              "backgroundColor": "schema:onBackground",
+              "onPressed": {
+                "jsInvoke": "Account.js",
+                "args": {
+                  "includeStateAll": true,
+                  "switch": "Logout"
+                }
+              }
             }
           }
         }
