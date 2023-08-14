@@ -1,7 +1,7 @@
 if (bridge.args["switch"] == "constructor") {
     let isAuth = bridge.getStorage("isAuth", "false");
 
-    bridge.log("Hello constructor: " + isAuth);
+    bridge.log("Hello constructor: isAuth: " + isAuth);
 
     bridge.call('SetStateData', {
         "map": {
@@ -18,6 +18,18 @@ if (bridge.args["switch"] == "constructor") {
             "jsInvoke": "Account.js",
             "args": {
                 "switch": "onFetchCountAllData"
+            }
+        }
+    });
+
+    bridge.call('DbQuery', {
+        "sql": "SELECT * FROM data where type_data = ? and uuid_data = ?",
+        "args": ["userDataRSync", "account"],
+        "onFetch": {
+            "jsInvoke": "Account.js",
+            "args": {
+                "includeAll": true,
+                "switch": "onFetchAccount"
             }
         }
     });
@@ -164,5 +176,44 @@ if (bridge.args["switch"] == "onActive") {
     bridge.log("onActive");
     bridge.call('PageReload', {
         "case": "current"
+    });
+}
+
+if (bridge.args["switch"] == "onFetchAccount") {
+    if (bridge.args["fetchDb"].length == 0) {
+        bridge.call('DataSourceSet', {
+            "uuid": "account",
+            "value": JSON.stringify({}),
+            "parent": null,
+            "type": "userDataRSync",
+            "key": "account"
+        });
+        bridge.state["accountValue"] = {
+            name: ""
+        };
+    } else {
+        bridge.state["accountValue"] = bridge.args["fetchDb"][0]["value_data"];
+    }
+    bridge.log(bridge.args["fetchDb"]);
+    bridge.call('SetStateData', {
+        "map": {
+            "accountValue": bridge.state["accountValue"]
+        }
+    });
+}
+
+if (bridge.args["switch"] == "setNewName") {
+    if (bridge.state["accountValue"] == null || bridge.state["accountValue"] == undefined) {
+        bridge.state["accountValue"] = {};
+    }
+    bridge.state["accountValue"]["name"] = bridge.state["name"];
+    bridge.log(bridge.state["accountValue"]);
+    bridge.call('DataSourceSet', {
+        "uuid": "account",
+        "value": bridge.state["accountValue"],
+        "parent": null,
+        "type": "userDataRSync",
+        "key": "account",
+        "debugTransaction": true
     });
 }

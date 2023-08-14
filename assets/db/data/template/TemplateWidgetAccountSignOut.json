@@ -4,8 +4,31 @@
   "crossAxisAlignment": "start",
   "children": [
     {
+      "flutterType": "SizedBox",
+      "height": 20
+    },
+    {
+      "flutterType": "Template",
+      "src": "Input",
+      "context": {
+        "data": "${state(accountValue.name)}",
+        "key": "name",
+        "placeholder": "Имя",
+        "onSubmit": {
+          "jsInvoke": "Account.js",
+          "args": {
+            "includeAll": true,
+            "switch": "setNewName"
+          }
+        }
+      },
+      "templateArguments": [
+        "context.data"
+      ]
+    },
+    {
       "flutterType": "Container",
-      "margin": "5,0,22,20",
+      "margin": "5,20,22,20",
       "child": {
         "flutterType": "Text",
         "label": "Личная информация",
@@ -82,7 +105,7 @@
               "onPressed": {
                 "jsInvoke": "Account.js",
                 "args": {
-                  "includeStateAll": true,
+                  "includeAll": true,
                   "switch": "Logout"
                 }
               }
