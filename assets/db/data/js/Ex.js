@@ -32,7 +32,7 @@ function genListCard(nsiList) {
                         "flutterType": "Center",
                         "child": {
                             "flutterType": "Text",
-                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["eng"]:nsiList[i]["rus"]
+                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["eng"] : nsiList[i]["rus"]
                         }
                     }
                 },
@@ -49,7 +49,7 @@ function genListCard(nsiList) {
                         "flutterType": "Center",
                         "child": {
                             "flutterType": "Text",
-                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["rus"]:nsiList[i]["eng"]
+                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["rus"] : nsiList[i]["eng"]
                         }
                     }
                 }
@@ -78,11 +78,14 @@ if (bridge.args["switch"] == "onSwipeCompleted") {
 if (bridge.args["switch"] == "selectPersonData") {
     var userDataUuid = bridge.args["fetchDb"][0]["uuid_data"];
     var userData = bridge.args["fetchDb"][0]["value_data"];
+    if (userData == undefined || userData == null) {
+        userData = {};
+    }
     var listCard = bridge.state["card"];
     var swipedIndex = bridge.args["swipedIndex"];
     var swipedDirection = bridge.args["swipedDirection"];
     var idCard = listCard[swipedIndex]["id"];
-    if (userData[idCard] == undefined) {
+    if (userData[idCard] == undefined || userData[idCard] == null) {
         userData[idCard] = {left: 0, right: 0};
     }
     userData[idCard][swipedDirection]++;

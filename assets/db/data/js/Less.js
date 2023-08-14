@@ -62,6 +62,8 @@ function genList(userData, nsiData) {
                 rus: nsiData["children"][i]["rus"],
                 eng: nsiData["children"][i]["eng"],
                 prc: prc + "",
+                right: userData[id]["right"],
+                left: userData[id]["left"],
                 "templateWidgetSrc": "Card"
             });
         }

@@ -33,7 +33,47 @@
       },
       {
         "flutterType": "Text",
-        "label": "${prc}%"
+        "label": "${prc}% "
+      },
+      {
+        "flutterType": "Container",
+        "padding": "7,4,7,4",
+        "margin": "5,0,2,0",
+        "decoration": {
+          "color": "green",
+          "flutterType": "BoxDecoration",
+          "borderRadius": "8"
+        },
+        "child": {
+          "flutterType": "Text",
+          "style": {
+            "flutterType": "TextStyle",
+            "color": "white",
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "label": "${right}"
+        }
+      },
+      {
+        "flutterType": "Container",
+        "padding": "7,4,7,4",
+        "margin": "3,0,0,0",
+        "decoration": {
+          "color": "red",
+          "flutterType": "BoxDecoration",
+          "borderRadius": "8"
+        },
+        "child": {
+          "flutterType": "Text",
+          "style": {
+            "flutterType": "TextStyle",
+            "color": "white",
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "label": "${left}"
+        }
       }
     ]
   }
