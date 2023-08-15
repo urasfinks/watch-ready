@@ -54,16 +54,18 @@ function genList(userData, nsiData) {
     if (nsiData["children"] != undefined) {
         for (var i = 0; i < nsiData["children"].length; i++) {
             var id = nsiData["children"][i]["id"];
-            var prc = 0;
+            var right = 0, left = 0;
             if (userData[id] != undefined) {
-                prc = Math.ceil(userData[id]["right"] * 100 / (userData[id]["left"] + userData[id]["right"]));
+                right = userData[id]["right"] || 0;
+                left = userData[id]["left"] || 0;
             }
+            var prc = (right + left == 0) ? 0 : Math.ceil(right * 100 / (left + right));
             result.push({
                 rus: nsiData["children"][i]["rus"],
                 eng: nsiData["children"][i]["eng"],
                 prc: prc + "",
-                right: userData[id]["right"],
-                left: userData[id]["left"],
+                right: right + "",
+                left: left + "",
                 "templateWidgetSrc": "Card"
             });
         }
