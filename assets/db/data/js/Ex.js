@@ -60,34 +60,41 @@ function genListCard(nsiList) {
 }
 
 if (bridge.args["switch"] == "onSwipeCompleted") {
+    var listCard = bridge.state["card"];
+    var swipedIndex = bridge.state["sw"]["swipedIndex"];
+    var idCard = listCard[swipedIndex]["id"];
     bridge.call('DbQuery', {
-        "sql": "select * from data where parent_uuid_data = ? order by id_data",
-        "args": [bridge.pageArgs["link"]["data"]],
+        "sql": "select * from data where uuid_data = ? order by id_data",
+        "args": [bridge.pageArgs["userData"]],
         "onFetch": {
             "jsInvoke": "Ex.js",
             "args": {
                 "includeAll": true,
                 "switch": "selectPersonData",
-                "swipedIndex": bridge.state["sw"]["swipedIndex"],
                 "swipedDirection": bridge.state["sw"]["swipedDirection"],
+                "idCard": idCard
             }
         }
     });
 }
 
 if (bridge.args["switch"] == "selectPersonData") {
-    var userDataUuid = bridge.args["fetchDb"][0]["uuid_data"];
+    //Это асинхрон => страница и состояния могли уже быть обновлены, а именно state.card от setState finish
+    // Это когда swipable переходит в конечное положение и перерисовывает всю страницу через setState, что больше
+    // карточки не нарисовались
+    var userDataUuid = bridge.pageArgs["userData"];
     var userData = bridge.args["fetchDb"][0]["value_data"];
     if (userData == undefined || userData == null) {
         userData = {};
     }
-    var listCard = bridge.state["card"];
-    var swipedIndex = bridge.args["swipedIndex"];
+
+    var idCard = bridge.args["idCard"];
     var swipedDirection = bridge.args["swipedDirection"];
-    var idCard = listCard[swipedIndex]["id"];
+
     if (userData[idCard] == undefined || userData[idCard] == null) {
         userData[idCard] = {left: 0, right: 0};
     }
+    bridge.log("swipedIndex: " + swipedIndex + "; swipedDirection: " + swipedDirection + ";");
     userData[idCard][swipedDirection]++;
     bridge.call('DataSourceSet', {
         "uuid": userDataUuid,
