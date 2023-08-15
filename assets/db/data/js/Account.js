@@ -1,3 +1,10 @@
+if (bridge.args["switch"] == "onActive") {
+    bridge.log("onActive");
+    bridge.call('PageReload', {
+        "case": "current"
+    });
+}
+
 if (bridge.args["switch"] == "constructor") {
     let isAuth = bridge.getStorage("isAuth", "false");
 
@@ -22,17 +29,19 @@ if (bridge.args["switch"] == "constructor") {
         }
     });
 
-    bridge.call('DbQuery', {
-        "sql": "SELECT * FROM data where type_data = ? and uuid_data = ?",
-        "args": ["userDataRSync", "account"],
-        "onFetch": {
-            "jsInvoke": "Account.js",
-            "args": {
-                "includeAll": true,
-                "switch": "onFetchAccount"
+    if (isAuth) {
+        bridge.call('DbQuery', {
+            "sql": "SELECT * FROM data where type_data = ? and uuid_data = ?",
+            "args": ["userDataRSync", "account"],
+            "onFetch": {
+                "jsInvoke": "Account.js",
+                "args": {
+                    "includeAll": true,
+                    "switch": "onFetchAccount"
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 if (bridge.args["switch"] == "onFetchCountAllData") {
@@ -143,18 +152,27 @@ if (bridge.args["switch"] == "ConfirmCodeResponse") {
     if (checkHttpResponse()) {
         bridge.call('SetStorage', {
             "map": {
+                "mail": bridge.pageArgs["mail"],
                 "isAuth": "true"
             }
         });
-        bridge.call('SetStorage', {
-            "map": {
-                "mail": bridge.pageArgs["mail"]
+        bridge.call("Show", {"case": "customLoader"});
+        bridge.call("DataSync", {
+            "onSync": {
+                "jsInvoke": "Account.js",
+                "args": {
+                    "includeAll": true,
+                    "switch": "onDataSync"
+                }
             }
         });
-        bridge.call("NavigatorPop", {
-            "reloadParent": true
-        });
     }
+}
+if (bridge.args["switch"] == "onDataSync") {
+    bridge.call("Hide", {"case": "customLoader"});
+    bridge.call("NavigatorPop", {
+        "reloadParent": true
+    });
 }
 
 if (bridge.args["switch"] == "Logout") {
@@ -167,13 +185,6 @@ if (bridge.args["switch"] == "Logout") {
             "isAuth": "false"
         }
     });
-    bridge.call('PageReload', {
-        "case": "current"
-    });
-}
-
-if (bridge.args["switch"] == "onActive") {
-    bridge.log("onActive");
     bridge.call('PageReload', {
         "case": "current"
     });
@@ -216,4 +227,8 @@ if (bridge.args["switch"] == "setNewName") {
         "key": "account",
         "debugTransaction": true
     });
+}
+
+if (bridge.args["switch"] == "showGallery") {
+    bridge.call("Show", {"case": "gallery"});
 }

@@ -111,6 +111,21 @@
               }
             }
           }
+        },
+        {
+          "label": "Открыть галерею",
+          "iconSrc": "exit_to_app",
+          "iconSize": 20,
+          "iconColor": "schema:inversePrimary",
+          "templateWidgetSrc": "Text",
+          "textAlign": "center",
+          "onTap": {
+            "jsInvoke": "Account.js",
+            "args": {
+              "includeAll": true,
+              "switch": "showGallery"
+            }
+          }
         }
       ]
     }
