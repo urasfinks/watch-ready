@@ -25,12 +25,21 @@
           "margin": 10,
           "decoration": {
             "flutterType": "BoxDecoration",
-            "color": "blue",
+            "color": "transparent",
             "shape": "circle",
             "border": {
               "flutterType": "Border",
               "color": "schema:onBackground",
               "width": 10
+            }
+          },
+          "child": {
+            "flutterType": "ClipRRect",
+            "borderRadius": 100,
+            "child": {
+              "flutterType": "ImageBase64",
+              "src": "avatar",
+              "assetLoader": "packages/rjdu/lib/assets/image/no-avatar.jpg"
             }
           }
         }
@@ -88,7 +97,7 @@
           ]
         },
         {
-          "label": "Всегог загружено данных",
+          "label": "Всего загружено",
           "labelStatistic": "${state(countAllData)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [
@@ -96,7 +105,7 @@
           ]
         },
         {
-          "label": "Личная информация/ ожидает",
+          "label": "Личная информация",
           "labelStatistic": "${state(countPersonData)}/${state(countNotSyncData)}",
           "templateWidgetSrc": "TextStatistic",
           "templateArguments": [

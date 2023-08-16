@@ -18,9 +18,9 @@ if (bridge.args["switch"] == "constructor") {
 
     bridge.call('DbQuery', {
         "sql": "SELECT count(*) as count FROM data" +
-            " UNION ALL SELECT count(*) as count FROM data where type_data = ?" +
-            " UNION ALL SELECT count(*) as count FROM data where type_data = ? and revision_data = 0",
-        "args": ["userDataRSync", "userDataRSync"],
+            " UNION ALL SELECT count(*) as count FROM data where type_data IN (?, ?)" +
+            " UNION ALL SELECT count(*) as count FROM data where type_data IN(?, ?) and revision_data = 0",
+        "args": ["userDataRSync", "blobRSync", "userDataRSync", "blobRSync"],
         "onFetch": {
             "jsInvoke": "Account.js",
             "args": {
@@ -230,5 +230,25 @@ if (bridge.args["switch"] == "setNewName") {
 }
 
 if (bridge.args["switch"] == "showGallery") {
-    bridge.call("Show", {"case": "gallery"});
+    bridge.call("Show", {
+        "case": "gallery",
+        "onLoadImage": {
+            "jsInvoke": "Account.js",
+            "args": {
+                "includeAll": true,
+                "switch": "onLoadImage"
+            }
+        }
+    });
+}
+
+if (bridge.args["switch"] == "onLoadImage") {
+    bridge.call('DataSourceSet', {
+        "uuid": "avatar",
+        "value": bridge.args["ImageData"],
+        "parent": null,
+        "type": "blobRSync",
+        "key": "avatar",
+        "debugTransaction": true
+    });
 }
