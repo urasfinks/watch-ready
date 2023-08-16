@@ -4,6 +4,39 @@
   "crossAxisAlignment": "start",
   "children": [
     {
+      "flutterType": "Center",
+      "child": {
+        "flutterType": "InkWell",
+        "onTap": {
+          "jsInvoke": "Account.js",
+          "args": {
+            "includeAll": true,
+            "switch": "showGallery"
+          }
+        },
+        "customBorder": {
+          "flutterType": "RoundedRectangleBorder",
+          "borderRadius": 100
+        },
+        "child": {
+          "flutterType": "Container",
+          "width": 100,
+          "height": 100,
+          "margin": 10,
+          "decoration": {
+            "flutterType": "BoxDecoration",
+            "color": "blue",
+            "shape": "circle",
+            "border": {
+              "flutterType": "Border",
+              "color": "schema:onBackground",
+              "width": 10
+            }
+          }
+        }
+      }
+    },
+    {
       "flutterType": "SizedBox",
       "height": 20
     },
@@ -109,21 +142,6 @@
                   "switch": "Logout"
                 }
               }
-            }
-          }
-        },
-        {
-          "label": "Открыть галерею",
-          "iconSrc": "exit_to_app",
-          "iconSize": 20,
-          "iconColor": "schema:inversePrimary",
-          "templateWidgetSrc": "Text",
-          "textAlign": "center",
-          "onTap": {
-            "jsInvoke": "Account.js",
-            "args": {
-              "includeAll": true,
-              "switch": "showGallery"
             }
           }
         }

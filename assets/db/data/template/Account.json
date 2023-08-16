@@ -1,46 +1,39 @@
 {
   "flutterType": "Scaffold",
   "body": {
-    "flutterType": "Padding",
-    "padding": 10,
-    "child": {
-      "flutterType": "CustomScrollView",
-      "includeBottomOffset": true,
-      "extraBottomOffset": 20,
-      "onStateDataUpdate": true,
-      "appBar": {
-        "flutterType": "SliverAppBar",
-        "title": {
-          "flutterType": "Text",
-          "label": "Аккаунт",
-          "style": {
-            "flutterType": "TextStyle",
-            "fontSize": 17
+    "flutterType": "CustomScrollView",
+    "includeBottomOffset": true,
+    "extraBottomOffset": 20,
+    "onStateDataUpdate": true,
+    "padding": "10,20,10,0",
+    "appBar": {
+      "flutterType": "SliverAppBar",
+      "title": {
+        "flutterType": "Text",
+        "label": "Аккаунт",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17
+        }
+      }
+    },
+    "children": [
+      {
+        "ChildrenExtension": "StateDataSwitch",
+        "key": "SwitchKey",
+        "children": [
+          {
+            "case": "default",
+            "flutterType": "Template",
+            "src": "AccountSignIn"
+          },
+          {
+            "case": "auth",
+            "flutterType": "Template",
+            "src": "AccountSignOut"
           }
-        }
-      },
-      "children": [
-        {
-          "flutterType": "SizedBox",
-          "height": 20
-        },
-        {
-          "ChildrenExtension": "StateDataSwitch",
-          "key": "SwitchKey",
-          "children": [
-            {
-              "case": "default",
-              "flutterType": "Template",
-              "src": "AccountSignIn"
-            },
-            {
-              "case": "auth",
-              "flutterType": "Template",
-              "src": "AccountSignOut"
-            }
-          ]
-        }
-      ]
-    }
+        ]
+      }
+    ]
   }
 }
