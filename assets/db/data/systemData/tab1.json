@@ -14,14 +14,17 @@
       "template": "Account.json"
     },
     "linkContainer": "root",
-    "linkDefault": {
-      "template": {
-        "flutterType": "Scaffold",
-        "appBar": {
-          "flutterType": "AppBar",
-          "title": {
-            "flutterType": "Text",
-            "label": "Аккаунт"
+    "context": {
+      "key": "Tab1",
+      "data": {
+        "template": {
+          "flutterType": "Scaffold",
+          "appBar": {
+            "flutterType": "AppBar",
+            "title": {
+              "flutterType": "Text",
+              "label": "Аккаунт"
+            }
           }
         }
       }

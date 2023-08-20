@@ -9,12 +9,15 @@
     "flutterType": "Notify",
     "link": {"template": "Main.json"},
     "linkContainer": "root",
-    "linkDefault": {
-      "template": {
-        "flutterType": "Scaffold",
-        "appBar": {
-          "flutterType": "AppBar",
-          "title": {"flutterType": "Text", "label": "WatchReady"}
+    "context": {
+      "key": "Tab0",
+      "data": {
+        "template": {
+          "flutterType": "Scaffold",
+          "appBar": {
+            "flutterType": "AppBar",
+            "title": {"flutterType": "Text", "label": "WatchReady"}
+          }
         }
       }
     },

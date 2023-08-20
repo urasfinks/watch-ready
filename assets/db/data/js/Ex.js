@@ -1,5 +1,5 @@
 if (bridge.args["switch"] == "onContextUpdate") {
-    if (bridge.args["key"] == "inputData" && bridge.args["updKeys"] != undefined && bridge.args["updKeys"].includes("data")) {
+    if (bridge.args["updKeys"] != undefined && bridge.args["updKeys"].includes("data")) {
         if (bridge.container["inputData"]["data"] != undefined && bridge.container["inputData"]["data"]["children"] != undefined) {
             bridge.call('SetStateData', {
                 "map": {
@@ -56,6 +56,7 @@ function genListCard(nsiList) {
             }
         });
     }
+    bridge.log(result);
     return result;
 }
 

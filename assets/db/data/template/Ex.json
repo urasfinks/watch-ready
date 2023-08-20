@@ -22,27 +22,30 @@
         "link": {
           "userData": "${pageArgument(userData)}"
         },
-        "linkDefault": {
-          "template": {
-            "flutterType": "Column",
-            "children": [
-              {
-                "flutterType": "Text",
-                "label": "${state(sw.index1,0)}/${state(sw.size,0)}"
-              },
-              {
-                "flutterType": "SizedBox",
-                "height": 20
-              },
-              {
-                "flutterType": "LinearProgressIndicator",
-                "value": "${state(sw.prc1,0)}",
-                "backgroundColor": "schema:onBackground",
-                "color": "schema:secondary",
-                "semanticsLabel": "semanticsLabel",
-                "semanticsValue": "semanticsValue"
-              }
-            ]
+        "context": {
+          "key": "Ex",
+          "data": {
+            "template": {
+              "flutterType": "Column",
+              "children": [
+                {
+                  "flutterType": "Text",
+                  "label": "${state(sw.index1,0)}/${state(sw.size,0)}"
+                },
+                {
+                  "flutterType": "SizedBox",
+                  "height": 20
+                },
+                {
+                  "flutterType": "LinearProgressIndicator",
+                  "value": "${state(sw.prc1,0)}",
+                  "backgroundColor": "schema:onBackground",
+                  "color": "schema:secondary",
+                  "semanticsLabel": "semanticsLabel",
+                  "semanticsValue": "semanticsValue"
+                }
+              ]
+            }
           }
         },
         "templateArguments": [
