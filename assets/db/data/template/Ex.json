@@ -9,7 +9,7 @@
       "flutterType": "SliverAppBar",
       "title": {
         "flutterType": "Text",
-        "label": "Тренировка ${container(inputData,data.label,WatchReady)}",
+        "label": "Тренировка ${contextByKey(inputData,data.label,WatchReady)}",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17

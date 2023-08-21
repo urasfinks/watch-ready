@@ -12,7 +12,7 @@ if (bridge.args["switch"] == "constructor") {
     });
 }
 
-if (bridge.args["switch"] == "selectPersonData") { //Need includeContainer+includePageArgument
+if (bridge.args["switch"] == "selectPersonData") { //Need includeContextMap+includePageArgument
     if (bridge.args["fetchDb"].length == 0) {
         var uuid = bridge.call('Uuid', {})["uuid"];
         bridge.call('DataSourceSet', {
@@ -36,15 +36,15 @@ if (bridge.args["switch"] == "selectPersonData") { //Need includeContainer+inclu
         "map": {
             "myProgressUuid": bridge.state["myProgressUuid"],
             "myProgressValue": bridge.state["myProgressValue"],
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.container["inputData"]["data"] || {})
+            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputData"]["data"] || {})
         }
     });
 }
 
-if (bridge.args["switch"] == "onContextUpdate") { //Need includeStateData+includeContainer
+if (bridge.args["switch"] == "onContextUpdate") { //Need includeStateData+includeContextMap
     bridge.call('SetStateData', {
         "map": {
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.container["inputData"]["data"] || {})
+            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputData"]["data"] || {})
         }
     });
 }

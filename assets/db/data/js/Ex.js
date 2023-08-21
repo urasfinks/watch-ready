@@ -1,9 +1,9 @@
 if (bridge.args["switch"] == "onContextUpdate") {
     if (bridge.args["updKeys"] != undefined && bridge.args["updKeys"].includes("data")) {
-        if (bridge.container["inputData"]["data"] != undefined && bridge.container["inputData"]["data"]["children"] != undefined) {
+        if (bridge.contextMap["inputData"]["data"] != undefined && bridge.contextMap["inputData"]["data"]["children"] != undefined) {
             bridge.call('SetStateData', {
                 "map": {
-                    "card": genListCard(bridge.container["inputData"]["data"]["children"])
+                    "card": genListCard(bridge.contextMap["inputData"]["data"]["children"])
                 }
             });
         }
