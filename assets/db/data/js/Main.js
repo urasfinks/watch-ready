@@ -28,7 +28,9 @@ if (bridge.args["switch"] == "selectLess") {
                         "template": "Less.json",
                         "data": bridge.args["fetchDb"][i]["uuid_data"]
                     },
-                    "linkContainer": "inputData",
+                    "context": {
+                        "key": "inputData"
+                    },
                     "constructor": {
                         "jsInvoke": "Less.js",
                         "args": {

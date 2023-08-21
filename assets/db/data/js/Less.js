@@ -89,7 +89,9 @@ function startEx(direction) {
             "template": "Ex.json",
             "data": bridge.pageArgs["link"]["data"]
         },
-        "linkContainer": "inputData",
+        "context": {
+            "key": "inputData"
+        },
         "onContextUpdate": {
             "jsInvoke": "Ex.js",
             "args": {
