@@ -26,6 +26,9 @@
         "includeStateData": true,
         "switch": "constructor"
       }
+    },
+    "subscribeRefresh": {
+      "key": "less"
     }
   }
 }
