@@ -9,7 +9,7 @@
       "flutterType": "SliverAppBar",
       "title": {
         "flutterType": "Text",
-        "label": "Тренировка ${contextByKey(inputData,data.label,WatchReady)}",
+        "label": "${contextByKey(inputExData,data.label,WatchReady)}",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17
@@ -18,9 +18,10 @@
     },
     "children": [
       {
+        "info": "Progress",
         "flutterType": "Notify",
         "link": {
-          "userData": "${pageArgument(userData)}"
+          "userData": "${pageArgs(userData)}"
         },
         "context": {
           "key": "Ex",
@@ -57,6 +58,7 @@
         "height": 30
       },
       {
+        "info": "Swipable",
         "flutterType": "Center",
         "child": {
           "flutterType": "Container",
@@ -120,6 +122,69 @@
             }
           }
         }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "info": "additionalMaterials",
+        "flutterType": "Notify",
+        "link": {
+          "userData": "${pageArgs(userData)}",
+          "state": "${getStateUuid()}"
+        },
+        "context": {
+          "key": "additionalMaterials",
+          "data": {
+            "template": {
+              "flutterType": "Column",
+              "debug": "additionalMaterials",
+              "crossAxisAlignment": "start",
+              "children": [
+                {
+                  "ChildrenExtension": "Iterator",
+                  "dataType": "state",
+                  "key": "additionalMaterials",
+                  "template_divider":{
+                    "flutterType": "SizedBox",
+                    "height": 20
+                  },
+                  "template": {
+                    "flutterType": "Row",
+                    "children": [
+                      {
+                        "flutterType": "AudioButton",
+                        "key": "${speech}",
+                        "type": "db",
+                        "uuid": "${speech}",
+                        "templateArguments": [
+                          "key",
+                          "uuid"
+                        ]
+                      },
+                      {
+                        "flutterType": "SizedBox",
+                        "width": 20
+                      },
+                      {
+                        "flutterType": "Expanded",
+                        "child": {
+                          "flutterType": "Text",
+                          "label": "${subtitles}"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "templateArguments": [
+          "link.userData",
+          "link.state"
+        ]
       }
     ]
   }

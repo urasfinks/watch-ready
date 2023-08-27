@@ -1,5 +1,6 @@
 if (bridge.args["switch"] == "constructor") {
-    bridge.call('DbQuery', {
+    //Пытаемся загрузить свои данные по этому занятию
+    bridge.call("DbQuery", {
         "sql": "select * from data where parent_uuid_data = ? order by id_data",
         "args": [bridge.pageArgs["link"]["data"]],
         "onFetch": {
@@ -12,10 +13,10 @@ if (bridge.args["switch"] == "constructor") {
     });
 }
 
-if (bridge.args["switch"] == "selectPersonData") { //Need includeContextMap+includePageArgument
-    if (bridge.args["fetchDb"].length == 0) {
-        var uuid = bridge.call('Uuid', {})["uuid"];
-        bridge.call('DataSourceSet', {
+if (bridge.args["switch"] == "selectPersonData") {
+    if (bridge.args["fetchDb"].length == 0) { //Своих данных в БД не оказалось, создаём
+        var uuid = bridge.call("Uuid", {})["uuid"];
+        bridge.call("DataSourceSet", {
             "uuid": uuid,
             "value": JSON.stringify({}),
             "parent": bridge.pageArgs["link"]["data"],
@@ -26,25 +27,24 @@ if (bridge.args["switch"] == "selectPersonData") { //Need includeContextMap+incl
         bridge.state["myProgressValue"] = {};
     } else {
         bridge.state["myProgressUuid"] = bridge.args["fetchDb"][0]["uuid_data"];
-        //console.log(bridge.args["fetchDb"][0]);
         bridge.state["myProgressValue"] = bridge.args["fetchDb"][0]["value_data"];
     }
-    bridge.call('SubscribeRefresh', {
+    bridge.call("SubscribeReload", { //Подписываемся на перезагрузку страницы, если личные данные будут обновлены
         "uuid": bridge.state["myProgressUuid"]
     });
-    bridge.call('SetStateData', {
+    bridge.call("SetStateData", {
         "map": {
             "myProgressUuid": bridge.state["myProgressUuid"],
             "myProgressValue": bridge.state["myProgressValue"],
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputData"]["data"] || {})
+            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
         }
     });
 }
 
-if (bridge.args["switch"] == "onContextUpdate") { //Need includeStateData+includeContextMap
-    bridge.call('SetStateData', {
+if (bridge.args["switch"] == "onContextUpdate") { //Были обновлены данные Less.json или само задание
+    bridge.call("SetStateData", {
         "map": {
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputData"]["data"] || {})
+            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
         }
     });
 }
@@ -61,8 +61,8 @@ function genList(userData, nsiData) {
             }
             var prc = (right + left == 0) ? 0 : Math.ceil(right * 100 / (left + right));
             result.push({
-                rus: nsiData["children"][i]["rus"],
-                eng: nsiData["children"][i]["eng"],
+                rus: nsiData["children"][i]["card"]["rus"],
+                eng: nsiData["children"][i]["card"]["eng"],
                 prc: prc + "",
                 right: right + "",
                 left: left + "",
@@ -90,7 +90,16 @@ function startEx(direction) {
             "data": bridge.pageArgs["link"]["data"]
         },
         "context": {
-            "key": "inputData"
+            "key": "inputExData",
+            "data": {
+                "template": {
+                    "flutterType": "Scaffold",
+                    "appBar": {
+                        "flutterType": "AppBar",
+                        "title": {"flutterType": "Text", "label": ""}
+                    }
+                }
+            }
         },
         "onContextUpdate": {
             "jsInvoke": "Ex.js",

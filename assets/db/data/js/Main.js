@@ -1,6 +1,6 @@
 if (bridge.args["switch"] == "constructor") {
-    bridge.call('DbQuery', {
-        "sql": "select * from data where key_data = ? order by id_data",
+    bridge.call("DbQuery", {
+        "sql": "select * from data where key_data = ? and is_remove_data = 0 order by id_data",
         "args": ["less"],
         "onFetch": {
             "jsInvoke": "Main.js",
@@ -29,7 +29,16 @@ if (bridge.args["switch"] == "selectLess") {
                         "data": bridge.args["fetchDb"][i]["uuid_data"]
                     },
                     "context": {
-                        "key": "inputData"
+                        "key": "inputLessData",
+                        "data": {
+                            "template": {
+                                "flutterType": "Scaffold",
+                                "appBar": {
+                                    "flutterType": "AppBar",
+                                    "title": {"flutterType": "Text", "label": ""}
+                                }
+                            }
+                        }
                     },
                     "constructor": {
                         "jsInvoke": "Less.js",
@@ -50,7 +59,7 @@ if (bridge.args["switch"] == "selectLess") {
         });
     }
     newStateData["listLess"] = listLess;
-    bridge.call('SetStateData', {
+    bridge.call("SetStateData", {
         "map": newStateData
     });
 }

@@ -9,7 +9,7 @@
       "flutterType": "SliverAppBar",
       "title": {
         "flutterType": "Text",
-        "label": "${contextByKey(inputData,data.label,WatchReady)}",
+        "label": "${contextByKey(inputLessData,data.label,WatchReady)}",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17
@@ -35,7 +35,7 @@
               },
               "child": {
                 "flutterType": "Text",
-                "label": "Тренировать English",
+                "label": "English Cards",
                 "textAlign": "center",
                 "style": {
                   "flutterType": "TextStyle",
@@ -64,7 +64,7 @@
               },
               "child": {
                 "flutterType": "Text",
-                "label": "Тренировать Русский",
+                "label": "Русские карточки",
                 "textAlign": "center",
                 "style": {
                   "flutterType": "TextStyle",

@@ -1,9 +1,16 @@
 if (bridge.args["switch"] == "onContextUpdate") {
-    if (bridge.args["updKeys"] != undefined && bridge.args["updKeys"].includes("data")) {
-        if (bridge.contextMap["inputData"]["data"] != undefined && bridge.contextMap["inputData"]["data"]["children"] != undefined) {
-            bridge.call('SetStateData', {
+    //bridge.log("onContextUpdate: " + JSON.stringify(bridge.args));
+    if (bridge.args["updateUuidList"].includes("data") && bridge.args["contextKey"] == "inputExData") {
+        if (bridge.contextMap["inputExData"]["data"] != undefined
+            && bridge.contextMap["inputExData"]["data"]["children"] != undefined
+        ) {
+            var currentIndex = bridge.selector(bridge.state, ["sw", "index"], 0);
+            var isFinish = bridge.selector(bridge.state, ["sw", "finish"], false);
+            var listCard = genListCard(bridge.contextMap["inputExData"]["data"]["children"]);
+            bridge.call("SetStateData", {
                 "map": {
-                    "card": genListCard(bridge.contextMap["inputData"]["data"]["children"])
+                    "card": listCard,
+                    "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, currentIndex, bridge.pageArgs["direction"])
                 }
             });
         }
@@ -16,9 +23,18 @@ function genListCard(nsiList) {
     for (var i = 0; i < nsiList.length; i++) {
         result.push({
             "id": nsiList[i]["id"],
+            "additionalMaterials": nsiList[i]["additionalMaterials"],
             "template": {
                 "flutterType": "FlipCard",
                 "key": "x" + i,
+                "onTap": {
+                    "jsInvoke": "Ex.js",
+                    "args": {
+                        "switch": "flip",
+                        "includeAll": true,
+                        "key": "x" + i
+                    }
+                },
                 "front": {
                     "flutterType": "Container",
                     "width": 999,
@@ -32,7 +48,7 @@ function genListCard(nsiList) {
                         "flutterType": "Center",
                         "child": {
                             "flutterType": "Text",
-                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["eng"] : nsiList[i]["rus"]
+                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["card"]["eng"] : nsiList[i]["card"]["rus"]
                         }
                     }
                 },
@@ -49,14 +65,14 @@ function genListCard(nsiList) {
                         "flutterType": "Center",
                         "child": {
                             "flutterType": "Text",
-                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["rus"] : nsiList[i]["eng"]
+                            "label": bridge.pageArgs["direction"] == "eng" ? nsiList[i]["card"]["rus"] : nsiList[i]["card"]["eng"]
                         }
                     }
                 }
             }
         });
     }
-    bridge.log(result);
+    //bridge.log(result);
     return result;
 }
 
@@ -64,7 +80,15 @@ if (bridge.args["switch"] == "onSwipeCompleted") {
     var listCard = bridge.state["card"];
     var swipedIndex = bridge.state["sw"]["swipedIndex"];
     var idCard = listCard[swipedIndex]["id"];
-    bridge.call('DbQuery', {
+
+    var isFinish = bridge.state["sw"]["finish"] == true || bridge.state["sw"]["finish"] == "true";
+    bridge.call("SetStateData", {
+        "map": {
+            "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, bridge.selector(bridge.state, ["sw", "index"], 0), bridge.pageArgs["direction"])
+        },
+        "notify": false
+    });
+    bridge.call("DbQuery", {
         "sql": "select * from data where uuid_data = ? order by id_data",
         "args": [bridge.pageArgs["userData"]],
         "onFetch": {
@@ -95,15 +119,34 @@ if (bridge.args["switch"] == "selectPersonData") {
     if (userData[idCard] == undefined || userData[idCard] == null) {
         userData[idCard] = {left: 0, right: 0};
     }
-    bridge.log("swipedIndex: " + swipedIndex + "; swipedDirection: " + swipedDirection + ";");
+    //bridge.log("swipedIndex: " + swipedIndex + "; swipedDirection: " + swipedDirection + ";");
     userData[idCard][swipedDirection]++;
-    bridge.call('DataSourceSet', {
+    bridge.call("DataSourceSet", {
         "uuid": userDataUuid,
         "value": userData,
         "type": "userDataRSync",
         "key": "myProgressValue",
         //"debugTransaction": true
     });
+}
+
+if (bridge.args["switch"] == "flip") {
+    bridge.log(bridge.state[bridge.args["key"]]);
+    bridge.call("Audio", {
+        "case": "stop"
+    });
+}
+
+function getAdditionalMaterials(listCard, currentIndex, direction) {
+    //bridge.log("getAdditionalMaterials() listCard: " + listCard.length + "; currentIndex: " + currentIndex + "; direction: " + direction);
+    var result = [];
+    var matList = bridge.selector(listCard, [currentIndex, "additionalMaterials"], []);
+    for (var i = 0; i < matList.length; i++) {
+        if (matList[i]["lang"] == direction || matList[i]["lang"] == "") {
+            result.push(matList[i]);
+        }
+    }
+    return result;
 }
 
 function shuffle(array) {
