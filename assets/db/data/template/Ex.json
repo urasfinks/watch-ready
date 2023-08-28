@@ -3,7 +3,6 @@
   "body": {
     "flutterType": "CustomScrollView",
     "includeBottomOffset": true,
-    "onStateDataUpdate": true,
     "padding": "10,20,10,0",
     "appBar": {
       "flutterType": "SliverAppBar",
@@ -18,11 +17,14 @@
     },
     "children": [
       {
-        "info": "Progress",
+        "info": "Progress. Subscribed on personProgressUuid",
         "flutterType": "Notify",
         "link": {
           "userData": "${pageArgs(userData)}"
         },
+        "templateArguments": [
+          "link.userData"
+        ],
         "context": {
           "key": "Ex",
           "data": {
@@ -48,17 +50,14 @@
               ]
             }
           }
-        },
-        "templateArguments": [
-          "link.userData"
-        ]
+        }
       },
       {
         "flutterType": "SizedBox",
         "height": 30
       },
       {
-        "info": "Swipable",
+        "info": "Swipable. Subscribed on State",
         "flutterType": "Center",
         "child": {
           "flutterType": "Container",
@@ -128,12 +127,16 @@
         "height": 30
       },
       {
-        "info": "additionalMaterials",
+        "info": "additionalMaterials. Subscribed on personProgressUuid, State",
         "flutterType": "Notify",
         "link": {
           "userData": "${pageArgs(userData)}",
           "state": "${getStateUuid()}"
         },
+        "templateArguments": [
+          "link.userData",
+          "link.state"
+        ],
         "context": {
           "key": "additionalMaterials",
           "data": {
@@ -180,11 +183,7 @@
               ]
             }
           }
-        },
-        "templateArguments": [
-          "link.userData",
-          "link.state"
-        ]
+        }
       }
     ]
   }

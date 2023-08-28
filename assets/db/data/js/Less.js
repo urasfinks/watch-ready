@@ -14,6 +14,11 @@ if (bridge.args["switch"] == "constructor") {
 }
 
 if (bridge.args["switch"] == "selectPersonData") {
+    // bridge.log(bridge.state);
+    // bridge.log(bridge.args);
+    // bridge.log(bridge.contextMap);
+    var state = bridge.selector(bridge.state, ["main"], {});
+
     if (bridge.args["fetchDb"].length == 0) { //Своих данных в БД не оказалось, создаём
         var uuid = bridge.call("Uuid", {})["uuid"];
         bridge.call("DataSourceSet", {
@@ -23,28 +28,29 @@ if (bridge.args["switch"] == "selectPersonData") {
             "type": "userDataRSync",
             "key": "myProgressValue"
         });
-        bridge.state["myProgressUuid"] = uuid;
-        bridge.state["myProgressValue"] = {};
+        state["myProgressUuid"] = uuid;
+        state["myProgressValue"] = {};
     } else {
-        bridge.state["myProgressUuid"] = bridge.args["fetchDb"][0]["uuid_data"];
-        bridge.state["myProgressValue"] = bridge.args["fetchDb"][0]["value_data"];
+        state["myProgressUuid"] = bridge.args["fetchDb"][0]["uuid_data"];
+        state["myProgressValue"] = bridge.args["fetchDb"][0]["value_data"];
     }
     bridge.call("SubscribeReload", { //Подписываемся на перезагрузку страницы, если личные данные будут обновлены
-        "uuid": bridge.state["myProgressUuid"]
+        "uuid": state["myProgressUuid"]
     });
+    // Тут нет данных inputLessData, что бы построить list
+    //state["list"] = genList(state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
     bridge.call("SetStateData", {
-        "map": {
-            "myProgressUuid": bridge.state["myProgressUuid"],
-            "myProgressValue": bridge.state["myProgressValue"],
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
-        }
+        "map": state
     });
 }
 
 if (bridge.args["switch"] == "onContextUpdate") { //Были обновлены данные Less.json или само задание
+    // bridge.log(bridge.args);
+    // bridge.log(bridge.contextMap["inputLessData"]["data"]);
+    // bridge.log(bridge.state["main"]["myProgressValue"]);
     bridge.call("SetStateData", {
         "map": {
-            "list": genList(bridge.state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
+            "list": genList(bridge.state["main"]["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
         }
     });
 }
@@ -83,7 +89,7 @@ if (bridge.args["switch"] == "startExEng") {
 function startEx(direction) {
     bridge.call("NavigatorPush", {
         "name": "Ex",
-        "userData": bridge.state["myProgressUuid"],
+        "userData": bridge.state["main"]["myProgressUuid"],
         "direction": direction,
         "link": {
             "template": "Ex.json",
