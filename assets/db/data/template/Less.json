@@ -9,7 +9,7 @@
       "flutterType": "SliverAppBar",
       "title": {
         "flutterType": "Text",
-        "label": "${contextByKey(inputLessData,data.label,WatchReady)}",
+        "label": "${contextMap(inputLessData,data.label,WatchReady)}",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17

@@ -1,19 +1,27 @@
 if (bridge.args["switch"] == "onContextUpdate") {
-    //bridge.log("onContextUpdate: " + JSON.stringify(bridge.args));
-    if (bridge.args["updateUuidList"].includes("data") && bridge.args["contextKey"] == "inputExData") {
-        if (bridge.contextMap["inputExData"]["data"] != undefined
-            && bridge.contextMap["inputExData"]["data"]["children"] != undefined
-        ) {
-            var currentIndex = bridge.selector(bridge.state, ["sw", "index"], 0);
-            var isFinish = bridge.selector(bridge.state, ["sw", "finish"], false);
-            var listCard = genListCard(bridge.contextMap["inputExData"]["data"]["children"]);
-            bridge.call("SetStateData", {
-                "map": {
-                    "card": listCard,
-                    "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, currentIndex, bridge.pageArgs["direction"])
-                }
-            });
-        }
+    bridge.log("onContextUpdate: " + JSON.stringify(bridge.args));
+    if (
+        bridge.args["contextKey"] == "inputExData"
+        && bridge.contextMap["inputExData"]["data"] != undefined
+        && bridge.contextMap["inputExData"]["data"]["children"] != undefined
+    ) {
+
+        var currentIndex = bridge.selector(bridge.state, ["sw", "index"], 0);
+        var isFinish = bridge.selector(bridge.state, ["sw", "finish"], false);
+        var listCard = genListCard(bridge.contextMap["inputExData"]["data"]["children"]);
+        bridge.call("SetStateData", {
+            "state": "card",
+            "map": {
+                "card": listCard
+            }
+        });
+        bridge.call("SetStateData", {
+            "state": "additionalMaterials",
+            "map": {
+                "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, currentIndex, bridge.pageArgs["direction"])
+            }
+        });
+
     }
 }
 
