@@ -38,14 +38,16 @@ if (bridge.args["switch"] == "selectPersonData") {
         "uuid": state["myProgressUuid"]
     });
     // Тут нет данных inputLessData, что бы построить list
-    //state["list"] = genList(state["myProgressValue"] || {}, bridge.contextMap["inputLessData"]["data"] || {})
+    var lessData = bridge.selector(bridge.contextMap, ["inputLessData", "data"], undefined);
+    if (lessData != undefined) {
+        state["list"] = genList(state["myProgressValue"] || {}, lessData)
+    }
     bridge.call("SetStateData", {
         "map": state
     });
 }
 
 if (bridge.args["switch"] == "onContextUpdate") { //Были обновлены данные Less.json или само задание
-    // bridge.log(bridge.args);
     // bridge.log(bridge.contextMap["inputLessData"]["data"]);
     // bridge.log(bridge.state["main"]["myProgressValue"]);
     bridge.call("SetStateData", {

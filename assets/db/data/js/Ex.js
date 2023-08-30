@@ -21,7 +21,6 @@ if (bridge.args["switch"] == "onContextUpdate") {
                 "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, currentIndex, bridge.pageArgs["direction"])
             }
         });
-
     }
 }
 
@@ -85,16 +84,17 @@ function genListCard(nsiList) {
 }
 
 if (bridge.args["switch"] == "onSwipeCompleted") {
-    var listCard = bridge.state["card"];
-    var swipedIndex = bridge.state["sw"]["swipedIndex"];
-    var idCard = listCard[swipedIndex]["id"];
+    var listCard = bridge.selector(bridge.state, ["card", "card"], []);
+    var swipedIndex = bridge.selector(bridge.state, ["sw", "swipedIndex"], -1);
+    var idCard = bridge.selector(listCard, [swipedIndex, "id"], -1);
 
-    var isFinish = bridge.state["sw"]["finish"] == true || bridge.state["sw"]["finish"] == "true";
+    var isFinish = bridge.selector(bridge.state, ["sw", "finish"], false) == true
+        || bridge.selector(bridge.state, ["sw", "finish"], false) == "true";
     bridge.call("SetStateData", {
+        "state": "additionalMaterials",
         "map": {
             "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, bridge.selector(bridge.state, ["sw", "index"], 0), bridge.pageArgs["direction"])
-        },
-        "notify": false
+        }
     });
     bridge.call("DbQuery", {
         "sql": "select * from data where uuid_data = ? order by id_data",
@@ -104,7 +104,7 @@ if (bridge.args["switch"] == "onSwipeCompleted") {
             "args": {
                 "includeAll": true,
                 "switch": "selectPersonData",
-                "swipedDirection": bridge.state["sw"]["swipedDirection"],
+                "swipedDirection": bridge.selector(bridge.state, ["sw", "swipedDirection"], "unknown"),
                 "idCard": idCard
             }
         }
@@ -139,7 +139,23 @@ if (bridge.args["switch"] == "selectPersonData") {
 }
 
 if (bridge.args["switch"] == "flip") {
-    bridge.log(bridge.state[bridge.args["key"]]);
+    var listCard = bridge.selector(bridge.state, ["card", "card"], []);
+    var currentIndex = bridge.selector(bridge.state, ["sw", "index"], 0);
+    var flipKey = bridge.args["key"];
+    var flipSate = bridge.state[flipKey]
+    //var lang = flipSate["isBack"] == true ?
+    var map = {
+        "front": bridge.pageArgs["direction"],
+        "back": bridge.pageArgs["direction"] == "rus" ? "end" : "rus"
+    };
+
+    //bridge.log();
+    bridge.call("SetStateData", {
+        "state": "additionalMaterials",
+        "map": {
+            "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, bridge.selector(bridge.state, ["sw", "index"], 0), flipSate["isBack"] ? map["back"] : map["front"])
+        }
+    });
     bridge.call("Audio", {
         "case": "stop"
     });

@@ -17,7 +17,7 @@
     },
     "children": [
       {
-        "info": "Progress. Subscribed on personProgressUuid",
+        "info": "Progress line",
         "flutterType": "Notify",
         "link": {
           "swState": "${stateUuid(sw)}"
@@ -33,7 +33,7 @@
               "children": [
                 {
                   "flutterType": "Text",
-                  "label": "${state(sw,index1,0)}/${state(sw,size,0)}"
+                  "label": "${state(sw,index1,1)}/${state(sw,size,0)}"
                 },
                 {
                   "flutterType": "SizedBox",
@@ -57,6 +57,7 @@
         "height": 30
       },
       {
+        "info": "Swipable",
         "flutterType": "Notify",
         "link": {
           "cardState": "${stateUuid(card)}"
@@ -68,7 +69,6 @@
           "key": "CardSwipable",
           "data": {
             "template": {
-              "info": "Swipable. Subscribed on State",
               "flutterType": "Center",
               "child": {
                 "flutterType": "Container",
@@ -145,15 +145,13 @@
         "height": 30
       },
       {
-        "info": "additionalMaterials. Subscribed on personProgressUuid, State",
+        "info": "additionalMaterials",
         "flutterType": "Notify",
         "link": {
-          "userData": "${pageArgs(userData)}",
-          "state": "${stateUuid()}"
+          "additionalMaterialsState": "${stateUuid(additionalMaterials)}"
         },
         "templateArguments": [
-          "link.userData",
-          "link.state"
+          "link.additionalMaterialsState"
         ],
         "context": {
           "key": "additionalMaterials",
@@ -165,6 +163,7 @@
                 {
                   "ChildrenExtension": "Iterator",
                   "dataType": "state",
+                  "state": "additionalMaterials",
                   "key": "additionalMaterials",
                   "template_divider":{
                     "flutterType": "SizedBox",
