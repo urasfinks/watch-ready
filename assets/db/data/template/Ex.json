@@ -174,12 +174,14 @@
                     "children": [
                       {
                         "flutterType": "AudioButton",
+                        "autoPlayOnLoad": "${first}",
                         "key": "${speech}",
                         "type": "db",
                         "uuid": "${speech}",
                         "templateArguments": [
                           "key",
-                          "uuid"
+                          "uuid",
+                          "autoPlayOnLoad"
                         ]
                       },
                       {

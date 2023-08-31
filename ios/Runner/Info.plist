@@ -24,6 +24,8 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>FLTEnableImpeller</key>
+    <true />
 	<key>NSCameraUsageDescription</key>
     <string>FiveGame просит доступ к камере, что бы загрузить фотографию вашего профиля</string>
     <key>NSPhotoLibraryUsageDescription</key>

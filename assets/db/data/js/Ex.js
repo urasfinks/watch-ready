@@ -165,8 +165,10 @@ function getAdditionalMaterials(listCard, currentIndex, direction) {
     //bridge.log("getAdditionalMaterials() listCard: " + listCard.length + "; currentIndex: " + currentIndex + "; direction: " + direction);
     var result = [];
     var matList = bridge.selector(listCard, [currentIndex, "additionalMaterials"], []);
+    var counter = 1;
     for (var i = 0; i < matList.length; i++) {
         if (matList[i]["lang"] == direction || matList[i]["lang"] == "") {
+            matList[i]["first"] = 1 == counter++;
             result.push(matList[i]);
         }
     }
