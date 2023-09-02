@@ -150,15 +150,15 @@ if (bridge.args["switch"] == "flip") {
     };
 
     //bridge.log();
-    bridge.call("SetStateData", {
-        "state": "additionalMaterials",
-        "map": {
-            "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, bridge.selector(bridge.state, ["sw", "index"], 0), flipSate["isBack"] ? map["back"] : map["front"])
-        }
-    });
-    bridge.call("Audio", {
+    // bridge.call("SetStateData", {
+    //     "state": "additionalMaterials",
+    //     "map": {
+    //         "additionalMaterials": isFinish == true ? [] : getAdditionalMaterials(listCard, bridge.selector(bridge.state, ["sw", "index"], 0), flipSate["isBack"] ? map["back"] : map["front"])
+    //     }
+    // });
+    /*bridge.call("Audio", {
         "case": "stop"
-    });
+    });*/
 }
 
 function getAdditionalMaterials(listCard, currentIndex, direction) {

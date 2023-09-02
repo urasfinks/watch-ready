@@ -1,0 +1,733 @@
+{
+  "label": "Друзья #1",
+  "children": [
+    {
+      "id": "15a66db9-f3a4-41fb-8847-613aec2abfc5",
+      "card": {
+        "eng": "fixating",
+        "rus": "фиксировать, заострять"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "15a66db9-f3a4-41fb-8847-613aec2abfc5.mp3",
+          "subtitles": "Why does everyone keep fixating on that?\n\nПочему все продолжают фиксироваться на этом?"
+        }
+      ]
+    },
+    {
+      "id": "78cb85d7-67de-461c-9e51-a5d15cbb82a4",
+      "card": {
+        "eng": "intestine",
+        "rus": "кишечник"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "78cb85d7-67de-461c-9e51-a5d15cbb82a4.mp3",
+          "subtitles": "I feel like someone pulled my intestine out of my mouth.\n\nМне кажется, будто кто-то вытащил мне кишечник изо рта."
+        }
+      ]
+    },
+    {
+      "id": "343c3af9-b237-46ed-a725-7b100d306c70",
+      "card": {
+        "eng": "hump",
+        "rus": "горб"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "343c3af9-b237-46ed-a725-7b100d306c70.mp3",
+          "subtitles": "So does he have a hump and a hairpiece?\n\nТак у него есть горб и парик?"
+        }
+      ]
+    },
+    {
+      "id": "7d2a2b8d-2b5c-4653-99f7-01005336accf",
+      "card": {
+        "eng": "aura",
+        "rus": "аура"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "7d2a2b8d-2b5c-4653-99f7-01005336accf.mp3",
+          "subtitles": "No, don't! Stop cleansing my aura.\n\nНет, не надо! Прекрати очищать мою ауру."
+        }
+      ]
+    },
+    {
+      "id": "ce06662f-a866-46ff-90d7-cebf7ba7c6fe",
+      "card": {
+        "eng": "lesbian",
+        "rus": "лесбиянка"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "ce06662f-a866-46ff-90d7-cebf7ba7c6fe.mp3",
+          "subtitles": "Sometimes I wish I was a lesbian.\n\nИногда мне хочется быть лесбиянкой."
+        }
+      ]
+    },
+    {
+      "id": "0408cc1b-ffa3-4a65-8d81-6919c399fe8d",
+      "card": {
+        "eng": "decaf",
+        "rus": "без кофеина"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "0408cc1b-ffa3-4a65-8d81-6919c399fe8d.mp3",
+          "subtitles": "Can I get you some coffee? - Decaf.\n\nМожно принести вам кофе? - Без кофеина."
+        }
+      ]
+    },
+    {
+      "id": "be88b1ac-739d-4b18-b66a-8423a610a709",
+      "card": {
+        "eng": "organ",
+        "rus": "орган"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "be88b1ac-739d-4b18-b66a-8423a610a709.mp3",
+          "subtitles": "I guess he bought her the pipe organ.\n\nДумаю, он купил ей орган."
+        }
+      ]
+    },
+    {
+      "id": "4fb9cfe9-4f3e-4604-88b0-92f7394d71fe",
+      "card": {
+        "eng": "drifted",
+        "rus": "отдаляться, удаляться"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "4fb9cfe9-4f3e-4604-88b0-92f7394d71fe.mp3",
+          "subtitles": "I know we've drifted apart..\n\nЯ знаю, что мы отдалились друг от друга."
+        }
+      ]
+    },
+    {
+      "id": "c55b18e4-9518-440d-b18d-6f166684bfe2",
+      "card": {
+        "eng": "invited",
+        "rus": "приглашенный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "c55b18e4-9518-440d-b18d-6f166684bfe2.mp3",
+          "subtitles": "Who wasn't invited to the wedding.\n\nКто не был приглашен на свадьбу?"
+        }
+      ]
+    },
+    {
+      "id": "a394ebd0-923c-4c0c-ada4-9f9df096f6cc",
+      "card": {
+        "eng": "metaphor",
+        "rus": "метафора"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "a394ebd0-923c-4c0c-ada4-9f9df096f6cc.mp3",
+          "subtitles": "It's a metaphor, Daddy!\n\nЭто метафора, папа!"
+        }
+      ]
+    },
+    {
+      "id": "ab2a610d-fc2e-41ed-afea-f0fee027ff6c",
+      "card": {
+        "eng": "decided",
+        "rus": "решать, определить"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "ab2a610d-fc2e-41ed-afea-f0fee027ff6c.mp3",
+          "subtitles": "\"Tuna or egg salad! Decide!\"\n\n\"Тунец или яичный салат! Реши!\""
+        }
+      ]
+    },
+    {
+      "id": "b98571cb-d76c-44aa-bafe-faebe97dbb53",
+      "card": {
+        "eng": "pushed",
+        "rus": "толкнул"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "b98571cb-d76c-44aa-bafe-faebe97dbb53.mp3",
+          "subtitles": "Push her! Push her down the stairs!\n\nТолкни ее! Толкни ее вниз по лестнице!"
+        }
+      ]
+    },
+    {
+      "id": "28db8a4b-e3a9-4d87-8d51-f9700cb33de6",
+      "card": {
+        "eng": "decision",
+        "rus": "решение"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "28db8a4b-e3a9-4d87-8d51-f9700cb33de6.mp3",
+          "subtitles": "Well, maybe that's my decision.\n\nНу, может быть, это мое решение."
+        }
+      ]
+    },
+    {
+      "id": "55249b4f-2c18-4f84-9e3f-111aecd3a467",
+      "card": {
+        "eng": "independence",
+        "rus": "независимость"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "55249b4f-2c18-4f84-9e3f-111aecd3a467.mp3",
+          "subtitles": "Independence. Controlling your life. The whole hat thing.\n\nНезависимость. Управление своей жизнью. Вся эта шляпная история."
+        }
+      ]
+    },
+    {
+      "id": "b5419c15-c707-4ded-80b4-7a6baea466ed",
+      "card": {
+        "eng": "complain",
+        "rus": "жаловаться"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "b5419c15-c707-4ded-80b4-7a6baea466ed.mp3",
+          "subtitles": "Or he just complains a lot?\n\nИли он просто много жалуется?"
+        }
+      ]
+    },
+    {
+      "id": "35a0ff65-298c-4654-bafc-aef287b508ce",
+      "card": {
+        "eng": "horrible",
+        "rus": "ужасный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "35a0ff65-298c-4654-bafc-aef287b508ce.mp3",
+          "subtitles": "Please don't do that again. It's a horrible sound.\n\nПожалуйста, больше так не делай. Это ужасный звук."
+        }
+      ]
+    },
+    {
+      "id": "93018931-7228-4fa7-8380-f2e0fed07594",
+      "card": {
+        "eng": "furniture",
+        "rus": "мебель"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "93018931-7228-4fa7-8380-f2e0fed07594.mp3",
+          "subtitles": "Your \"not a real date\" is with Paul, the wine guy?\n\nТвое «не настоящее свидание» с Полом, винным гурманом?"
+        }
+      ]
+    },
+    {
+      "id": "84fe2be2-26f3-4118-a8bc-d630394d6cef",
+      "card": {
+        "eng": "excited",
+        "rus": "взволнованный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "84fe2be2-26f3-4118-a8bc-d630394d6cef.mp3",
+          "subtitles": "We're very excited about it.\n\nМы очень взволнованы этим."
+        }
+      ]
+    },
+    {
+      "id": "8a5dada0-0ed1-4782-a952-5c59c7c68c32",
+      "card": {
+        "eng": "steer clear",
+        "rus": "избегать"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "8a5dada0-0ed1-4782-a952-5c59c7c68c32.mp3",
+          "subtitles": "Steer clear of you.\n\nИзбегай тебя."
+        }
+      ]
+    },
+    {
+      "id": "eaed7693-4cd8-42d1-a3b2-6706aceead62",
+      "card": {
+        "eng": "attach",
+        "rus": "прикрепить"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "eaed7693-4cd8-42d1-a3b2-6706aceead62.mp3",
+          "subtitles": "I'm supposed to attach a bracket-y thing to the side things..\n\nМне нужно прикрепить вещь в форме скобки к боковым частям.."
+        }
+      ]
+    },
+    {
+      "id": "24927810-08b7-4c97-8941-a134fba19c1f",
+      "card": {
+        "eng": "break",
+        "rus": "сломать, разбить"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "24927810-08b7-4c97-8941-a134fba19c1f.mp3",
+          "subtitles": "He might accidentally break something valuable of hers.\n\nОн может случайно сломать что-то ценное у нее."
+        }
+      ]
+    },
+    {
+      "id": "c5b0fb63-7875-4ce7-bbf3-54f7a485b468",
+      "card": {
+        "eng": "hang out",
+        "rus": "тусить, проводить время"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "c5b0fb63-7875-4ce7-bbf3-54f7a485b468.mp3",
+          "subtitles": "Thanks. But I'm just going to hang out here.\n\nСпасибо. Но я просто побуду здесь."
+        }
+      ]
+    },
+    {
+      "id": "94f91de9-c64e-4b52-ae75-6832dc3170af",
+      "card": {
+        "eng": "rub",
+        "rus": "тереть, натирать"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "94f91de9-c64e-4b52-ae75-6832dc3170af.mp3",
+          "subtitles": "She really likes it when you rub her neck in the same spot..\n\nЕй очень нравится, когда ты теребишь ей шею в том же месте.."
+        }
+      ]
+    },
+    {
+      "id": "3c0ed279-d569-4690-9908-91e3faf9e378",
+      "card": {
+        "eng": "screw",
+        "rus": "обмануть, надуть"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "3c0ed279-d569-4690-9908-91e3faf9e378.mp3",
+          "subtitles": "You got screwed.\n\nВас обманули."
+        }
+      ]
+    },
+    {
+      "id": "85a3becd-d5d1-4804-96d5-efb964e2c947",
+      "card": {
+        "eng": "honeymoon",
+        "rus": "медовый месяц"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "85a3becd-d5d1-4804-96d5-efb964e2c947.mp3",
+          "subtitles": "Right. You're not even getting your honeymoon.\n\nПравильно. Ты даже не получаешь медовый месяц."
+        }
+      ]
+    },
+    {
+      "id": "919cc3f7-76d6-4f3f-a54a-c27650ac6442",
+      "card": {
+        "eng": "control",
+        "rus": "контроль, управление"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "919cc3f7-76d6-4f3f-a54a-c27650ac6442.mp3",
+          "subtitles": "Independence. Controlling your life. The whole hat thing.\n\nНезависимость. Управление своей жизнью. Вся эта шляпная история."
+        }
+      ]
+    },
+    {
+      "id": "651cf696-7f16-4ccd-8167-59b9e1862928",
+      "card": {
+        "eng": "giant",
+        "rus": "гигантский"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "651cf696-7f16-4ccd-8167-59b9e1862928.mp3",
+          "subtitles": "Is like a giant pigeon\nCrapping on my heart\n\nПохоже на гигантского голубя,\nкакающего на мое сердце"
+        }
+      ]
+    },
+    {
+      "id": "1fb3f3cf-19e5-4097-a5f1-f1ee311ceec8",
+      "card": {
+        "eng": "closeness",
+        "rus": "близость"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "1fb3f3cf-19e5-4097-a5f1-f1ee311ceec8.mp3",
+          "subtitles": "Four years of closeness and sharing, after which she ripped your heart out.\n\nЧетыре года близости и совместного времяпровождения, после чего она вырвала твоё сердце."
+        }
+      ]
+    },
+    {
+      "id": "ce480a78-c123-4b8f-b920-61e61d29b09f",
+      "card": {
+        "eng": "difference",
+        "rus": "разница"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "ce480a78-c123-4b8f-b920-61e61d29b09f.mp3",
+          "subtitles": "But Joanie loved Chachi. That's the difference.\n\nНо Джоани любила Чачи. В этом и заключается разница."
+        }
+      ]
+    },
+    {
+      "id": "debc9386-a052-463c-8d53-f8854c37deec",
+      "card": {
+        "eng": "revelation",
+        "rus": "разоблачение, откровение"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "debc9386-a052-463c-8d53-f8854c37deec.mp3",
+          "subtitles": "It's more of a fifth date kind of revelation.\n\nЭто больше откровение на пятом свидании."
+        }
+      ]
+    },
+    {
+      "id": "721860df-f6d8-4f01-8b42-403b4f5e829e",
+      "card": {
+        "eng": "perform",
+        "rus": "выполнять, исполнять"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "721860df-f6d8-4f01-8b42-403b4f5e829e.mp3",
+          "subtitles": "I haven't been able to perform.. sexually.\n\nУ меня не получается выполнять.. сексуальные действия."
+        }
+      ]
+    },
+    {
+      "id": "e4d5826f-1f70-4b82-93ba-bc61eb803fe2",
+      "card": {
+        "eng": "regional",
+        "rus": "региональный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "e4d5826f-1f70-4b82-93ba-bc61eb803fe2.mp3",
+          "subtitles": "I doubt it. Mostly regional work.\n\nСомневаюсь. В основном региональная работа."
+        }
+      ]
+    },
+    {
+      "id": "9ab91884-2bbb-40b7-9159-0600911e37fc",
+      "card": {
+        "eng": "invade",
+        "rus": "вторгаться, захватывать"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "9ab91884-2bbb-40b7-9159-0600911e37fc.mp3",
+          "subtitles": "If I can invade Poland, there's nothing I can't do.\n\nЕсли я могу вторгнуться в Польшу, то нет ничего, чего я не мог бы сделать."
+        }
+      ]
+    },
+    {
+      "id": "6b5a800a-f6c9-4b2c-9a8c-04f3c78f2db4",
+      "card": {
+        "eng": "bonds",
+        "rus": "связь, узы"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "6b5a800a-f6c9-4b2c-9a8c-04f3c78f2db4.mp3",
+          "subtitles": "We are gathered here to join Joanie Louise Cunningham.. and Charles. Chachi, Chachi, Chachi.. in the bonds of holy matrimony.\n\nМы собрались здесь, чтобы соединить Джоани Луиз Каннингем.. и Чарльза. Чачи, Чачи, Чачи.. в узы святого брака."
+        }
+      ]
+    },
+    {
+      "id": "9b4c52de-7ea9-4b85-8eae-fe65dcb93272",
+      "card": {
+        "eng": "abuse",
+        "rus": "оскорбление, насилие"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "9b4c52de-7ea9-4b85-8eae-fe65dcb93272.mp3",
+          "subtitles": "- I will not take this abuse. - You're right, I'm sorry.\n\n- Я не буду терпеть этого оскорбления. - Ты прав, прошу прощения."
+        }
+      ]
+    },
+    {
+      "id": "57bc0274-423b-42f2-9271-8eab631b9a15",
+      "card": {
+        "eng": "invasion",
+        "rus": "вторжение, захват"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "57bc0274-423b-42f2-9271-8eab631b9a15.mp3",
+          "subtitles": "Do the words, \"Billy, don't be a hero,\" mean anything to you?\n\nСлова \"Билли, не будь героем\" что-то значат для тебя?"
+        }
+      ]
+    },
+    {
+      "id": "0459db7a-295b-4826-b514-c247b895d914",
+      "card": {
+        "eng": "input",
+        "rus": "ввод, внесение данных"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "0459db7a-295b-4826-b514-c247b895d914.mp3",
+          "subtitles": "If I don't input those numbers, it doesn't make much of a difference.\n\nЕсли я не введу эти числа, это не сделает большой разницы."
+        }
+      ]
+    },
+    {
+      "id": "867095f9-7474-498c-88d8-c0e74b348b9d",
+      "card": {
+        "eng": "actor",
+        "rus": "актер"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "867095f9-7474-498c-88d8-c0e74b348b9d.mp3",
+          "subtitles": "- Yeah, I'm an actor. - Have I seen you in anything?\n\n- Да, я актер. - Я тебя видела где-то?"
+        }
+      ]
+    },
+    {
+      "id": "5744f307-1959-437e-92c1-8b3b279be778",
+      "card": {
+        "eng": "congratulations",
+        "rus": "поздравления"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "5744f307-1959-437e-92c1-8b3b279be778.mp3",
+          "subtitles": "- That is amazing. - Congratulations.\n\n- Это удивительно. - Поздравляю."
+        }
+      ]
+    },
+    {
+      "id": "75b80c2a-bf7d-4cbe-82bc-1b0e8f1d183a",
+      "card": {
+        "eng": "sophisticated",
+        "rus": "сложный, утонченный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "75b80c2a-bf7d-4cbe-82bc-1b0e8f1d183a.mp3",
+          "subtitles": "I assume we want an answer more sophisticated than: \"To get you into bed.\"\n\nЯ предполагаю, что нам нужен более утонченный ответ, чем: \"Чтобы тебя затащить в постель.\""
+        }
+      ]
+    },
+    {
+      "id": "00307127-0249-4843-b5ab-95c66f402991",
+      "card": {
+        "eng": "universe",
+        "rus": "вселенная"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "00307127-0249-4843-b5ab-95c66f402991.mp3",
+          "subtitles": "Don't hate. You don't want to put that out into the universe.\n\nНе ненавидь. Ты не хочешь отправлять это во Вселенную."
+        }
+      ]
+    },
+    {
+      "id": "f59f6451-d6d5-484f-8b7c-869e5d0a9bf7",
+      "card": {
+        "eng": "beacon",
+        "rus": "сигнал, маяк"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "f59f6451-d6d5-484f-8b7c-869e5d0a9bf7.mp3",
+          "subtitles": "Is it like I have some sort of beacon that only dogs.. and men with emotional problems can hear?\n\nЭто как будто у меня есть своего рода маяк, который слышат только собаки.. и мужчины с эмоциональными проблемами?"
+        }
+      ]
+    },
+    {
+      "id": "c43f1275-613d-4273-ab2a-fc5f7a490845",
+      "card": {
+        "eng": "vulnerability",
+        "rus": "уязвимость"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "c43f1275-613d-4273-ab2a-fc5f7a490845.mp3",
+          "subtitles": "Listen, do you think..? Try not to let my vulnerability become a factor here.\n\nПослушай, думаешь..? Постарайся не допустить, чтобы моя уязвимость стала здесь фактором."
+        }
+      ]
+    },
+    {
+      "id": "f4155be6-3d3e-459a-902e-fdf4b3563ecb",
+      "card": {
+        "eng": "symbolic",
+        "rus": "символический"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "f4155be6-3d3e-459a-902e-fdf4b3563ecb.mp3",
+          "subtitles": "That's it. Are you going to crash on the couch?\n\nNo, I gotta go home sometime.\n\nAre you gonna be okay?\n\nLook what I just found on the floor.\n\nВот и всё. Ты будешь спать на диване?\n\nНет, мне надо когда-то домой.\n\nТы будешь в порядке?\n\nПосмотри, что я только что нашёл на полу."
+        }
+      ]
+    },
+    {
+      "id": "b03599d9-3b5b-42e8-8b89-4973ed08cb0a",
+      "card": {
+        "eng": "retailers",
+        "rus": "розничные продавцы"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "b03599d9-3b5b-42e8-8b89-4973ed08cb0a.mp3",
+          "subtitles": "If you listen closely, you can hear a thousand retailers scream.\n\nЕсли внимательно прислушаться, можно услышать тысячу криков розничных продавцов."
+        }
+      ]
+    },
+    {
+      "id": "2ac414ec-7f76-41db-9762-0d7445d58c48",
+      "card": {
+        "eng": "upbeat",
+        "rus": "оптимистичный, жизнерадостный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "2ac414ec-7f76-41db-9762-0d7445d58c48.mp3",
+          "subtitles": "You're surprisingly upbeat.\n\nТы удивительно оптимистичен."
+        }
+      ]
+    },
+    {
+      "id": "667da8b7-b3a8-4c08-b754-92afb6206898",
+      "card": {
+        "eng": "albino",
+        "rus": "альбинос"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "667da8b7-b3a8-4c08-b754-92afb6206898.mp3",
+          "subtitles": "I ended up living with this albino guy who was cleaning windshields.\n\nВ итоге я оказался живущим с этим альбиносом, который чистил лобовые стёкла."
+        }
+      ]
+    },
+    {
+      "id": "07c5e8cc-8b51-4566-9fad-7958128668cc",
+      "card": {
+        "eng": "geeky",
+        "rus": "ботанический, странный"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "07c5e8cc-8b51-4566-9fad-7958128668cc.mp3",
+          "subtitles": "I figured you thought I was Monica's geeky brother.\n\nЯ думал, ты думала, что я ботанический брат Моники."
+        }
+      ]
+    },
+    {
+      "id": "aec6fefa-bf10-4f22-bf36-2404e1955982",
+      "card": {
+        "eng": "crash",
+        "rus": "остановиться, переночевать (неформально)"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "aec6fefa-bf10-4f22-bf36-2404e1955982.mp3",
+          "subtitles": "That's it. Are you going to crash on the couch?\n\nNo, I gotta go home sometime.\n\nВот и всё. Ты будешь спать на диване?\n\nНет, мне надо когда-то домой."
+        }
+      ]
+    },
+    {
+      "id": "4576de08-365a-4319-a311-509623491775",
+      "card": {
+        "eng": "cupboard",
+        "rus": "шкаф, буфет"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "4576de08-365a-4319-a311-509623491775.mp3",
+          "subtitles": "Look what I just found on the floor.\n\nПосмотри, что я только что нашёл на полу."
+        }
+      ]
+    },
+    {
+      "id": "56693a3e-bce6-43e8-990d-fa68aef18d1e",
+      "card": {
+        "eng": "jump out of the plane with no parachute",
+        "rus": "прыгнуть из самолёта без парашюта (идиома)"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "56693a3e-bce6-43e8-990d-fa68aef18d1e.mp3",
+          "subtitles": "\"Ready to jump out of the plane with no parachute?\"\n\n\"Готов прыгнуть из самолёта без парашюта?\""
+        }
+      ]
+    },
+    {
+      "id": "a4ae2e2b-cee7-4613-844f-870bc3ed2a4f",
+      "card": {
+        "eng": "grab",
+        "rus": "взять, хватать"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "",
+          "speech": "a4ae2e2b-cee7-4613-844f-870bc3ed2a4f.mp3",
+          "subtitles": "I just grabbed a spoon.\n\nЯ просто взял ложку."
+        }
+      ]
+    }
+  ]
+}
