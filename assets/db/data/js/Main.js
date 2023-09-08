@@ -10,476 +10,396 @@ if (bridge.args["switch"] == "constructor") {
             }
         }
     });
-    // parser([
-    //     {
-    //         "word": "fixating",
-    //         "translation": "фиксировать, заострять",
-    //         "phrase": "Why does everyone keep fixating on that?",
-    //         "phrase_translation": "Почему все продолжают фиксироваться на этом?",
-    //         "fileName": "15a66db9-f3a4-41fb-8847-613aec2abfc5.mp3",
-    //         "start_time_seconds": 200.367,
-    //         "end_time_seconds": 203.912
-    //     },
-    //     {
-    //         "word": "intestine",
-    //         "translation": "кишечник",
-    //         "phrase": "I feel like someone pulled my intestine out of my mouth.",
-    //         "phrase_translation": "Мне кажется, будто кто-то вытащил мне кишечник изо рта.",
-    //         "fileName": "78cb85d7-67de-461c-9e51-a5d15cbb82a4.mp3",
-    //         "start_time_seconds": 155.405,
-    //         "end_time_seconds": 159.868
-    //     },
-    //     {
-    //         "word": "hump",
-    //         "translation": "горб",
-    //         "phrase": "So does he have a hump and a hairpiece?",
-    //         "phrase_translation": "Так у него есть горб и парик?",
-    //         "fileName": "343c3af9-b237-46ed-a725-7b100d306c70.mp3",
-    //         "start_time_seconds": 71.154,
-    //         "end_time_seconds": 73.615
-    //     },
-    //     {
-    //         "word": "aura",
-    //         "translation": "аура",
-    //         "phrase": "No, don't! Stop cleansing my aura.",
-    //         "phrase_translation": "Нет, не надо! Прекрати очищать мою ауру.",
-    //         "fileName": "7d2a2b8d-2b5c-4653-99f7-01005336accf.mp3",
-    //         "start_time_seconds": 175.092,
-    //         "end_time_seconds": 179.721
-    //     },
-    //     {
-    //         "word": "lesbian",
-    //         "translation": "лесбиянка",
-    //         "phrase": "Sometimes I wish I was a lesbian.",
-    //         "phrase_translation": "Иногда мне хочется быть лесбиянкой.",
-    //         "fileName": "ce06662f-a866-46ff-90d7-cebf7ba7c6fe.mp3",
-    //         "start_time_seconds": 209.459,
-    //         "end_time_seconds": 211.67
-    //     },
-    //     {
-    //         "word": "decaf",
-    //         "translation": "без кофеина",
-    //         "phrase": "Can I get you some coffee? - Decaf.",
-    //         "phrase_translation": "Можно принести вам кофе? - Без кофеина.",
-    //         "fileName": "0408cc1b-ffa3-4a65-8d81-6919c399fe8d.mp3",
-    //         "start_time_seconds": 277.361,
-    //         "end_time_seconds": 280.739
-    //     },
-    //     {
-    //         "word": "organ",
-    //         "translation": "орган",
-    //         "phrase": "I guess he bought her the pipe organ.",
-    //         "phrase_translation": "Думаю, он купил ей орган.",
-    //         "fileName": "be88b1ac-739d-4b18-b66a-8423a610a709.mp3",
-    //         "start_time_seconds": 381.173,
-    //         "end_time_seconds": 383.759
-    //     },
-    //     {
-    //         "word": "drifted",
-    //         "translation": "отдаляться, удаляться",
-    //         "phrase": "I know we've drifted apart..",
-    //         "phrase_translation": "Я знаю, что мы отдалились друг от друга.",
-    //         "fileName": "4fb9cfe9-4f3e-4604-88b0-92f7394d71fe.mp3",
-    //         "start_time_seconds": 350.767,
-    //         "end_time_seconds": 353.604
-    //     },
-    //     {
-    //         "word": "invited",
-    //         "translation": "приглашенный",
-    //         "phrase": "Who wasn't invited to the wedding.",
-    //         "phrase_translation": "Кто не был приглашен на свадьбу?",
-    //         "fileName": "c55b18e4-9518-440d-b18d-6f166684bfe2.mp3",
-    //         "start_time_seconds": 375.626,
-    //         "end_time_seconds": 380.547
-    //     },
-    //     {
-    //         "word": "metaphor",
-    //         "translation": "метафора",
-    //         "phrase": "It's a metaphor, Daddy!",
-    //         "phrase_translation": "Это метафора, папа!",
-    //         "fileName": "a394ebd0-923c-4c0c-ada4-9f9df096f6cc.mp3",
-    //         "start_time_seconds": 450.617,
-    //         "end_time_seconds": 454.079
-    //     },
-    //     {
-    //         "word": "decided",
-    //         "translation": "решать, определить",
-    //         "phrase": "\"Tuna or egg salad! Decide!\"",
-    //         "phrase_translation": "\"Тунец или яичный салат! Реши!\"",
-    //         "fileName": "ab2a610d-fc2e-41ed-afea-f0fee027ff6c.mp3",
-    //         "start_time_seconds": 385.302,
-    //         "end_time_seconds": 390.015
-    //     },
-    //     {
-    //         "word": "pushed",
-    //         "translation": "толкнул",
-    //         "phrase": "Push her! Push her down the stairs!",
-    //         "phrase_translation": "Толкни ее! Толкни ее вниз по лестнице!",
-    //         "fileName": "b98571cb-d76c-44aa-bafe-faebe97dbb53.mp3",
-    //         "start_time_seconds": 424.341,
-    //         "end_time_seconds": 426.969
-    //     },
-    //     {
-    //         "word": "decision",
-    //         "translation": "решение",
-    //         "phrase": "Well, maybe that's my decision.",
-    //         "phrase_translation": "Ну, может быть, это мое решение.",
-    //         "fileName": "28db8a4b-e3a9-4d87-8d51-f9700cb33de6.mp3",
-    //         "start_time_seconds": 472.097,
-    //         "end_time_seconds": 474.308
-    //     },
-    //     {
-    //         "word": "independence",
-    //         "translation": "независимость",
-    //         "phrase": "Independence. Controlling your life. The whole hat thing.",
-    //         "phrase_translation": "Независимость. Управление своей жизнью. Вся эта шляпная история.",
-    //         "fileName": "55249b4f-2c18-4f84-9e3f-111aecd3a467.mp3",
-    //         "start_time_seconds": 519.311,
-    //         "end_time_seconds": 523.44
-    //     },
-    //     {
-    //         "word": "complain",
-    //         "translation": "жаловаться",
-    //         "phrase": "Or he just complains a lot?",
-    //         "phrase_translation": "Или он просто много жалуется?",
-    //         "fileName": "b5419c15-c707-4ded-80b4-7a6baea466ed.mp3",
-    //         "start_time_seconds": 584.168,
-    //         "end_time_seconds": 586.503
-    //     },
-    //     {
-    //         "word": "horrible",
-    //         "translation": "ужасный",
-    //         "phrase": "Please don't do that again. It's a horrible sound.",
-    //         "phrase_translation": "Пожалуйста, больше так не делай. Это ужасный звук.",
-    //         "fileName": "35a0ff65-298c-4654-bafc-aef287b508ce.mp3",
-    //         "start_time_seconds": 543.752,
-    //         "end_time_seconds": 545.254
-    //     },
-    //     {
-    //         "word": "furniture",
-    //         "translation": "мебель",
-    //         "phrase": "Your \"not a real date\" is with Paul, the wine guy?",
-    //         "phrase_translation": "Твое «не настоящее свидание» с Полом, винным гурманом?",
-    //         "fileName": "93018931-7228-4fa7-8380-f2e0fed07594.mp3",
-    //         "start_time_seconds": 556.473,
-    //         "end_time_seconds": 558.934
-    //     },
-    //     {
-    //         "word": "excited",
-    //         "translation": "взволнованный",
-    //         "phrase": "We're very excited about it.",
-    //         "phrase_translation": "Мы очень взволнованы этим.",
-    //         "fileName": "84fe2be2-26f3-4118-a8bc-d630394d6cef.mp3",
-    //         "start_time_seconds": 668.544,
-    //         "end_time_seconds": 671.713
-    //     },
-    //     {
-    //         "word": "steer clear",
-    //         "translation": "избегать",
-    //         "phrase": "Steer clear of you.",
-    //         "phrase_translation": "Избегай тебя.",
-    //         "fileName": "8a5dada0-0ed1-4782-a952-5c59c7c68c32.mp3",
-    //         "start_time_seconds": 830.622,
-    //         "end_time_seconds": 833.584
-    //     },
-    //     {
-    //         "word": "attach",
-    //         "translation": "прикрепить",
-    //         "phrase": "I'm supposed to attach a bracket-y thing to the side things..",
-    //         "phrase_translation": "Мне нужно прикрепить вещь в форме скобки к боковым частям..",
-    //         "fileName": "eaed7693-4cd8-42d1-a3b2-6706aceead62.mp3",
-    //         "start_time_seconds": 725.517,
-    //         "end_time_seconds": 728.312
-    //     },
-    //     {
-    //         "word": "break",
-    //         "translation": "сломать, разбить",
-    //         "phrase": "He might accidentally break something valuable of hers.",
-    //         "phrase_translation": "Он может случайно сломать что-то ценное у нее.",
-    //         "fileName": "24927810-08b7-4c97-8941-a134fba19c1f.mp3",
-    //         "start_time_seconds": 812.896,
-    //         "end_time_seconds": 814.523
-    //     },
-    //     {
-    //         "word": "hang out",
-    //         "translation": "тусить, проводить время",
-    //         "phrase": "Thanks. But I'm just going to hang out here.",
-    //         "phrase_translation": "Спасибо. Но я просто побуду здесь.",
-    //         "fileName": "c5b0fb63-7875-4ce7-bbf3-54f7a485b468.mp3",
-    //         "start_time_seconds": 671.922,
-    //         "end_time_seconds": 674.007
-    //     },
-    //     {
-    //         "word": "rub",
-    //         "translation": "тереть, натирать",
-    //         "phrase": "She really likes it when you rub her neck in the same spot..",
-    //         "phrase_translation": "Ей очень нравится, когда ты теребишь ей шею в том же месте..",
-    //         "fileName": "94f91de9-c64e-4b52-ae75-6832dc3170af.mp3",
-    //         "start_time_seconds": 626.71,
-    //         "end_time_seconds": 629.546
-    //     },
-    //     {
-    //         "word": "screw",
-    //         "translation": "обмануть, надуть",
-    //         "phrase": "You got screwed.",
-    //         "phrase_translation": "Вас обманули.",
-    //         "fileName": "3c0ed279-d569-4690-9908-91e3faf9e378.mp3",
-    //         "start_time_seconds": 792.835,
-    //         "end_time_seconds": 797.422
-    //     },
-    //     {
-    //         "word": "honeymoon",
-    //         "translation": "медовый месяц",
-    //         "phrase": "Right. You're not even getting your honeymoon.",
-    //         "phrase_translation": "Правильно. Ты даже не получаешь медовый месяц.",
-    //         "fileName": "85a3becd-d5d1-4804-96d5-efb964e2c947.mp3",
-    //         "start_time_seconds": 647.439,
-    //         "end_time_seconds": 650.4
-    //     },
-    //     {
-    //         "word": "control",
-    //         "translation": "контроль, управление",
-    //         "phrase": "Independence. Controlling your life. The whole hat thing.",
-    //         "phrase_translation": "Независимость. Управление своей жизнью. Вся эта шляпная история.",
-    //         "fileName": "919cc3f7-76d6-4f3f-a54a-c27650ac6442.mp3",
-    //         "start_time_seconds": 519.311,
-    //         "end_time_seconds": 523.44
-    //     },
-    //     {
-    //         "word": "giant",
-    //         "translation": "гигантский",
-    //         "phrase": "Is like a giant pigeon\nCrapping on my heart",
-    //         "phrase_translation": "Похоже на гигантского голубя,\nкакающего на мое сердце",
-    //         "fileName": "651cf696-7f16-4ccd-8167-59b9e1862928.mp3",
-    //         "start_time_seconds": 704.454,
-    //         "end_time_seconds": 708.125
-    //     },
-    //     {
-    //         "word": "closeness",
-    //         "translation": "близость",
-    //         "phrase": "Four years of closeness and sharing, after which she ripped your heart out.",
-    //         "phrase_translation": "Четыре года близости и совместного времяпровождения, после чего она вырвала твоё сердце.",
-    //         "fileName": "1fb3f3cf-19e5-4097-a5f1-f1ee311ceec8.mp3",
-    //         "start_time_seconds": 905.656,
-    //         "end_time_seconds": 908.659
-    //     },
-    //     {
-    //         "word": "difference",
-    //         "translation": "разница",
-    //         "phrase": "But Joanie loved Chachi. That's the difference.",
-    //         "phrase_translation": "Но Джоани любила Чачи. В этом и заключается разница.",
-    //         "fileName": "ce480a78-c123-4b8f-b920-61e61d29b09f.mp3",
-    //         "start_time_seconds": 1064.857,
-    //         "end_time_seconds": 1066.692
-    //     },
-    //     {
-    //         "word": "revelation",
-    //         "translation": "разоблачение, откровение",
-    //         "phrase": "It's more of a fifth date kind of revelation.",
-    //         "phrase_translation": "Это больше откровение на пятом свидании.",
-    //         "fileName": "debc9386-a052-463c-8d53-f8854c37deec.mp3",
-    //         "start_time_seconds": 983.025,
-    //         "end_time_seconds": 987.529
-    //     },
-    //     {
-    //         "word": "perform",
-    //         "translation": "выполнять, исполнять",
-    //         "phrase": "I haven't been able to perform.. sexually.",
-    //         "phrase_translation": "У меня не получается выполнять.. сексуальные действия.",
-    //         "fileName": "721860df-f6d8-4f01-8b42-403b4f5e829e.mp3",
-    //         "start_time_seconds": 1007.09,
-    //         "end_time_seconds": 1008.884
-    //     },
-    //     {
-    //         "word": "regional",
-    //         "translation": "региональный",
-    //         "phrase": "I doubt it. Mostly regional work.",
-    //         "phrase_translation": "Сомневаюсь. В основном региональная работа.",
-    //         "fileName": "e4d5826f-1f70-4b82-93ba-bc61eb803fe2.mp3",
-    //         "start_time_seconds": 1250.0,
-    //         "end_time_seconds": 1253.462
-    //     },
-    //     {
-    //         "word": "invade",
-    //         "translation": "вторгаться, захватывать",
-    //         "phrase": "If I can invade Poland, there's nothing I can't do.",
-    //         "phrase_translation": "Если я могу вторгнуться в Польшу, то нет ничего, чего я не мог бы сделать.",
-    //         "fileName": "9ab91884-2bbb-40b7-9159-0600911e37fc.mp3",
-    //         "start_time_seconds": 1146.355,
-    //         "end_time_seconds": 1151.026
-    //     },
-    //     {
-    //         "word": "bonds",
-    //         "translation": "связь, узы",
-    //         "phrase": "We are gathered here to join Joanie Louise Cunningham.. and Charles. Chachi, Chachi, Chachi.. in the bonds of holy matrimony.",
-    //         "phrase_translation": "Мы собрались здесь, чтобы соединить Джоани Луиз Каннингем.. и Чарльза. Чачи, Чачи, Чачи.. в узы святого брака.",
-    //         "fileName": "6b5a800a-f6c9-4b2c-9a8c-04f3c78f2db4.mp3",
-    //         "start_time_seconds": 1046.296,
-    //         "end_time_seconds": 1051.635
-    //     },
-    //     {
-    //         "word": "abuse",
-    //         "translation": "оскорбление, насилие",
-    //         "phrase": "- I will not take this abuse. - You're right, I'm sorry.",
-    //         "phrase_translation": "- Я не буду терпеть этого оскорбления. - Ты прав, прошу прощения.",
-    //         "fileName": "9b4c52de-7ea9-4b85-8eae-fe65dcb93272.mp3",
-    //         "start_time_seconds": 1268.018,
-    //         "end_time_seconds": 1270.687
-    //     },
-    //     {
-    //         "word": "invasion",
-    //         "translation": "вторжение, захват",
-    //         "phrase": "Do the words, \"Billy, don't be a hero,\" mean anything to you?",
-    //         "phrase_translation": "Слова \"Билли, не будь героем\" что-то значат для тебя?",
-    //         "fileName": "57bc0274-423b-42f2-9271-8eab631b9a15.mp3",
-    //         "start_time_seconds": 1078.537,
-    //         "end_time_seconds": 1081.623
-    //     },
-    //     {
-    //         "word": "input",
-    //         "translation": "ввод, внесение данных",
-    //         "phrase": "If I don't input those numbers, it doesn't make much of a difference.",
-    //         "phrase_translation": "Если я не введу эти числа, это не сделает большой разницы.",
-    //         "fileName": "0459db7a-295b-4826-b514-c247b895d914.mp3",
-    //         "start_time_seconds": 1232.608,
-    //         "end_time_seconds": 1235.194
-    //     },
-    //     {
-    //         "word": "actor",
-    //         "translation": "актер",
-    //         "phrase": "- Yeah, I'm an actor. - Have I seen you in anything?",
-    //         "phrase_translation": "- Да, я актер. - Я тебя видела где-то?",
-    //         "fileName": "867095f9-7474-498c-88d8-c0e74b348b9d.mp3",
-    //         "start_time_seconds": 1247.456,
-    //         "end_time_seconds": 1249.791
-    //     },
-    //     {
-    //         "word": "congratulations",
-    //         "translation": "поздравления",
-    //         "phrase": "- That is amazing. - Congratulations.",
-    //         "phrase_translation": "- Это удивительно. - Поздравляю.",
-    //         "fileName": "5744f307-1959-437e-92c1-8b3b279be778.mp3",
-    //         "start_time_seconds": 1136.72,
-    //         "end_time_seconds": 1140.432
-    //     },
-    //     {
-    //         "word": "sophisticated",
-    //         "translation": "сложный, утонченный",
-    //         "phrase": "I assume we want an answer more sophisticated than: \"To get you into bed.\"",
-    //         "phrase_translation": "Я предполагаю, что нам нужен более утонченный ответ, чем: \"Чтобы тебя затащить в постель.\"",
-    //         "fileName": "75b80c2a-bf7d-4cbe-82bc-1b0e8f1d183a.mp3",
-    //         "start_time_seconds": 1392.226,
-    //         "end_time_seconds": 1395.145
-    //     },
-    //     {
-    //         "word": "universe",
-    //         "translation": "вселенная",
-    //         "phrase": "Don't hate. You don't want to put that out into the universe.",
-    //         "phrase_translation": "Не ненавидь. Ты не хочешь отправлять это во Вселенную.",
-    //         "fileName": "00307127-0249-4843-b5ab-95c66f402991.mp3",
-    //         "start_time_seconds": 1402.319,
-    //         "end_time_seconds": 1403.612
-    //     },
-    //     {
-    //         "word": "beacon",
-    //         "translation": "сигнал, маяк",
-    //         "phrase": "Is it like I have some sort of beacon that only dogs.. and men with emotional problems can hear?",
-    //         "phrase_translation": "Это как будто у меня есть своего рода маяк, который слышат только собаки.. и мужчины с эмоциональными проблемами?",
-    //         "fileName": "f59f6451-d6d5-484f-8b7c-869e5d0a9bf7.mp3",
-    //         "start_time_seconds": 1407.699,
-    //         "end_time_seconds": 1410.41
-    //     },
-    //     {
-    //         "word": "vulnerability",
-    //         "translation": "уязвимость",
-    //         "phrase": "Listen, do you think..? Try not to let my vulnerability become a factor here.",
-    //         "phrase_translation": "Послушай, думаешь..? Постарайся не допустить, чтобы моя уязвимость стала здесь фактором.",
-    //         "fileName": "c43f1275-613d-4273-ab2a-fc5f7a490845.mp3",
-    //         "start_time_seconds": 1649.691,
-    //         "end_time_seconds": 1654.655
-    //     },
-    //     {
-    //         "word": "symbolic",
-    //         "translation": "символический",
-    //         "phrase": "That's it. Are you going to crash on the couch?\n\nNo, I gotta go home sometime.\n\nAre you gonna be okay?\n\nLook what I just found on the floor.",
-    //         "phrase_translation": "Вот и всё. Ты будешь спать на диване?\n\nНет, мне надо когда-то домой.\n\nТы будешь в порядке?\n\nПосмотри, что я только что нашёл на полу.",
-    //         "fileName": "f4155be6-3d3e-459a-902e-fdf4b3563ecb.mp3",
-    //         "start_time_seconds": 1582.457,
-    //         "end_time_seconds": 1586.628
-    //     },
-    //     {
-    //         "word": "retailers",
-    //         "translation": "розничные продавцы",
-    //         "phrase": "If you listen closely, you can hear a thousand retailers scream.",
-    //         "phrase_translation": "Если внимательно прислушаться, можно услышать тысячу криков розничных продавцов.",
-    //         "fileName": "b03599d9-3b5b-42e8-8b89-4973ed08cb0a.mp3",
-    //         "start_time_seconds": 1566.191,
-    //         "end_time_seconds": 1567.86
-    //     },
-    //     {
-    //         "word": "upbeat",
-    //         "translation": "оптимистичный, жизнерадостный",
-    //         "phrase": "You're surprisingly upbeat.",
-    //         "phrase_translation": "Ты удивительно оптимистичен.",
-    //         "fileName": "2ac414ec-7f76-41db-9762-0d7445d58c48.mp3",
-    //         "start_time_seconds": 1444.57,
-    //         "end_time_seconds": 1447.823
-    //     },
-    //     {
-    //         "word": "albino",
-    //         "translation": "альбинос",
-    //         "phrase": "I ended up living with this albino guy who was cleaning windshields.",
-    //         "phrase_translation": "В итоге я оказался живущим с этим альбиносом, который чистил лобовые стёкла.",
-    //         "fileName": "667da8b7-b3a8-4c08-b754-92afb6206898.mp3",
-    //         "start_time_seconds": 1500.751,
-    //         "end_time_seconds": 1502.544
-    //     },
-    //     {
-    //         "word": "geeky",
-    //         "translation": "ботанический, странный",
-    //         "phrase": "I figured you thought I was Monica's geeky brother.",
-    //         "phrase_translation": "Я думал, ты думала, что я ботанический брат Моники.",
-    //         "fileName": "07c5e8cc-8b51-4566-9fad-7958128668cc.mp3",
-    //         "start_time_seconds": 1641.183,
-    //         "end_time_seconds": 1643.227
-    //     },
-    //     {
-    //         "word": "crash",
-    //         "translation": "остановиться, переночевать (неформально)",
-    //         "phrase": "That's it. Are you going to crash on the couch?\n\nNo, I gotta go home sometime.",
-    //         "phrase_translation": "Вот и всё. Ты будешь спать на диване?\n\nНет, мне надо когда-то домой.",
-    //         "fileName": "aec6fefa-bf10-4f22-bf36-2404e1955982.mp3",
-    //         "start_time_seconds": 1582.457,
-    //         "end_time_seconds": 1586.628
-    //     },
-    //     {
-    //         "word": "cupboard",
-    //         "translation": "шкаф, буфет",
-    //         "phrase": "Look what I just found on the floor.",
-    //         "phrase_translation": "Посмотри, что я только что нашёл на полу.",
-    //         "fileName": "4576de08-365a-4319-a311-509623491775.mp3",
-    //         "start_time_seconds": 1592.676,
-    //         "end_time_seconds": 1594.178
-    //     },
-    //     {
-    //         "word": "jump out of the plane with no parachute",
-    //         "translation": "прыгнуть из самолёта без парашюта (идиома)",
-    //         "phrase": "\"Ready to jump out of the plane with no parachute?\"",
-    //         "phrase_translation": "\"Готов прыгнуть из самолёта без парашюта?\"",
-    //         "fileName": "56693a3e-bce6-43e8-990d-fa68aef18d1e.mp3",
-    //         "start_time_seconds": 1527.444,
-    //         "end_time_seconds": 1529.696
-    //     },
-    //     {
-    //         "word": "grab",
-    //         "translation": "взять, хватать",
-    //         "phrase": "I just grabbed a spoon.",
-    //         "phrase_translation": "Я просто взял ложку.",
-    //         "fileName": "a4ae2e2b-cee7-4613-844f-870bc3ed2a4f.mp3",
-    //         "start_time_seconds": 1713.463,
-    //         "end_time_seconds": 1717.634
-    //     }
-    // ]);
+    parser([
+            {
+                "word": "Gravy boat",
+                "translation": "Соусник",
+                "phrase": "I was in this room where we were keeping all the presents, and I was looking at this gravy boat.",
+                "phrase_translation": "Я был в этой комнате, где мы хранили все подарки, и я смотрел на этот соусник.",
+                "start_time_seconds": 307.94,
+                "end_time_seconds": 312.68,
+                "fileName": "604d1253-fc69-4e26-bc82-e4ad6f2a3702.mp3"
+            },
+            {
+                "word": "Drifted",
+                "translation": "Отдалились",
+                "phrase": "I know that you and I have kind of drifted apart.",
+                "phrase_translation": "Я знаю, что ты и я как бы отдалились.",
+                "start_time_seconds": 348.34,
+                "end_time_seconds": 350.34,
+                "fileName": "6e7fec6b-637f-479e-ac8e-245dd21ec747.mp3"
+            },
+            {
+                "word": "Issue",
+                "translation": "Проблема",
+                "phrase": "I'm guessing that he bought her the big pipe organ, and she's really not happy about it.",
+                "phrase_translation": "Я предполагаю, что он купил ей большой орган, и ей это совсем не нравится.",
+                "start_time_seconds": 374.84,
+                "end_time_seconds": 379.1,
+                "fileName": "86301d00-6a03-45ae-9ab8-a1a832f6a2a5.mp3"
+            },
+            {
+                "word": "Metaphor",
+                "translation": "Метафора",
+                "phrase": "It's a metaphor, Daddy.",
+                "phrase_translation": "Это метафора, папа.",
+                "start_time_seconds": 446.58,
+                "end_time_seconds": 447.92,
+                "fileName": "b5a8d425-abc8-4e37-840c-4234c419208f.mp3"
+            },
+            {
+                "word": "Independence",
+                "translation": "Независимость",
+                "phrase": "Independence, taking control of your life.",
+                "phrase_translation": "Независимость, взятие жизни в свои руки.",
+                "start_time_seconds": 514.52,
+                "end_time_seconds": 517.22,
+                "fileName": "424e1555-2268-49c8-8476-42884206cac4.mp3"
+            },
+            {
+                "word": "Hit on",
+                "translation": "Флиртовать с кем-либо",
+                "phrase": "Joey, stop hitting on her.",
+                "phrase_translation": "Джоуи, перестань флиртовать с ней.",
+                "start_time_seconds": 528.9000000000001,
+                "end_time_seconds": 530.6,
+                "fileName": "365bafd6-0c7c-432b-b9a7-e5e1cdb4d04c.mp3"
+            },
+            {
+                "word": "Complain",
+                "translation": "Жаловаться",
+                "phrase": "What does that mean? Does he sell it, drink it, or he just complains a lot?",
+                "phrase_translation": "Что это означает? Он его продает, пьет или просто много жалуется?",
+                "start_time_seconds": 578.72,
+                "end_time_seconds": 582.04,
+                "fileName": "4c4f469c-b002-4847-b85b-cc4a82184893.mp3"
+            },
+            {
+                "word": "Catch",
+                "translation": "Понять, услышать",
+                "phrase": "I'm sorry, I didn't catch your name.",
+                "phrase_translation": "Прошу прощения, я не расслышал ваше имя.",
+                "start_time_seconds": 592.54,
+                "end_time_seconds": 594.28,
+                "fileName": "9ba0b6c5-b920-454a-baa1-825399d940f5.mp3"
+            },
+            {
+                "word": "Wondering",
+                "translation": "Сомневающийся",
+                "phrase": "I've just got to go, uh, go, uh. A wondering?",
+                "phrase_translation": "Мне просто нужно уйти, эм, уйти. Вы уходите?",
+                "start_time_seconds": 599.02,
+                "end_time_seconds": 601.48,
+                "fileName": "0d027d34-e573-40f1-afd7-957d93a85dfe.mp3"
+            },
+            {
+                "word": "Strip joints",
+                "translation": "Стрип-клубы",
+                "phrase": "Can I tell you what the answer is? Strip joints.",
+                "phrase_translation": "Могу ли я сказать вам ответ? Стрип-клубы.",
+                "start_time_seconds": 235.04,
+                "end_time_seconds": 239.46,
+                "fileName": "04a80e5d-1ead-4b06-8cbf-14d170472986.mp3"
+            },
+            {
+                "word": "Turned on",
+                "translation": "Включиться, возбудиться",
+                "phrase": "I realized that I was more turned on by this gravy boat than by Barry.",
+                "phrase_translation": "Я поняла, что меня больше возбуждает этот соусник, чем Барри.",
+                "start_time_seconds": 320.06,
+                "end_time_seconds": 325.62,
+                "fileName": "bcde5792-87da-4255-a36c-0d4b8433038d.mp3"
+            },
+            {
+                "word": "Hump",
+                "translation": "Горб",
+                "phrase": "So does he have a hump, a hump and a hair piece?",
+                "phrase_translation": "Итак, у него есть горб, горб и парик?",
+                "start_time_seconds": 66.74,
+                "end_time_seconds": 68.74,
+                "fileName": "837ea442-5c7f-42cd-bc01-e5cdf87c6ee2.mp3"
+            },
+            {
+                "word": "Eyelashes",
+                "translation": "Ресницы",
+                "phrase": "Ooh, I just pulled out four eyelashes.",
+                "phrase_translation": "Ой, я только что вытащила четыре ресницы.",
+                "start_time_seconds": 606.46,
+                "end_time_seconds": 612.8,
+                "fileName": "f652e124-f57c-4b52-bd92-83dea07de36f.mp3"
+            },
+            {
+                "word": "Rub",
+                "translation": "Поглаживать",
+                "phrase": "She really likes it when you rub her neck in the same spot over and over and over again.",
+                "phrase_translation": "Ей очень нравится, когда ты поглаживаешь ей шею в одном и том же месте снова и снова и снова.",
+                "start_time_seconds": 621.76,
+                "end_time_seconds": 626.94,
+                "fileName": "b467ca9f-2dc3-4d36-a005-019a8a1bf1aa.mp3"
+            },
+            {
+                "word": "Honeymoon",
+                "translation": "Медовый месяц",
+                "phrase": "Well, I was kind of supposed to be headed for Aruba on my honeymoon, so nothing.",
+                "phrase_translation": "Ну, я как бы должна была быть в пути на Арубу в свой медовый месяц, так что ничего.",
+                "start_time_seconds": 636.54,
+                "end_time_seconds": 641.32,
+                "fileName": "3595f916-fa19-42be-9692-b70c869013eb.mp3"
+            },
+            {
+                "word": "Lizards",
+                "translation": "Ящерицы",
+                "phrase": "Talk about your... big lizards.",
+                "phrase_translation": "Говоря о... больших ящерицах.",
+                "start_time_seconds": 650.72,
+                "end_time_seconds": 654.1,
+                "fileName": "bb3a42ba-175b-4c9a-9242-c3ff3636f173.mp3"
+            },
+            {
+                "word": "Bracket",
+                "translation": "Скобка",
+                "phrase": "I'm supposed to attach a brackety thing to the side things using a bunch of these little worm guys.",
+                "phrase_translation": "Мне нужно прикрепить скобку к боковым частям, используя кучу этих маленьких червячков.",
+                "start_time_seconds": 720.9,
+                "end_time_seconds": 727.82,
+                "fileName": "83ba27fe-bed4-4465-8cfe-53923749116e.mp3"
+            },
+            {
+                "word": "Bookcase",
+                "translation": "Книжный шкаф",
+                "phrase": "I'm thinking we got a bookcase here. It's a beautiful thing.",
+                "phrase_translation": "Мне кажется, у нас есть книжный шкаф. Это прекрасно.",
+                "start_time_seconds": 740.48,
+                "end_time_seconds": 743.22,
+                "fileName": "3c427c8d-3960-4e1e-a1b2-6236accb9703.mp3"
+            },
+            {
+                "word": "Beer",
+                "translation": "Пиво",
+                "phrase": "This was Carol's favorite beer. She always drank it out of the can.",
+                "phrase_translation": "Это было любимое пиво Кэрол. Она всегда пила его из банки.",
+                "start_time_seconds": 764.02,
+                "end_time_seconds": 770.06,
+                "fileName": "59593415-36e7-4eb7-86d4-dddd4e0f09f3.mp3"
+            },
+            {
+                "word": "Shredded",
+                "translation": "Разорванный",
+                "phrase": "The worst thing that I ever did was I shredded my old boyfriend's favorite bath towel.",
+                "phrase_translation": "Самое ужасное, что я когда-либо сделала, - это разорвала любимое полотенце моего бывшего парня.",
+                "start_time_seconds": 821.72,
+                "end_time_seconds": 826.44,
+                "fileName": "1ee5ce34-b1ef-4639-af7f-439a8c2da628.mp3"
+            },
+            {
+                "word": "Relationship",
+                "translation": "Отношения",
+                "phrase": "Between us, we haven't had a relationship that's lasted longer than a mento.",
+                "phrase_translation": "Между нами не было отношений, которые продлились бы дольше ментоса.",
+                "start_time_seconds": 889.38,
+                "end_time_seconds": 893.2,
+                "fileName": "4124cd00-f3f5-4fa2-ace8-815bfecc798a.mp3"
+            },
+            {
+                "word": "Flavor",
+                "translation": "Вкус",
+                "phrase": "Let me tell you something, Ross. There's lots of flavors out there. There's Rocky Road and cookie dough and bing!",
+                "phrase_translation": "Давай я тебе скажу, Росс. Там много вкусов. Есть Рокки Роуд и куки-тесто и бинг!",
+                "start_time_seconds": 935.22,
+                "end_time_seconds": 942.86,
+                "fileName": "9f708834-2378-40d0-9b5c-77c12c74d703.mp3"
+            },
+            {
+                "word": "Perform",
+                "translation": "Выполнять",
+                "phrase": "Ever since she left me, I haven't been able to perform sexually.",
+                "phrase_translation": "С тех пор как она ушла от меня, я не мог выполнять половой акт.",
+                "start_time_seconds": 999.52,
+                "end_time_seconds": 1007.56,
+                "fileName": "4b91f5ed-bdc1-4e99-9090-128749146dd5.mp3"
+            },
+            {
+                "word": "Matrimony",
+                "translation": "Брак",
+                "phrase": "I call us in the bond of holy matrimony.",
+                "phrase_translation": "Я объединяю нас в узах святого брака.",
+                "start_time_seconds": 1050.92,
+                "end_time_seconds": 1054.52,
+                "fileName": "8cbaf016-78fd-4c4e-9b3c-d029b49c0606.mp3"
+            },
+            {
+                "word": "Roll",
+                "translation": "Удача",
+                "phrase": "Listen, while you're on a roll, if you feel like you gotta make like a western omelette or something.",
+                "phrase_translation": "Пока удача на твоей стороне, если захочешь сделать что-нибудь типа западного омлета или что-то в этом роде.",
+                "start_time_seconds": 1145.76,
+                "end_time_seconds": 1149.88,
+                "fileName": "64c35cc3-564b-4964-b18b-cbb562ce8650.mp3"
+            },
+            {
+                "word": "Gratulations",
+                "translation": "Поздравления",
+                "phrase": "Last night was like all my birthdays both graduations plus the barn raising scene in Witness. Gratulations!",
+                "phrase_translation": "Вчера было как все мои дни рождения и оба выпускных плюс сцена поднятия сарая в фильме 'Свидетель'. Поздравляю!",
+                "start_time_seconds": 1182.52,
+                "end_time_seconds": 1188.24,
+                "fileName": "8382c06e-7517-4fb5-aca1-a0d71a132464.mp3"
+            },
+            {
+                "word": "Abuse",
+                "translation": "Злоупотребление",
+                "phrase": "I will not take this abuse.",
+                "phrase_translation": "Я не буду терпеть это злоупотребление.",
+                "start_time_seconds": 1263.82,
+                "end_time_seconds": 1265.94,
+                "fileName": "dd0bf379-75ac-45fe-b2bf-b99823c6c34a.mp3"
+            },
+            {
+                "word": "Wooden",
+                "translation": "Деревянный",
+                "phrase": "Once I was a wooden boy, a little wooden boy.",
+                "phrase_translation": "Когда-то я был деревянным мальчиком, маленьким деревянным мальчиком.",
+                "start_time_seconds": 1268.16,
+                "end_time_seconds": 1270.8,
+                "fileName": "a64a1d0b-25ff-491f-bb2c-efba7398a712.mp3"
+            },
+            {
+                "word": "Push",
+                "translation": "Толкать",
+                "phrase": "I'm pushing my Aunt Roz through Parrot Jungle.",
+                "phrase_translation": "Я толкаю свою тётю Розу в Парк Попугаев.",
+                "start_time_seconds": 1354.66,
+                "end_time_seconds": 1356.7,
+                "fileName": "1a1776cf-2388-4092-8e62-0f5bc87c2b65.mp3"
+            },
+            {
+                "word": "Sophisticated",
+                "translation": "Сложный",
+                "phrase": "I assume we're looking for an answer more sophisticated than to get you into bed.",
+                "phrase_translation": "Предполагаю, мы ищем более сложный ответ, чем просто чтобы тебя в постель.",
+                "start_time_seconds": 1388.8,
+                "end_time_seconds": 1393.2,
+                "fileName": "618e204a-5dc9-4160-8147-ba0ea45bd2b4.mp3"
+            },
+            {
+                "word": "Beacon",
+                "translation": "Маяк",
+                "phrase": "Is it like I have some sort of beacon that only dogs and men with severe emotional problems can hear?",
+                "phrase_translation": "Мне как будто бы дали маяк, который слышат только собаки и мужчины с серьезными эмоциональными проблемами?",
+                "start_time_seconds": 1402.1599999999999,
+                "end_time_seconds": 1410.34,
+                "fileName": "78252069-015b-416c-8687-e8959676cd18.mp3"
+            },
+            {
+                "word": "Universe",
+                "translation": "Вселенная",
+                "phrase": "You don't want to put that out in the universe.",
+                "phrase_translation": "Ты не хочешь, чтобы это попало во Вселенную.",
+                "start_time_seconds": 1398.76,
+                "end_time_seconds": 1400.58,
+                "fileName": "872c2224-f366-475e-872d-c0f9ca0d9067.mp3"
+            },
+            {
+                "word": "Snap",
+                "translation": "Щелкать",
+                "phrase": "You know, before me there was no snapping his turtle for two years.",
+                "phrase_translation": "Знаешь, до меня его черепашка не щелкала два года.",
+                "start_time_seconds": 1375.32,
+                "end_time_seconds": 1379.2,
+                "fileName": "16e02e25-1492-4ad7-ad35-776776263f4e.mp3"
+            },
+            {
+                "word": "Line",
+                "translation": "Фраза",
+                "phrase": "Of course it was a line. Why? Why? Why would anybody do something like that?",
+                "phrase_translation": "Конечно, это была фраза. Почему? Почему? Почему кто-то мог сделать что-то подобное?",
+                "start_time_seconds": 1382.74,
+                "end_time_seconds": 1388.7,
+                "fileName": "355346d8-673c-4e7e-9627-04a7eaef98be.mp3"
+            },
+            {
+                "word": "Screamer",
+                "translation": "Крикун",
+                "phrase": "Oh, man. Andrea's the screamer.",
+                "phrase_translation": "О, чувак, Андреа - крикун.",
+                "start_time_seconds": 1085.8000000000002,
+                "end_time_seconds": 1088.18,
+                "fileName": "685581a9-14a6-4adb-9004-5e5fd69ab351.mp3"
+            },
+            {
+                "word": "Upbeat",
+                "translation": "Оптимистичный",
+                "phrase": "And yet you're surprisingly upbeat.",
+                "phrase_translation": "И всё равно ты удивительно оптимистичен.",
+                "start_time_seconds": 1442.46,
+                "end_time_seconds": 1444.38,
+                "fileName": "d6d4140b-9d78-463a-b7b0-c5b9c62f6cc4.mp3"
+            },
+            {
+                "word": "Charging",
+                "translation": "Заряжать",
+                "phrase": "I can stop charging any time I want.",
+                "phrase_translation": "Я могу перестать заряжать в любой момент.",
+                "start_time_seconds": 1473.72,
+                "end_time_seconds": 1475.58,
+                "fileName": "04131329-b552-4063-8441-c94b583a304e.mp3"
+            },
+            {
+                "word": "Symbolic",
+                "translation": "Символический",
+                "phrase": "Kind of like a symbolic gesture.",
+                "phrase_translation": "Что-то вроде символического жеста.",
+                "start_time_seconds": 1546.88,
+                "end_time_seconds": 1549.3,
+                "fileName": "fd92cb84-33f2-4f8f-b073-e05ae9729729.mp3"
+            },
+            {
+                "word": "Crush",
+                "translation": "Симпатия",
+                "phrase": "Back in high school I had a major crush on you.",
+                "phrase_translation": "Ещё в старших классах у меня была большая симпатия к тебе.",
+                "start_time_seconds": 1626.18,
+                "end_time_seconds": 1630.44,
+                "fileName": "5671964f-3ebd-4463-a858-ed6b4bbfdeb9.mp3"
+            },
+            {
+                "word": "Vulnerability",
+                "translation": "Уязвимость",
+                "phrase": "Try not to let my intense vulnerability become any kind of a factor here.",
+                "phrase_translation": "Постарайся не давать моей глубокой уязвимости влиять на наши отношения.",
+                "start_time_seconds": 1650.02,
+                "end_time_seconds": 1653.28,
+                "fileName": "23c5dbb2-fb8b-4cc3-b6c1-4052071a8ce0.mp3"
+            },
+            {
+                "word": "Couch",
+                "translation": "Диван",
+                "phrase": "You wanna crash on the couch?",
+                "phrase_translation": "Ты хочешь переночевать на диване?",
+                "start_time_seconds": 1581.06,
+                "end_time_seconds": 1582.34,
+                "fileName": "65f4bd4a-77c1-43e8-be2c-ba0cb6b44468.mp3"
+            },
+            {
+                "word": "Librarian",
+                "translation": "Библиотекарь",
+                "phrase": "That was a library card.",
+                "phrase_translation": "Это была библиотечная карта.",
+                "start_time_seconds": 1550.08,
+                "end_time_seconds": 1551.2,
+                "fileName": "bc210cc5-4216-4d40-86b5-a9cda258cce2.mp3"
+            },
+            {
+                "word": "Butt",
+                "translation": "Зад",
+                "phrase": "I said that you had a nice butt. It's just not a great butt.",
+                "phrase_translation": "Я сказал, что у тебя хорошая попа. Просто не супер.",
+                "start_time_seconds": 1726.1799999999998,
+                "end_time_seconds": 1730.62,
+                "fileName": "bdcb8968-822f-4c75-8cb6-ae700611ed3b.mp3"
+            }
+        ]
+    );
 }
 
 function parser(input) {
