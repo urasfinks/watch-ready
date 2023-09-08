@@ -78,7 +78,6 @@
                   "flutterType": "SwipableStack",
                   "state": "sw",
                   "setStateOnInit": true,
-                  "setStateOnChangeIndex": true,
                   "setStateOnSwipeCompleted":  true,
                   "roll": false,
                   "viewFraction": 0,
