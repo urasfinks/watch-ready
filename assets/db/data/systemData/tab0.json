@@ -27,7 +27,7 @@
         "switch": "constructor"
       }
     },
-    "subscribeRefresh": {
+    "subscribeToRefresh": {
       "key": "less"
     }
   }

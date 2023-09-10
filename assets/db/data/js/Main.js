@@ -434,11 +434,11 @@ function parser(input) {
         "label": "Друзья #1",
         "children": list
     };
-    bridge.log(result);
+    //bridge.log(result);
 }
 
 if (bridge.args["switch"] == "selectLess") {
-    bridge.log(bridge.args["fetchDb"]);
+    //bridge.log(bridge.args["fetchDb"]);
     var newStateData = {};
     var listLess = [];
     for (var i = 0; i < bridge.args["fetchDb"].length; i++) {
