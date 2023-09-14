@@ -20,7 +20,7 @@ if (bridge.args["switch"] == "selectPersonData") {
     var state = bridge.selector(bridge.state, ["main"], {});
 
     if (bridge.args["fetchDb"].length == 0) { //Своих данных в БД не оказалось, создаём
-        var uuid = bridge.call("Uuid", {})["uuid"];
+        var uuid = bridge.call("Util", {"case":"uuid"})["uuid"];
         bridge.call("DataSourceSet", {
             "uuid": uuid,
             "value": JSON.stringify({}),

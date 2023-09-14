@@ -445,7 +445,7 @@ if (bridge.args["switch"] == "selectLess") {
         var data = bridge.args["fetchDb"][i]["value_data"];
         listLess.push({
             "label": data["label"],
-            "templateWidgetSrc": "ButtonIcon",
+            "templateWidgetSrc": "IteratorButtonIcon",
             "onTap": {
                 "sysInvoke": "NavigatorPush",
                 "args": {

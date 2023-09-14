@@ -33,15 +33,7 @@ function genListCard(nsiList) {
             "additionalMaterials": nsiList[i]["additionalMaterials"],
             "template": {
                 "flutterType": "FlipCard",
-                "key": "x" + i,
-                "onTap": {
-                    "jsInvoke": "Ex.js",
-                    "args": {
-                        "switch": "flip",
-                        "includeAll": true,
-                        "key": "x" + i
-                    }
-                },
+                "controller": "x" + i,
                 "front": {
                     "flutterType": "Container",
                     "width": 999,
