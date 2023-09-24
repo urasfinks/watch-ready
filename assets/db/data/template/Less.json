@@ -24,7 +24,7 @@
             "flutterType": "Expanded",
             "child": {
               "flutterType": "Button",
-              "minimumSize": "9999,44",
+              "height": 44,
               "backgroundColor": "blue",
               "onPressed": {
                 "jsInvoke": "Less.js",
@@ -53,7 +53,7 @@
             "flutterType": "Expanded",
             "child": {
               "flutterType": "Button",
-              "minimumSize": "9999,44",
+              "height": 44,
               "backgroundColor": "blue",
               "onPressed": {
                 "jsInvoke": "Less.js",
