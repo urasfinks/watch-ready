@@ -18,28 +18,17 @@
     },
     "children": [
       {
-        "flutterType": "Padding",
-        "padding": "10,0,0,0",
-        "child": {
-          "flutterType": "Text",
-          "label": "Занятия",
-          "style": {
-            "flutterType": "TextStyle",
-            "fontSize": 17,
-            "fontWeight": "bold",
-            "color": "schema:secondary"
-          }
-        }
-      },
-      {
         "flutterType": "SizedBox",
         "height": 20
       },
       {
         "ChildrenExtension": "Iterator",
         "dataType": "state",
-        "key": "listLess",
-        "theme": "ButtonGroup"
+        "key": "listSerial",
+        "templateLabel": {
+          "flutterType": "Text",
+          "label": "Hello ${label}!"
+        }
       },
       {
         "flutterType": "SizedBox",

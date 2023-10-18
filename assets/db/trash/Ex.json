@@ -1,0 +1,207 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "CustomScrollView",
+    "includeBottomOffset": true,
+    "padding": "10,20,10,0",
+    "appBar": {
+      "flutterType": "SliverAppBar",
+      "title": {
+        "flutterType": "Text",
+        "label": "${contextMap(inputExData,data.label,WatchReady)}",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17
+        }
+      }
+    },
+    "children": [
+      {
+        "info": "Progress line",
+        "flutterType": "Notify",
+        "link": {
+          "swState": "${stateUuid(sw)}"
+        },
+        "templateArguments": [
+          "link.swState"
+        ],
+        "context": {
+          "key": "Ex",
+          "data": {
+            "template": {
+              "flutterType": "Column",
+              "children": [
+                {
+                  "flutterType": "Text",
+                  "label": "${state(sw,index1,1)}/${state(sw,size,0)}"
+                },
+                {
+                  "flutterType": "SizedBox",
+                  "height": 20
+                },
+                {
+                  "flutterType": "LinearProgressIndicator",
+                  "value": "${state(sw,prc1,0)}",
+                  "backgroundColor": "schema:onBackground",
+                  "color": "schema:secondary",
+                  "semanticsLabel": "semanticsLabel",
+                  "semanticsValue": "semanticsValue"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "info": "Swipable",
+        "flutterType": "Notify",
+        "link": {
+          "cardState": "${stateUuid(card)}"
+        },
+        "templateArguments": [
+          "link.cardState"
+        ],
+        "context": {
+          "key": "CardSwipable",
+          "data": {
+            "template": {
+              "flutterType": "Center",
+              "child": {
+                "flutterType": "Container",
+                "width": 999,
+                "height": 200,
+                "child": {
+                  "flutterType": "SwipableStack",
+                  "state": "sw",
+                  "setStateOnInit": true,
+                  "setStateOnSwipeCompleted":  true,
+                  "roll": false,
+                  "viewFraction": 0,
+                  "directions": [
+                    "left",
+                    "right"
+                  ],
+                  "overlay": {
+                    "flutterType": "Opacity",
+                    "opacity": "${state(sw,overlayOpacity)}",
+                    "child": {
+                      "flutterType": "Row",
+                      "mainAxisAlignment": "${state(sw,overlayDirection)|map(right,start,left,end)}",
+                      "crossAxisAlignment": "start",
+                      "children": [
+                        {
+                          "flutterType": "Container",
+                          "width": 80,
+                          "height": 44,
+                          "margin": 10,
+                          "decoration": {
+                            "flutterType": "BoxDecoration",
+                            "color": "schema:background",
+                            "borderRadius": 10
+                          },
+                          "child": {
+                            "flutterType": "Center",
+                            "child": {
+                              "flutterType": "Text",
+                              "label": "${state(sw,overlayDirection)|map(right,Знаю,left,Не знаю)}"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "finish": {
+                    "flutterType": "Text",
+                    "label": "Finish"
+                  },
+                  "children": [
+                    {
+                      "ChildrenExtension": "Iterator",
+                      "dataType": "state",
+                      "state": "card",
+                      "key": "card"
+                    }
+                  ],
+                  "onSwipeCompleted": {
+                    "jsInvoke": "Ex.js",
+                    "args": {
+                      "includeAll": true,
+                      "switch": "onSwipeCompleted"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "info": "additionalMaterials",
+        "flutterType": "Notify",
+        "link": {
+          "additionalMaterialsState": "${stateUuid(additionalMaterials)}"
+        },
+        "templateArguments": [
+          "link.additionalMaterialsState"
+        ],
+        "context": {
+          "key": "additionalMaterials",
+          "data": {
+            "template": {
+              "flutterType": "Column",
+              "crossAxisAlignment": "start",
+              "children": [
+                {
+                  "ChildrenExtension": "Iterator",
+                  "dataType": "state",
+                  "state": "additionalMaterials",
+                  "key": "additionalMaterials",
+                  "templateDivider":{
+                    "flutterType": "SizedBox",
+                    "height": 20
+                  },
+                  "template": {
+                    "flutterType": "Row",
+                    "children": [
+                      {
+                        "flutterType": "AudioButton",
+                        "autoPlayOnLoad": "${first}",
+                        "key": "${speech}",
+                        "type": "db",
+                        "uuid": "${speech}",
+                        "templateArguments": [
+                          "key",
+                          "uuid",
+                          "autoPlayOnLoad"
+                        ]
+                      },
+                      {
+                        "flutterType": "SizedBox",
+                        "width": 20
+                      },
+                      {
+                        "flutterType": "Expanded",
+                        "child": {
+                          "flutterType": "Text",
+                          "label": "${subtitles}"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

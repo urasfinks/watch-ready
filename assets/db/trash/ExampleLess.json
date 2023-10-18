@@ -1,0 +1,38 @@
+{
+  "label": "Первый ебанистический",
+  "children": [
+    {
+      "id": "eda276d9-2602-4f68-8504-c728da3ae882",
+      "card": {
+        "eng": "Hello",
+        "rus": "Здарова"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "rus",
+          "speech": "zdarova-zeal-privetstvie-kazahov.mp3",
+          "subtitles": "Здорово зайбал"
+        },
+        {
+          "lang": "",
+          "speech": "tutututu-mem-demotivator.mp3",
+          "subtitles": "Общий демотиватор"
+        }
+      ]
+    },
+    {
+      "id": "b81d988a-0550-4688-bf43-5a153ec8aeeb",
+      "card": {
+        "eng": "Fuck off",
+        "rus": "Похгнали нахуй"
+      },
+      "additionalMaterials": [
+        {
+          "lang": "rus",
+          "speech": "nu-che-narod-pognali.mp3",
+          "subtitles": "Ну чё народ, похгнали нахуй! Ёббаанныйй в РОООТ!"
+        }
+      ]
+    }
+  ]
+}

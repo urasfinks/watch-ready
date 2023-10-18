@@ -1,0 +1,50 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "CustomScrollView",
+    "includeBottomOffset": true,
+    "onStateDataUpdate": true,
+    "padding": "10,20,10,0",
+    "appBar": {
+      "flutterType": "SliverAppBar",
+      "title": {
+        "flutterType": "Text",
+        "label": "WatchReady",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17
+        }
+      }
+    },
+    "children": [
+      {
+        "flutterType": "Padding",
+        "padding": "10,0,0,0",
+        "child": {
+          "flutterType": "Text",
+          "label": "Занятия",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontSize": 17,
+            "fontWeight": "bold",
+            "color": "schema:secondary"
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 20
+      },
+      {
+        "ChildrenExtension": "Iterator",
+        "dataType": "state",
+        "key": "listLess",
+        "theme": "ButtonGroup"
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 20
+      }
+    ]
+  }
+}

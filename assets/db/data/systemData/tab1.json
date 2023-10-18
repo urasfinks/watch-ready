@@ -13,6 +13,9 @@
     "link": {
       "template": "Account.json"
     },
+    "subscribeToRefresh": {
+      "uuid": "Account.js"
+    },
     "context": {
       "key": "Tab1",
       "data": {
@@ -31,14 +34,14 @@
     "constructor": {
       "jsInvoke": "Account.js",
       "args": {
+        "includeAll": true,
         "switch": "constructor"
       }
     },
     "onActive": {
       "jsInvoke": "Account.js",
       "args": {
-        "includeStateData": true,
-        "includePageArgument": true,
+        "includeAll": true,
         "switch": "onActive"
       }
     }
