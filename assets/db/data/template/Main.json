@@ -2,32 +2,148 @@
   "flutterType": "Scaffold",
   "body": {
     "flutterType": "CustomScrollView",
-    "includeBottomOffset": true,
     "onStateDataUpdate": true,
     "padding": "10,20,10,0",
     "appBar": {
       "flutterType": "SliverAppBar",
+      "centerTitle": false,
       "title": {
         "flutterType": "Text",
         "label": "WatchReady",
+        "textAlign": "left",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17
         }
-      }
+      },
+      "actions": [
+        {
+          "flutterType": "Column",
+          "mainAxisAlignment": "center",
+          "children": [
+            {
+              "flutterType": "Button",
+              "height": 34,
+              "borderRadius": 20,
+              "onPressed": "",
+              "child": {
+                "flutterType": "Text",
+                "label": "Хочу больше сериалов",
+                "textAlign": "center",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 14,
+                  "color": "schema:inversePrimary"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flutterType": "SizedBox",
+          "width": 10
+        }
+      ]
     },
     "children": [
-      {
-        "flutterType": "SizedBox",
-        "height": 20
-      },
       {
         "ChildrenExtension": "Iterator",
         "dataType": "state",
         "key": "listSerial",
         "templateLabel": {
-          "flutterType": "Text",
-          "label": "Hello ${label}!"
+          "flutterType": "Padding",
+          "padding": "0,0,0,20",
+          "child": {
+            "flutterType": "Text",
+            "label": "${label}",
+            "style": {
+              "flutterType": "TextStyle",
+              "fontSize": 17,
+              "fontWeight": "bold",
+              "color": "schema:secondary"
+            }
+          }
+        },
+        "templateSerialLine": {
+          "flutterType": "Padding",
+          "padding": "0,0,0,20",
+          "child": {
+            "flutterType": "Row",
+            "children": [
+              {
+                "flutterType": "Expanded",
+                "child": {
+                  "flutterType": "ImageTitled",
+                  "extra": "${extra1}",
+                  "label": "${label1}",
+                  "onTap": "${onTap1|jsonEncode()}",
+                  "image": {
+                    "flutterType": "ImageBase64",
+                    "height": 130,
+                    "width": "infinity",
+                    "fit": "cover",
+                    "src": "${src1}",
+                    "controller": "${contextKey()}_1column"
+                  },
+                  "templateArguments": [
+                    "image.controller"
+                  ],
+                  "templateLockScreen": {
+                    "flutterType": "Container",
+                    "alignment": "topRight",
+                    "color": "#000000|opacity(0.65)",
+                    "child": {
+                      "flutterType": "Padding",
+                      "padding": "10",
+                      "child": {
+                        "flutterType": "Icon",
+                        "src": "lock_outline",
+                        "color": "white"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "flutterType": "SizedBox",
+                "width": 20
+              },
+              {
+                "flutterType": "Expanded",
+                "child": {
+                  "flutterType": "ImageTitled",
+                  "extra": "${extra2}",
+                  "label": "${label2}",
+                  "onTap": "${onTap2|jsonEncode()}",
+                  "image": {
+                    "flutterType": "ImageBase64",
+                    "height": 130,
+                    "width": "infinity",
+                    "fit": "cover",
+                    "src": "${src2}",
+                    "controller": "${contextKey()}_2column"
+                  },
+                  "templateArguments": [
+                    "image.controller"
+                  ],
+                  "templateLockScreen": {
+                    "flutterType": "Container",
+                    "alignment": "topRight",
+                    "color": "#000000|opacity(0.65)",
+                    "child": {
+                      "flutterType": "Padding",
+                      "padding": "10",
+                      "child": {
+                        "flutterType": "Icon",
+                        "src": "lock_outline",
+                        "color": "white"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       },
       {

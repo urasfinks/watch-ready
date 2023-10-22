@@ -1,0 +1,39 @@
+{
+  "flutterType": "Scaffold",
+  "backgroundColor": "transparent",
+  "body": {
+    "flutterType": "SizedBox",
+    "type": "expand",
+    "child": {
+      "flutterType": "Column",
+      "mainAxisAlignment": "center",
+      "children": [
+        {
+          "flutterType": "Text",
+          "label": "Спасибо, ваше сообщение отправлено"
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 30
+        },
+        {
+          "flutterType": "Button",
+          "height": 44,
+          "onPressed": {
+            "sysInvoke": "NavigatorPop"
+          },
+          "child": {
+            "flutterType": "Text",
+            "label": "Ok",
+            "textAlign": "center",
+            "style": {
+              "flutterType": "TextStyle",
+              "fontSize": 15,
+              "color": "white"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

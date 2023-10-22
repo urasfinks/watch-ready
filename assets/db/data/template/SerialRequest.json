@@ -1,0 +1,98 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "CustomScrollView",
+    "padding": "15,20,15,0",
+    "appBar": {
+      "flutterType": "SliverAppBar",
+      "title": {
+        "flutterType": "Text",
+        "label": "Аккаунт",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17
+        }
+      }
+    },
+    "children": [
+      {
+        "flutterType": "Container",
+        "padding": 5,
+        "child": {
+          "flutterType": "Text",
+          "label": "Если вы не нашли интересующий вас сериал, напишите его название в форме ниже.\r\n\r\nТак же вы можете оставить свой email и мы сообщим вам о появлении сериала на платформе",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontSize": 16
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "flutterType": "Template",
+        "src": "Input",
+        "context": {
+          "key": "mail",
+          "data": {
+            "placeholder": "Email",
+            "key": "mail",
+            "data": ""
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "flutterType": "Template",
+        "src": "Input",
+        "context": {
+          "key": "serial",
+          "data": {
+            "placeholder": "Name of serial",
+            "key": "serial",
+            "data": ""
+          }
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      },
+      {
+        "flutterType": "Row",
+        "children": [
+          {
+            "flutterType": "Button",
+            "height": 44,
+            "onPressed": {
+              "jsInvoke": "SerialRequest.js",
+              "args": {
+                "includeAll": true,
+                "switch": "request"
+              }
+            },
+            "child": {
+              "flutterType": "Text",
+              "label": "Отправить",
+              "textAlign": "center",
+              "style": {
+                "flutterType": "TextStyle",
+                "fontSize": 15,
+                "color": "white"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 30
+      }
+    ]
+  }
+}
