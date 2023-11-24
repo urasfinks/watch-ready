@@ -38,10 +38,14 @@
           "key": "mail",
           "data": {
             "placeholder": "Email",
+            "keyboardType": "emailAddress",
             "key": "mail",
-            "data": ""
+            "data": "${storage(mail,)}"
           }
-        }
+        },
+        "templateArguments": [
+          "context.data.data"
+        ]
       },
       {
         "flutterType": "SizedBox",
@@ -55,9 +59,12 @@
           "data": {
             "placeholder": "Name of serial",
             "key": "serial",
-            "data": ""
+            "data": "${pageArgs(message,)}"
           }
-        }
+        },
+        "templateArguments": [
+          "context.data.data"
+        ]
       },
       {
         "flutterType": "SizedBox",

@@ -14,13 +14,14 @@ if (bridge.args["switch"] === "constructor") {
                     "src2":"riverdale.jpg",
                     "extra1": "",
                     "extra2": "templateLockScreen",
-                    "onTap1": {
+                    "onTap1": {},
+                    "onTap2": {
                         "sysInvoke": "NavigatorPush",
                         "args": {
-                            "uuid": "SerialRequest.json"
+                            "uuid": "SerialRequest.json",
+                            "message": "Riverdale"
                         }
-                    },
-                    "onTap2": {}
+                    }
                 },
                 {
                     "templateCustom": "templateLabel",
@@ -34,8 +35,20 @@ if (bridge.args["switch"] === "constructor") {
                     "src2":"szs.jpeg",
                     "extra1": "templateLockScreen",
                     "extra2": "templateLockScreen",
-                    "onTap1": "",
-                    "onTap2": ""
+                    "onTap1": {
+                        "sysInvoke": "NavigatorPush",
+                        "args": {
+                            "uuid": "SerialRequest.json",
+                            "message": "Капкан"
+                        }
+                    },
+                    "onTap2": {
+                        "sysInvoke": "NavigatorPush",
+                        "args": {
+                            "uuid": "SerialRequest.json",
+                            "message": "Сексуальная жизнь студентик"
+                        }
+                    }
                 },
                 {
                     "templateCustom": "templateLabel",
@@ -49,8 +62,20 @@ if (bridge.args["switch"] === "constructor") {
                     "src2":"td.webp",
                     "extra1": "templateLockScreen",
                     "extra2": "templateLockScreen",
-                    "onTap1": "",
-                    "onTap2": ""
+                    "onTap1": {
+                        "sysInvoke": "NavigatorPush",
+                        "args": {
+                            "uuid": "SerialRequest.json",
+                            "message": "Супермен"
+                        }
+                    },
+                    "onTap2": {
+                        "sysInvoke": "NavigatorPush",
+                        "args": {
+                            "uuid": "SerialRequest.json",
+                            "message": "Настоящий датектив"
+                        }
+                    }
                 },
             ]
         }
