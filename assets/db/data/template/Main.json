@@ -33,7 +33,7 @@
                 "style": {
                   "flutterType": "TextStyle",
                   "fontSize": 14,
-                  "color": "schema:inversePrimary"
+                  "color": "white"
                 }
               },
               "onPressed": {
