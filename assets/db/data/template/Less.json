@@ -1,0 +1,369 @@
+{
+  "flutterType": "Scaffold",
+  "appBar": {
+    "flutterType": "AppBar",
+    "centerTitle": false,
+    "title": {
+      "flutterType": "Text",
+      "label": "WatchReady",
+      "textAlign": "left",
+      "style": {
+        "flutterType": "TextStyle",
+        "fontSize": 17
+      }
+    }
+  },
+  "body": {
+    "flutterType": "SafeArea",
+    "child": {
+      "flutterType": "Column",
+      "children": [
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "flutterType": "Text",
+          "label": "${state(sw,index1,1)}/${state(sw,size,0)}",
+          "textAlign": "center"
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "flutterType": "LinearProgressIndicator",
+          "value": "${state(sw,prc1,0)}",
+          "backgroundColor": "schema:onBackground",
+          "color": "schema:secondary",
+          "semanticsLabel": "semanticsLabel",
+          "semanticsValue": "semanticsValue"
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        },
+        {
+          "flutterType": "Stream",
+          "controller": "ControllerListener3",
+          "stream": {
+            "case": "ControllerListener",
+            "controller": "sw"
+          },
+          "child": {
+            "flutterType": "Row",
+            "children": [
+              {
+                "flutterType": "Container",
+                "width": 50,
+                "height": 35,
+                "decoration": {
+                  "flutterType": "BoxDecoration",
+                  "color": "${context(overlayDirection,none)|map(left,red,schema:onBackground)}",
+                  "borderRadius": "0,15,15,0"
+                },
+                "child": {
+                  "flutterType": "Center",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "15"
+                  }
+                }
+              },
+              {
+                "flutterType": "Expanded"
+              },
+              {
+                "flutterType": "Container",
+                "width": 50,
+                "height": 35,
+                "decoration": {
+                  "flutterType": "BoxDecoration",
+                  "color": "${context(overlayDirection,none)|map(right,green,schema:onBackground)}",
+                  "borderRadius": "15,0,0,15"
+                },
+                "child": {
+                  "flutterType": "Center",
+                  "child": {
+                    "flutterType": "Text",
+                    "label": "25"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "flutterType": "Expanded",
+          "child": {
+            "flutterType": "Container",
+            "width": "infinity",
+            "padding": 20,
+            "child": {
+              "flutterType": "SwipableStack",
+              "state": "sw",
+              "setStateOnInit": true,
+              "setStateOnSwipeCompleted": true,
+              "roll": false,
+              "viewFraction": 0,
+              "directions": [
+                "left",
+                "right"
+              ],
+              "children": [
+                {
+                  "flutterType": "FlipCard",
+                  "controller": "x1",
+                  "front": {
+                    "flutterType": "Container",
+                    "decoration": {
+                      "flutterType": "BoxDecoration",
+                      "color": "schema:onBackground",
+                      "borderRadius": 10
+                    },
+                    "child": {
+                      "flutterType": "Column",
+                      "children": [
+                        {
+                          "flutterType": "Expanded",
+                          "child": {
+                            "flutterType": "Padding",
+                            "padding": 20,
+                            "child": {
+                              "flutterType": "Center",
+                              "child": {
+                                "flutterType": "Text",
+                                "label": "Gravy boat",
+                                "style": {
+                                  "flutterType": "TextStyle",
+                                  "fontSize": 27,
+                                  "fontWeight": "bold"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "flutterType": "Padding",
+                          "padding": 20,
+                          "child": {
+                            "flutterType": "Text",
+                            "textAlign": "center",
+                            "label": "I was in this room where we were keeping all the presents, and I was looking at this gravy boat.",
+                            "style": {
+                              "flutterType": "TextStyle",
+                              "color": "schema:primary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "back": {
+                    "flutterType": "Container",
+                    "decoration": {
+                      "flutterType": "BoxDecoration",
+                      "color": "schema:onBackground",
+                      "borderRadius": 10
+                    },
+                    "child": {
+                      "flutterType": "Column",
+                      "children": [
+                        {
+                          "flutterType": "Expanded",
+                          "child": {
+                            "flutterType": "Padding",
+                            "padding": 20,
+                            "child": {
+                              "flutterType": "Center",
+                              "child": {
+                                "flutterType": "Text",
+                                "label": "Соусник",
+                                "style": {
+                                  "flutterType": "TextStyle",
+                                  "fontSize": 27,
+                                  "fontWeight": "bold"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "flutterType": "Padding",
+                          "padding": 20,
+                          "child": {
+                            "flutterType": "Text",
+                            "textAlign": "center",
+                            "label": "Я был в этой комнате, где мы хранили все подарки, и я смотрел на этот соусник.",
+                            "style": {
+                              "flutterType": "TextStyle",
+                              "color": "schema:primary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "flutterType": "FlipCard",
+                  "controller": "x2",
+                  "front": {
+                    "flutterType": "Container",
+                    "decoration": {
+                      "flutterType": "BoxDecoration",
+                      "color": "schema:onBackground",
+                      "borderRadius": 10
+                    },
+                    "child": {
+                      "flutterType": "Column",
+                      "children": [
+                        {
+                          "flutterType": "Expanded",
+                          "child": {
+                            "flutterType": "Padding",
+                            "padding": 20,
+                            "child": {
+                              "flutterType": "Center",
+                              "child": {
+                                "flutterType": "Text",
+                                "label": "Drifted",
+                                "style": {
+                                  "flutterType": "TextStyle",
+                                  "fontSize": 27,
+                                  "fontWeight": "bold"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "flutterType": "Padding",
+                          "padding": 20,
+                          "child": {
+                            "flutterType": "Text",
+                            "textAlign": "center",
+                            "overflow": "fade",
+                            "maxLines": 4,
+                            "label": "I know that you and I have kind of drifted apart.",
+                            "style": {
+                              "flutterType": "TextStyle",
+                              "color": "schema:primary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "back": {
+                    "flutterType": "Container",
+                    "decoration": {
+                      "flutterType": "BoxDecoration",
+                      "color": "schema:onBackground",
+                      "borderRadius": 10
+                    },
+                    "child": {
+                      "flutterType": "Column",
+                      "children": [
+                        {
+                          "flutterType": "Expanded",
+                          "child": {
+                            "flutterType": "Padding",
+                            "padding": 20,
+                            "child": {
+                              "flutterType": "Center",
+                              "child": {
+                                "flutterType": "Text",
+                                "label": "Отдалились",
+                                "style": {
+                                  "flutterType": "TextStyle",
+                                  "fontSize": 27,
+                                  "fontWeight": "bold"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "flutterType": "Padding",
+                          "padding": 20,
+                          "child": {
+                            "flutterType": "Text",
+                            "textAlign": "center",
+                            "label": "Я знаю, что ты и я как бы отдалились.",
+                            "style": {
+                              "flutterType": "TextStyle",
+                              "color": "schema:primary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "flutterType": "Padding",
+          "padding": "23,0,23,0",
+          "child": {
+            "flutterType": "Row",
+            "color": "blue",
+            "width": "infinity",
+            "children": [
+              {
+                "flutterType": "Button",
+                "height": 44,
+                "backgroundColor": "transparent",
+                "onPressed": "${onPressed|jsonEncode()}",
+                "child": {
+                  "flutterType": "Icon",
+                  "src": "undo",
+                  "color": "schema:primary"
+                }
+              },
+              {
+                "flutterType": "SizedBox",
+                "width": 20
+              },
+              {
+                "flutterType": "Expanded",
+                "child": {
+                  "flutterType": "Text",
+                  "textAlign": "center",
+                  "label": "Коснитесь карточки, что бы перевернуть её",
+                  "style": {
+                    "flutterType": "TextStyle",
+                    "color": "schema:primary|opacity(0.5)"
+                  }
+                }
+              },
+              {
+                "flutterType": "SizedBox",
+                "width": 20
+              },
+              {
+                "flutterType": "AudioButton",
+                "autoPlayOnLoad": "false",
+                "key": "604d1253-fc69-4e26-bc82-e4ad6f2a3702.mp3",
+                "type": "db",
+                "uuid": "604d1253-fc69-4e26-bc82-e4ad6f2a3702.mp3",
+                "templateArguments": [
+                  "key",
+                  "uuid",
+                  "autoPlayOnLoad"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 20
+        }
+      ]
+    }
+  }
+}

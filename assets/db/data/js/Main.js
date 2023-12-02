@@ -14,7 +14,13 @@ if (bridge.args["switch"] === "constructor") {
                     "src2":"riverdale.jpg",
                     "extra1": "",
                     "extra2": "templateLockScreen",
-                    "onTap1": {},
+                    "onTap1": {
+                        "sysInvoke": "NavigatorPush",
+                        "args": {
+                            "uuid": "Less.json",
+                            "serial_uuid": "a1b3c3"
+                        }
+                    },
                     "onTap2": {
                         "sysInvoke": "NavigatorPush",
                         "args": {
