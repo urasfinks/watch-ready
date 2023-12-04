@@ -7,7 +7,7 @@
   },
   "content": {
     "flutterType": "Notify",
-    "link": {"template": "Less.json"},
+    "link": {"template": "Main.json"},
     "context": {
       "key": "Tab0",
       "data": {
@@ -21,7 +21,7 @@
       }
     },
     "constructor": {
-      "jsInvoke": "Less.js",
+      "jsInvoke": "Main.js",
       "args": {
         "includeStateData": true,
         "switch": "constructor"

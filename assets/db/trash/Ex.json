@@ -22,7 +22,7 @@
         "link": {
           "swState": "${stateUuid(sw)}"
         },
-        "templateArguments": [
+        "currentRenderTemplateList": [
           "link.swState"
         ],
         "context": {
@@ -62,7 +62,7 @@
         "link": {
           "cardState": "${stateUuid(card)}"
         },
-        "templateArguments": [
+        "currentRenderTemplateList": [
           "link.cardState"
         ],
         "context": {
@@ -149,7 +149,7 @@
         "link": {
           "additionalMaterialsState": "${stateUuid(additionalMaterials)}"
         },
-        "templateArguments": [
+        "currentRenderTemplateList": [
           "link.additionalMaterialsState"
         ],
         "context": {
@@ -177,7 +177,7 @@
                         "key": "${speech}",
                         "type": "db",
                         "uuid": "${speech}",
-                        "templateArguments": [
+                        "currentRenderTemplateList": [
                           "key",
                           "uuid",
                           "autoPlayOnLoad"

@@ -25,7 +25,6 @@
               "flutterType": "Button",
               "height": 34,
               "borderRadius": 20,
-              "onPressed": "",
               "child": {
                 "flutterType": "Text",
                 "label": "Хочу больше сериалов",
@@ -91,7 +90,7 @@
                     "src": "${src1}",
                     "controller": "${contextKey()}_1column"
                   },
-                  "templateArguments": [
+                  "currentRenderTemplateList": [
                     "image.controller"
                   ],
                   "templateLockScreen": {
@@ -129,7 +128,7 @@
                     "src": "${src2}",
                     "controller": "${contextKey()}_2column"
                   },
-                  "templateArguments": [
+                  "currentRenderTemplateList": [
                     "image.controller"
                   ],
                   "templateLockScreen": {

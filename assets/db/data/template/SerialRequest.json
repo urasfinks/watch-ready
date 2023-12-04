@@ -43,7 +43,7 @@
             "data": "${storage(mail,)}"
           }
         },
-        "templateArguments": [
+        "currentRenderTemplateList": [
           "context.data.data"
         ]
       },
@@ -62,7 +62,7 @@
             "data": "${pageArgs(message,)}"
           }
         },
-        "templateArguments": [
+        "currentRenderTemplateList": [
           "context.data.data"
         ]
       },

@@ -1,0 +1,112 @@
+{
+  "flutterType": "FlipCard",
+  "controller": "${id}",
+  "front": {
+    "flutterType": "Container",
+    "decoration": {
+      "flutterType": "BoxDecoration",
+      "color": "schema:onBackground",
+      "borderRadius": 10
+    },
+    "child": {
+      "flutterType": "Column",
+      "children": [
+        {
+          "flutterType": "Expanded",
+          "flex": 3,
+          "child": {
+            "flutterType": "Padding",
+            "padding": 20,
+            "child": {
+              "flutterType": "Center",
+              "child": {
+                "flutterType": "Text",
+                "label": "${eng}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 27,
+                  "fontWeight": "bold"
+                }
+              }
+            }
+          }
+        },
+        {
+          "flutterType": "Expanded",
+          "flex": 1,
+          "child": {
+            "flutterType": "Align",
+            "alignment": "bottomCenter",
+            "child": {
+              "flutterType": "Padding",
+              "padding": "20,0,20,20",
+              "child":  {
+                "flutterType": "Text",
+                "textAlign": "center",
+                "label": "${engSentence}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "color": "schema:primary"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "back": {
+    "flutterType": "Container",
+    "decoration": {
+      "flutterType": "BoxDecoration",
+      "color": "schema:secondary",
+      "borderRadius": 10
+    },
+    "child": {
+      "flutterType": "Column",
+      "children": [
+        {
+          "flutterType": "Expanded",
+          "flex": 3,
+          "child": {
+            "flutterType": "Padding",
+            "padding": 20,
+            "child": {
+              "flutterType": "Center",
+              "child": {
+                "flutterType": "Text",
+                "label": "${rus}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 27,
+                  "fontWeight": "bold"
+                }
+              }
+            }
+          }
+        },
+        {
+          "flutterType": "Expanded",
+          "flex": 1,
+          "child": {
+            "flutterType": "Align",
+            "alignment": "bottomCenter",
+            "child": {
+              "flutterType": "Padding",
+              "padding": "20,0,20,20",
+              "child":  {
+                "flutterType": "Text",
+                "textAlign": "center",
+                "label": "${rusSentence}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "color": "schema:primary"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
