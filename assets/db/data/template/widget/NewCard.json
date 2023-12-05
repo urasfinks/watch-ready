@@ -21,6 +21,7 @@
               "flutterType": "Center",
               "child": {
                 "flutterType": "Text",
+                "textAlign": "center",
                 "label": "${eng}",
                 "style": {
                   "flutterType": "TextStyle",
@@ -59,7 +60,7 @@
     "flutterType": "Container",
     "decoration": {
       "flutterType": "BoxDecoration",
-      "color": "schema:secondary",
+      "color": "schema:primaryContainer",
       "borderRadius": 10
     },
     "child": {
@@ -75,6 +76,7 @@
               "flutterType": "Center",
               "child": {
                 "flutterType": "Text",
+                "textAlign": "center",
                 "label": "${rus}",
                 "style": {
                   "flutterType": "TextStyle",

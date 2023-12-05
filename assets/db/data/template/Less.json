@@ -27,7 +27,12 @@
           "onStateDataUpdate": true,
           "onStateDataUpdateKey": "sw",
           "label": "${state(sw,index1,1)}/${state(sw,size,0)}",
-          "textAlign": "center"
+          "textAlign": "center",
+          "style": {
+            "flutterType": "TextStyle",
+            "fontWeight": "bold",
+            "fontSize": 14
+          }
         },
         {
           "flutterType": "SizedBox",
@@ -38,8 +43,8 @@
           "onStateDataUpdate": true,
           "state": "sw",
           "value": "${state(sw,prc1,0)}",
-          "backgroundColor": "schema:onBackground",
-          "color": "schema:secondary",
+          "backgroundColor": "schema:primaryContainer",
+          "color": "schema:onPrimary",
           "semanticsLabel": "semanticsLabel",
           "semanticsValue": "semanticsValue"
         },
@@ -70,7 +75,13 @@
                   "flutterType": "Center",
                   "child": {
                     "flutterType": "Text",
-                    "label": "${state(sw,swiped.left,0)}"
+                    "label": "${state(sw,swiped.left,0)}",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "${context(overlayDirection,none)|map(left,white,schema:primary)}",
+                      "fontWeight": "bold",
+                      "fontSize": 14
+                    }
                   }
                 }
               },
@@ -83,14 +94,20 @@
                 "height": 35,
                 "decoration": {
                   "flutterType": "BoxDecoration",
-                  "color": "${context(overlayDirection,none)|map(right,green,schema:onBackground)}",
+                  "color": "${context(overlayDirection,none)|map(right,schema:projectPrimary,schema:onBackground)}",
                   "borderRadius": "15,0,0,15"
                 },
                 "child": {
                   "flutterType": "Center",
                   "child": {
                     "flutterType": "Text",
-                    "label": "${state(sw,swiped.right,0)}"
+                    "label": "${state(sw,swiped.right,0)}",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "${context(overlayDirection,none)|map(right,white,schema:primary)}",
+                      "fontWeight": "bold",
+                      "fontSize": 14
+                    }
                   }
                 }
               }
