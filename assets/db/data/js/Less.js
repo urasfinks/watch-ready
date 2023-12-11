@@ -46,18 +46,66 @@ function genListCard(nsiList) {
     return result;
 }
 
+function getGeneralUuid() {
+    return {
+        "lessUuid": bridge.pageArgs["link"]["data"],
+        "serialUuid": bridge.pageArgs["serialUuid"]
+    };
+}
+
+if (bridge.args["switch"] == "onFinish") {
+    var gUuid = getGeneralUuid();
+    bridge.log(gUuid);
+}
+
 if (bridge.args["switch"] == "onSwipeCompleted") {
     var listCard = bridge.selector(bridge.state, ["card", "card"], []);
     var swipedIndex = bridge.selector(bridge.state, ["sw", "swipedIndex"], -1);
     bridge.call("Audio", {
         "case": "stop"
     });
+    //Последний свайп уже не имеет карточек, так как индекс уже за границей
+    var speech = "";
+    if (listCard[swipedIndex + 1] != undefined) {
+        speech = listCard[swipedIndex + 1].speech;
+    }
     bridge.call("SetStateData", {
         "state": "speech",
         "map": {
-            "speech": listCard[swipedIndex + 1].speech
+            "speech": speech
         }
     });
+    if (swipedIndex == 0) {
+        var gUuid = getGeneralUuid();
+        var lessStateUuid = "LessState-" + gUuid["lessUuid"];
+
+        bridge.call("DataSourceSet", {
+            "uuid": lessStateUuid,
+            "parent": gUuid["lessUuid"],
+            "value": {},
+            "type": "userDataRSync",
+            "key": "LessState",
+            "updateIfExist": false //Если уже есть, мы ничего не будем делать
+            //"debugTransaction": true
+        });
+        bridge.call("DataSourceSet", {
+            "uuid": "SerialState-" + gUuid["serialUuid"],
+            "parent": gUuid["serialUuid"],
+            "value": {
+                "startLessState": lessStateUuid
+            },
+            "type": "userDataRSync",
+            "key": "SerialState",
+            "updateIfExist": true,
+            "onUpdateOverlayJsonValue": true
+            //"debugTransaction": true
+        });
+        bridge.call("SetStorage", {
+            "map": {
+                "StartLessState": lessStateUuid
+            }
+        });
+    }
 }
 
 if (bridge.args["switch"] == "prev") {

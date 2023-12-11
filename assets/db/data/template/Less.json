@@ -147,6 +147,13 @@
                   "includeAll": true,
                   "switch": "onSwipeCompleted"
                 }
+              },
+              "onFinish": {
+                "jsInvoke": "Less.js",
+                "args": {
+                  "includeAll": true,
+                  "switch": "onFinish"
+                }
               }
             }
           }

@@ -7,7 +7,8 @@
   },
   "content": {
     "flutterType": "Notify",
-    "link": {"template": "Less.json", "data": "tst1"},
+    "link": {"template": "Less.json", "data": "tst2"},
+    "serialUuid" : "a1b2c3",
     "context": {
       "key": "inputLessData",
       "data": {
