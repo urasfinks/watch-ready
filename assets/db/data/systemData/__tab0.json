@@ -7,9 +7,11 @@
   },
   "content": {
     "flutterType": "Notify",
-    "link": {"template": "Main.json"},
+    "link": {"template": "Less.json", "data": "tst2"},
+    "serialUuid" : "a1b2c3",
+    "windowLabel": "WatchReady",
     "context": {
-      "key": "Tab0",
+      "key": "inputLessData",
       "data": {
         "template": {
           "flutterType": "Scaffold",
@@ -21,10 +23,17 @@
       }
     },
     "constructor": {
-      "jsInvoke": "Main.js",
+      "jsInvoke": "Less.js",
       "args": {
         "includeStateData": true,
         "switch": "constructor"
+      }
+    },
+    "onContextUpdate": {
+      "jsInvoke": "Less.js",
+      "args": {
+        "includeAll": true,
+        "switch": "onContextUpdate"
       }
     }
   }

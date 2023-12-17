@@ -5,7 +5,7 @@
     "centerTitle": false,
     "title": {
       "flutterType": "Text",
-      "label": "WatchReady",
+      "label": "${pageArgs(windowLabel,)}",
       "textAlign": "left",
       "style": {
         "flutterType": "TextStyle",

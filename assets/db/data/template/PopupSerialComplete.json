@@ -1,0 +1,44 @@
+{
+  "flutterType": "Scaffold",
+  "backgroundColor": "transparent",
+  "body": {
+    "flutterType": "SizedBox",
+    "type": "expand",
+    "child": {
+      "flutterType": "Column",
+      "mainAxisAlignment": "center",
+      "children": [
+        {
+          "flutterType": "Text",
+          "label": "Спасибо, это был последний урок в этом сериале"
+        },
+        {
+          "flutterType": "SizedBox",
+          "height": 30
+        },
+        {
+          "flutterType": "Button",
+          "backgroundColor": "schema:primaryContainer",
+          "width": 200,
+          "height": 44,
+          "onPressed": {
+            "sysInvoke": "NavigatorPop",
+            "args": {
+              "count": 2
+            }
+          },
+          "child": {
+            "flutterType": "Text",
+            "label": "Назад",
+            "textAlign": "center",
+            "style": {
+              "flutterType": "TextStyle",
+              "fontSize": 15,
+              "color": "schema:primary"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

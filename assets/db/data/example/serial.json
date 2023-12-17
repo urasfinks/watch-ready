@@ -1,17 +1,7 @@
 {
-  "group": "Детективные сериалы",
-  "label": "Парижская полиция 1905",
-  "srcPoster": "pp1905.jpg",
-  "active": true,
-  "seasonList": [
-    {
-      "label": "Season 1",
-      "episodeList": [
-        {
-          "name": "Eposode 1 Kapkan",
-          "uuid": "{uuid-less}"
-        }
-      ]
-    }
-  ]
+  "group": "Лучшие проекты НВО/НВО Max",
+  "label": "Настоящий датектив",
+  "srcPoster": "td.webp",
+  "active": false,
+  "seasonList": []
 }

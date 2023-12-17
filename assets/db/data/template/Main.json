@@ -79,7 +79,7 @@
                 "flutterType": "Expanded",
                 "child": {
                   "flutterType": "ImageTitled",
-                  "extra": "${extra1}",
+                  "childKey": "${childKey1}",
                   "label": "${label1}",
                   "onTap": "${onTap1|jsonEncode()}",
                   "image": {
@@ -117,7 +117,7 @@
                 "flutterType": "Expanded",
                 "child": {
                   "flutterType": "ImageTitled",
-                  "extra": "${extra2}",
+                  "childKey": "${childKey2}",
                   "label": "${label2}",
                   "onTap": "${onTap2|jsonEncode()}",
                   "image": {

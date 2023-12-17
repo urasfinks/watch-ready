@@ -7,7 +7,7 @@
       "flutterType": "SliverAppBar",
       "title": {
         "flutterType": "Text",
-        "label": "Аккаунт",
+        "label": "Запрос сериала",
         "style": {
           "flutterType": "TextStyle",
           "fontSize": 17
@@ -43,7 +43,7 @@
             "data": "${storage(mail,)}"
           }
         },
-        "currentRenderTemplateList": [
+        "childRenderTemplateList": [
           "context.data.data"
         ]
       },
@@ -62,7 +62,7 @@
             "data": "${pageArgs(message,)}"
           }
         },
-        "currentRenderTemplateList": [
+        "childRenderTemplateList": [
           "context.data.data"
         ]
       },

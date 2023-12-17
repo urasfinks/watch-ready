@@ -1,0 +1,22 @@
+{
+  "flutterType": "Scaffold",
+  "body": {
+    "flutterType": "CustomScrollView",
+    "onStateDataUpdate": true,
+    "padding": "10,20,10,0",
+    "appBar": {
+      "flutterType": "SliverAppBar",
+      "title": {
+        "flutterType": "Text",
+        "label": "${pageArgs(windowLabel,)}",
+        "style": {
+          "flutterType": "TextStyle",
+          "fontSize": 17
+        }
+      }
+    },
+    "children": [
+
+    ]
+  }
+}
