@@ -100,11 +100,11 @@ if (bridge.args["switch"] == "onFetchLessState") {
                 " FROM data \n" +
                 " WHERE 1 = 1\n" +
                 "  AND parent_uuid_data = ?\n" +
-                "  AND key_data = 'less'\n" +
+                "  AND key_data = ?\n" +
                 " ORDER BY meta_data\n" +
                 ")\n" +
                 "SELECT uuid_data, type_data, value_data FROM sq1 WHERE row_num > (SELECT row_num FROM sq1 WHERE uuid_data = ?) LIMIT 1",
-            "args": [gUuid["serialUuid"], gUuid["lessUuid"]],
+            "args": [gUuid["serialUuid"], "Less", gUuid["lessUuid"]],
             "onFetch": {
                 "jsInvoke": "Less.js",
                 "args": {
@@ -159,6 +159,7 @@ if (bridge.args["switch"] == "onFetchNextState") {
 if (bridge.args["switch"] == "nextLess") {
     setNewLessState(bridge.args["nextLessUuid"], bridge.args["serialUuid"]);
     bridge.call("NavigatorPop", {
+        "reloadParent": true,
         "count": 2
     });
     var gUuid = getGeneralUuid();

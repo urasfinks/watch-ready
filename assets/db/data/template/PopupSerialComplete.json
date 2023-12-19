@@ -24,6 +24,7 @@
           "onPressed": {
             "sysInvoke": "NavigatorPop",
             "args": {
+              "reloadParent": true,
               "count": 2
             }
           },

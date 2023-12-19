@@ -16,7 +16,141 @@
       }
     },
     "children": [
-
+      {
+        "flutterType": "ImageTitled",
+        "label": "",
+        "image": {
+          "flutterType": "ImageBase64",
+          "height": 230,
+          "width": "infinity",
+          "fit": "cover",
+          "src": "${pageArgs(serialImageSrc,)}",
+          "controller": "SerialImage"
+        }
+      },
+      {
+        "flutterType": "SizedBox",
+        "height": 20
+      },
+      {
+        "ChildrenExtension": "Iterator",
+        "dataType": "state",
+        "key": "listLess",
+        "templateSeason": {
+          "flutterType": "Padding",
+          "padding": "0,15,0,15",
+          "child": {
+            "flutterType": "Text",
+            "label": "${label}",
+            "style": {
+              "flutterType": "TextStyle",
+              "fontSize": 17,
+              "fontWeight": "bold",
+              "color": "schema:secondary"
+            }
+          }
+        },
+        "templateLess": {
+          "flutterType": "Button",
+          "alignment": "centerStart",
+          "buttonStyle": "Text",
+          "onPressed": "${onPressed|jsonEncode()}",
+          "child": {
+            "flutterType": "Padding",
+            "padding": "15,3,0,3",
+            "child": {
+              "flutterType": "Text",
+              "label": "${label}",
+              "textAlign": "start",
+              "style": {
+                "flutterType": "TextStyle",
+                "fontSize": 15,
+                "color": "schema:inversePrimary"
+              }
+            }
+          }
+        },
+        "templateLessStat": {
+          "flutterType": "Button",
+          "alignment": "centerStart",
+          "buttonStyle": "Text",
+          "onPressed": "${onPressed|jsonEncode()}",
+          "child": {
+            "flutterType": "Padding",
+            "padding": "15,3,0,3",
+            "child": {
+              "flutterType": "Row",
+              "children": [
+                {
+                  "flutterType": "Text",
+                  "label": "${label}",
+                  "textAlign": "start",
+                  "style": {
+                    "flutterType": "TextStyle",
+                    "fontSize": 15,
+                    "color": "schema:inversePrimary"
+                  }
+                },
+                {
+                  "flutterType": "Expanded"
+                },
+                {
+                  "flutterType": "Container",
+                  "padding": "7,4,5,4",
+                  "decoration": {
+                    "color": "red",
+                    "flutterType": "BoxDecoration",
+                    "borderRadius": "15,0,0,15"
+                  },
+                  "child": {
+                    "flutterType": "Text",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "white",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    "label": "${countFail}"
+                  }
+                },
+                {
+                  "flutterType": "Container",
+                  "padding": "7,4,7,4",
+                  "color": "schema:onBackground",
+                  "child": {
+                    "flutterType": "Text",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "schema:inversePrimary",
+                      "fontSize": 12
+                    },
+                    "label": "${lastScore}%"
+                  }
+                },
+                {
+                  "flutterType": "Container",
+                  "padding": "5,4,7,4",
+                  "decoration": {
+                    "color": "green",
+                    "flutterType": "BoxDecoration",
+                    "borderRadius": "0,15,15,0"
+                  },
+                  "child": {
+                    "flutterType": "Text",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "white",
+                      "fontSize": 12,
+                      "fontWeight": "bold"
+                    },
+                    "label": "${countSuccess}"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
     ]
   }
 }

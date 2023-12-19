@@ -10,94 +10,6 @@ if (bridge.args["switch"] === "constructor") {
             }
         }
     });
-
-    // bridge.call("SetStateData", {
-    //     "map": {
-    //         "listSerial": [
-    //             {
-    //                 "templateCustom": "templateLabel",
-    //                 "label": "Детективные сериалы"
-    //             },
-    //             {
-    //                 "templateCustom": "templateSerialLine",
-    //                 "label1": "Парижская полиция 1905",
-    //                 "label2": "Riverdale",
-    //                 "src1":"pp1905.jpg",
-    //                 "src2":"riverdale.jpg",
-    //                 "extra1": "",
-    //                 "extra2": "templateLockScreen",
-    //                 "onTap1": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "Less.json",
-    //                         "serial_uuid": "a1b3c3"
-    //                     }
-    //                 },
-    //                 "onTap2": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "SerialRequest.json",
-    //                         "message": "Riverdale"
-    //                     }
-    //                 }
-    //             },
-    //             {
-    //                 "templateCustom": "templateLabel",
-    //                 "label": "Учится никогда не поздно"
-    //             },
-    //             {
-    //                 "templateCustom": "templateSerialLine",
-    //                 "label1": "Капкан",
-    //                 "label2": "Сексуальная жизнь студентик",
-    //                 "src1":"kapkan.jpeg",
-    //                 "src2":"szs.jpeg",
-    //                 "extra1": "templateLockScreen",
-    //                 "extra2": "templateLockScreen",
-    //                 "onTap1": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "SerialRequest.json",
-    //                         "message": "Капкан"
-    //                     }
-    //                 },
-    //                 "onTap2": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "SerialRequest.json",
-    //                         "message": "Сексуальная жизнь студентик"
-    //                     }
-    //                 }
-    //             },
-    //             {
-    //                 "templateCustom": "templateLabel",
-    //                 "label": "Лучшие проекты НВО/НВО Max"
-    //             },
-    //             {
-    //                 "templateCustom": "templateSerialLine",
-    //                 "label1": "Супермен",
-    //                 "label2": "Настоящий датектив",
-    //                 "src1":"superman.webp",
-    //                 "src2":"td.webp",
-    //                 "extra1": "templateLockScreen",
-    //                 "extra2": "templateLockScreen",
-    //                 "onTap1": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "SerialRequest.json",
-    //                         "message": "Супермен"
-    //                     }
-    //                 },
-    //                 "onTap2": {
-    //                     "sysInvoke": "NavigatorPush",
-    //                     "args": {
-    //                         "uuid": "SerialRequest.json",
-    //                         "message": "Настоящий датектив"
-    //                     }
-    //                 }
-    //             },
-    //         ]
-    //     }
-    // });
 }
 
 if (bridge.args["switch"] === "selectSerial") {
@@ -106,6 +18,7 @@ if (bridge.args["switch"] === "selectSerial") {
         var state = [];
         for (var i = 0; i < bridge.args["fetchDb"].length; i++) {
             var serial = bridge.args["fetchDb"][i]["value_data"];
+            serial["serialUuid"] = bridge.args["fetchDb"][i]["uuid_data"];
             var curGroup = getGroup(group, serial["group"]);
             curGroup.list.push(serial);
         }
@@ -125,8 +38,18 @@ if (bridge.args["switch"] === "selectSerial") {
                     "src2": get(group[i].list[j + 1], "srcPoster"),
                     "childKey1": active1 ? "" : "templateLockScreen",
                     "childKey2": active2 ? "" : "templateLockScreen",
-                    "onTap1": getActiveTap(active1, group[i].list[j]["label"]),
-                    "onTap2":getActiveTap(active2, get(group[i].list[j + 1], "label"))
+                    "onTap1": getActiveTap(
+                        active1,
+                        group[i].list[j]["label"],
+                        group[i].list[j]["serialUuid"],
+                        group[i].list[j]["srcPoster"]
+                    ),
+                    "onTap2": getActiveTap(
+                        active2,
+                        get(group[i].list[j + 1], "label"),
+                        get(group[i].list[j + 1], "serialUuid"),
+                        get(group[i].list[j + 1], "srcPoster")
+                    )
                 });
             }
         }
@@ -139,36 +62,40 @@ if (bridge.args["switch"] === "selectSerial") {
     }
 }
 
-function getActiveTap(active, nameSerial, serialUuid) {
+function getActiveTap(active, nameSerial, serialUuid, serialImageSrc) {
     if (active) {
         return {
-            "flutterType": "Notify",
-            "link": {"template": "Serial.json", "data": serialUuid},
-            "windowLabel": nameSerial,
-            "context": {
-                "key": "inputSerialData",
-                "data": {
-                    "template": {
-                        "flutterType": "Scaffold",
-                        "appBar": {
-                            "flutterType": "AppBar",
-                            "title": {"flutterType": "Text", "label": nameSerial}
+            "sysInvoke": "NavigatorPush",
+            "args": {
+                "flutterType": "Notify",
+                "link": {"template": "Serial.json", "data": serialUuid},
+                "windowLabel": nameSerial,
+                "serialImageSrc": serialImageSrc,
+                "context": {
+                    "key": "inputSerialData",
+                    "data": {
+                        "template": {
+                            "flutterType": "Scaffold",
+                            "appBar": {
+                                "flutterType": "AppBar",
+                                "title": {"flutterType": "Text", "label": nameSerial}
+                            }
                         }
                     }
-                }
-            },
-            "constructor": {
-                "jsInvoke": "Serial.js",
-                "args": {
-                    "includeStateData": true,
-                    "switch": "constructor"
-                }
-            },
-            "onContextUpdate": {
-                "jsInvoke": "Serial.js",
-                "args": {
-                    "includeAll": true,
-                    "switch": "onContextUpdate"
+                },
+                "constructor": {
+                    "jsInvoke": "Serial.js",
+                    "args": {
+                        "includeAll": true,
+                        "switch": "constructor"
+                    }
+                },
+                "onContextUpdate": {
+                    "jsInvoke": "Serial.js",
+                    "args": {
+                        "includeAll": true,
+                        "switch": "onContextUpdate"
+                    }
                 }
             }
         };
