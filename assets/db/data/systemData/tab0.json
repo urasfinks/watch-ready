@@ -8,6 +8,12 @@
   "content": {
     "flutterType": "Notify",
     "link": {"template": "Main.json"},
+    "subscribeToRefresh": {
+      "listKey": [
+        "SerialState",
+        "LessState"
+      ]
+    },
     "context": {
       "key": "Tab0",
       "data": {

@@ -1,7 +1,28 @@
 if (bridge.args["switch"] === "constructor") {
+    var startLessState = bridge.getStorage("StartLessState", "");
     bridge.call("DbQuery", {
-        "sql": "select * from data where key_data = ? and is_remove_data = 0 order by meta_data",
-        "args": ["Serial"],
+        "multiple": [
+            {
+                "sql": "select * from data where key_data = ? and is_remove_data = 0 order by meta_data",
+                "args": ["Serial"],
+            },
+            {
+                "sql": "SELECT \n" +
+                    "  d1.value_data AS less_sate,\n" +
+                    "  d2.value_data AS less,\n" +
+                    "  d2.uuid_data AS less_uuid,\n" +
+                    "  d3.uuid_data AS serial_uuid,\n" +
+                    "  d3.value_data AS serial\n" +
+                    "FROM data d1\n" +
+                    "INNER JOIN data d2 ON d1.parent_uuid_data = d2.uuid_data\n" +
+                    "INNER JOIN data d3 ON d2.parent_uuid_data = d3.uuid_data\n" +
+                    "  WHERE 1 = 1\n" +
+                    "  AND d1.uuid_data = ? \n" +
+                    "  AND d1.key_data = ?",
+                "args": [startLessState, "LessState"]
+            }
+        ],
+
         "onFetch": {
             "jsInvoke": "Main.js",
             "args": {
@@ -13,12 +34,21 @@ if (bridge.args["switch"] === "constructor") {
 }
 
 if (bridge.args["switch"] === "selectSerial") {
-    if (bridge.args["fetchDb"].length > 0) {
+    var listSerial = bridge.args["fetchDb"][0];
+    if (listSerial.length > 0) {
         var group = [];
         var state = [];
-        for (var i = 0; i < bridge.args["fetchDb"].length; i++) {
-            var serial = bridge.args["fetchDb"][i]["value_data"];
-            serial["serialUuid"] = bridge.args["fetchDb"][i]["uuid_data"];
+        var continueLess = createStartCard(bridge.args["fetchDb"][1]);
+        if (continueLess["templateCustom"] !== "emptyStartCard") {
+            state.push({
+                "templateCustom": "templateLabel",
+                "label": "Продолжить обучение"
+            });
+            state.push(continueLess);
+        }
+        for (var i = 0; i < listSerial.length; i++) {
+            var serial = listSerial[i]["value_data"];
+            serial["serialUuid"] = listSerial[i]["uuid_data"];
             var curGroup = getGroup(group, serial["group"]);
             curGroup.list.push(serial);
         }
@@ -68,7 +98,7 @@ function getActiveTap(active, nameSerial, serialUuid, serialImageSrc) {
             "sysInvoke": "NavigatorPush",
             "args": {
                 "flutterType": "Notify",
-                "link": {"template": "Serial.json", "data": serialUuid},
+                "link": {"template": "Serial.json", "data": serialUuid, "serialState": ("SerialState-" + serialUuid)},
                 "windowLabel": nameSerial,
                 "serialImageSrc": serialImageSrc,
                 "context": {
@@ -81,13 +111,6 @@ function getActiveTap(active, nameSerial, serialUuid, serialImageSrc) {
                                 "title": {"flutterType": "Text", "label": nameSerial}
                             }
                         }
-                    }
-                },
-                "constructor": {
-                    "jsInvoke": "Serial.js",
-                    "args": {
-                        "includeAll": true,
-                        "switch": "constructor"
                     }
                 },
                 "onContextUpdate": {
@@ -128,4 +151,67 @@ function getGroup(group, name) {
         "list": []
     });
     return group[group.length - 1];
+}
+
+function createStartCard(fetchDb) {
+    if (fetchDb.length > 0) {
+        var lessSate = JSON.parse(fetchDb[0]["less_sate"]);
+        var less = JSON.parse(fetchDb[0]["less"]);
+        var serial = JSON.parse(fetchDb[0]["serial"]);
+        return {
+            "templateCustom": "startCard",
+            "lessName": less["label"] || "?",
+            "serialGroup": serial["group"] || "?",
+            "serialName": serial["label"] || "?",
+            "lastScore": Math.max(lessSate["lastScore"], 0) || 0,
+            "countSuccess": lessSate["countSuccess"] || 0,
+            "countFail": lessSate["countFail"] || 0,
+            "onTap": openLess(
+                fetchDb[0]["serial_uuid"],
+                fetchDb[0]["less_uuid"],
+                less["label"] || "?"
+            )
+        };
+    }
+    return {
+        "templateCustom": "emptyStartCard"
+    };
+}
+
+function openLess(serialUuid, lessUuid, windowLabel) {
+    return {
+        "sysInvoke": "NavigatorPush",
+        "args": {
+            "flutterType": "Notify",
+            "link": {"template": "Less.json", "data": lessUuid},
+            "serialUuid": serialUuid,
+            "windowLabel": windowLabel,
+            "context": {
+                "key": "inputLessData",
+                "data": {
+                    "template": {
+                        "flutterType": "Scaffold",
+                        "appBar": {
+                            "flutterType": "AppBar",
+                            "title": {"flutterType": "Text", "label": windowLabel}
+                        }
+                    }
+                }
+            },
+            "constructor": {
+                "jsInvoke": "Less.js",
+                "args": {
+                    "includeStateData": true,
+                    "switch": "constructor"
+                }
+            },
+            "onContextUpdate": {
+                "jsInvoke": "Less.js",
+                "args": {
+                    "includeAll": true,
+                    "switch": "onContextUpdate"
+                }
+            }
+        }
+    };
 }
