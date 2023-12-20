@@ -254,6 +254,10 @@
         "dataType": "list",
         "list": [
           {
+            "visibility": "${state(main,showButtonResetScore)}",
+            "currentRenderTemplateList": [
+              "visibility"
+            ],
             "label": "Сбросить результат",
             "iconSrc": "remove_circle_outline",
             "iconSize": 20,

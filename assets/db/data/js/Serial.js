@@ -69,6 +69,7 @@ function createStartCard(fetchDb) {
 }
 
 if (bridge.args["switch"] === "selectLessState") {
+    var showButtonResetScore = false;
     var seasonList = bridge.contextMap["inputSerialData"]["data"]["seasonList"];
     var listLessState = bridge.args["fetchDb"][0];
 
@@ -95,6 +96,7 @@ if (bridge.args["switch"] === "selectLessState") {
         for (var j = 0; j < seasonList[i]["episodeList"].length; j++) {
             var lessState = mapState[seasonList[i]["episodeList"][j]["uuid"]];
             if (lessState != undefined && lessState["lastScore"] != undefined && lessState["lastScore"] != -1) {
+                showButtonResetScore = true;
                 state.push({
                     "templateCustom": "templateLessStat",
                     "label": seasonList[i]["episodeList"][j]["label"],
@@ -122,6 +124,7 @@ if (bridge.args["switch"] === "selectLessState") {
     }
     bridge.call("SetStateData", {
         "map": {
+            "showButtonResetScore": showButtonResetScore,
             "listLess": state
         }
     });
