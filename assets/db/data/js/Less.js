@@ -201,14 +201,14 @@ if (bridge.args["switch"] == "onSwipeCompleted") {
     }
 }
 
-function setNewLessState(newLessState, serialUuid) {
+function setNewLessState(newLessStateUUid, serialUuid) {
     // Состояние сериала может уже существовать, поэтому точечно перезаписывем SerialState в режиме
     // updateIfExist = true и onUpdateOverlayJsonValue = true
     bridge.call("DataSourceSet", {
         "uuid": "SerialState-" + serialUuid,
         "parent": serialUuid,
         "value": {
-            "startLessState": newLessState
+            "startLessState": newLessStateUUid
         },
         "type": "userDataRSync",
         "key": "SerialState",
@@ -217,7 +217,7 @@ function setNewLessState(newLessState, serialUuid) {
     });
     bridge.call("SetStorage", {
         "map": {
-            "StartLessState": newLessState
+            "StartLessState": newLessStateUUid
         }
     });
 }
