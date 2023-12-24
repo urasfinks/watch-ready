@@ -37,88 +37,69 @@
         "dataType": "state",
         "key": "listLess",
         "startCard": {
-          "flutterType": "Material",
-          "color": "schema:onBackground",
-          "shape": {
-            "flutterType": "RoundedRectangleBorder",
-            "borderRadius": "10"
+          "flutterType": "Container",
+          "decoration": {
+            "flutterType": "BoxDecoration",
+            "color": "schema:onBackground",
+            "borderRadius": 10
           },
+          "padding": 15,
           "child": {
-            "flutterType": "InkWell",
-            "customBorder": {
-              "flutterType": "RoundedRectangleBorder",
-              "borderRadius": "10"
-            },
-            "onTap": "${onTap|jsonEncode()}",
-            "child": {
-              "flutterType": "Container",
-              "padding": 15,
-              "child": {
-                "flutterType": "Row",
-                "children": [
-                  {
-                    "flutterType": "Expanded",
-                    "child": {
-                      "flutterType": "Column",
-                      "crossAxisAlignment": "start",
-                      "children": [
-                        {
-                          "flutterType": "Text",
-                          "style": {
-                            "flutterType": "TextStyle",
-                            "fontWeight": "bold"
-                          },
-                          "label": "${serialName} - ${lessName}"
-                        },
-                        {
-                          "flutterType": "SizedBox",
-                          "height": 5
-                        },
-                        {
-                          "flutterType": "Text",
-                          "style": {
-                            "flutterType": "TextStyle",
-                            "color": "schema:secondary"
-                          },
-                          "label": "${serialGroup}\r\n${lastScore}%"
-                        },
-                        {
-                          "flutterType": "SizedBox",
-                          "height": 5
-                        },
-                        {
-                          "flutterType": "LinearProgressIndicator",
-                          "valueIsPercent": true,
-                          "value": "${lastScore}",
-                          "backgroundColor": "schema:primaryContainer",
-                          "color": "schema:onPrimary",
-                          "semanticsLabel": "semanticsLabel",
-                          "semanticsValue": "semanticsValue"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "flutterType": "SizedBox",
-                    "width": 30
-                  },
-                  {
-                    "flutterType": "Container",
-                    "width": 50,
-                    "height": 50,
-                    "decoration": {
-                      "color": "schema:primaryContainer",
-                      "flutterType": "BoxDecoration",
-                      "borderRadius": 50
-                    },
-                    "child": {
-                      "flutterType": "Icon",
-                      "src": "play_arrow"
-                    }
+            "flutterType": "Column",
+            "crossAxisAlignment": "start",
+            "children": [
+              {
+                "flutterType": "Text",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontWeight": "bold"
+                },
+                "label": "${serialName} - ${lessName}"
+              },
+              {
+                "flutterType": "SizedBox",
+                "height": 5
+              },
+              {
+                "flutterType": "Text",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "color": "schema:secondary"
+                },
+                "label": "${serialGroup}\r\n${lastScore}%"
+              },
+              {
+                "flutterType": "SizedBox",
+                "height": 5
+              },
+              {
+                "flutterType": "LinearProgressIndicator",
+                "valueIsPercent": true,
+                "value": "${lastScore}",
+                "backgroundColor": "schema:primaryContainer",
+                "color": "schema:onPrimary",
+                "semanticsLabel": "semanticsLabel",
+                "semanticsValue": "semanticsValue"
+              },
+              {
+                "flutterType": "SizedBox",
+                "height": 20
+              },
+              {
+                "flutterType": "Button",
+                "onPressed": "${onTap|jsonEncode()}",
+                "child": {
+                  "flutterType": "Text",
+                  "label": "Продолжить обучение",
+                  "textAlign": "center",
+                  "style": {
+                    "flutterType": "TextStyle",
+                    "fontSize": 15,
+                    "color": "white"
                   }
-                ]
+                }
               }
-            }
+            ]
           }
         },
         "emptyStartCard": {
@@ -254,7 +235,7 @@
         "dataType": "list",
         "list": [
           {
-            "visibility": "${state(main,showButtonResetScore)}",
+            "visibility": "${state(main,showButtonResetScore,false)}",
             "currentRenderTemplateList": [
               "visibility"
             ],

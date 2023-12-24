@@ -8,6 +8,7 @@
   "content": {
     "flutterType": "Notify",
     "link": {"template": "Main.json"},
+    "reloadBackground": true,
     "subscribeToRefresh": {
       "listKey": [
         "SerialState",

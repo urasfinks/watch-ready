@@ -184,6 +184,7 @@ function openLess(serialUuid, lessUuid, windowLabel) {
         "args": {
             "flutterType": "Notify",
             "link": {"template": "Less.json", "data": lessUuid},
+            "lazySync": [lessUuid],
             "serialUuid": serialUuid,
             "windowLabel": windowLabel,
             "context": {
