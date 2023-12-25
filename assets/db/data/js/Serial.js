@@ -1,36 +1,45 @@
 if (bridge.args["switch"] === "onContextUpdate") {
+    bridge.log(bridge.contextMap["inputSerialData"]);
     if (bridge.args["contextKey"] == "inputSerialData") {
-        if (
-            bridge.contextMap["inputSerialData"]["data"] != undefined
-            && bridge.contextMap["inputSerialData"]["serialState"] != undefined
-        ) {
+        var listSql = [];
+        if(bridge.contextMap["inputSerialData"]["data"] != undefined){
+            listSql.push({
+                "sql": "SELECT d2.* FROM data d1 \n" +
+                    "INNER JOIN data d2 ON d2.parent_uuid_data = d1.uuid_data\n" +
+                    "WHERE 1 = 1\n" +
+                    "  AND d1.parent_uuid_data = ?\n" +
+                    "  AND d1.key_data = ?\n" +
+                    "  AND d2.key_data = ?\n",
+                "args": [bridge.pageArgs["link"]["data"], "Less", "LessState"]
+            });
+        } else {
+            //Надо всегда, что бы был первый sql не важно какой
+            listSql.push({
+                "sql": "select 1",
+                "args": []
+            });
+        }
+        if(bridge.contextMap["inputSerialData"]["serialState"] != undefined){
+            listSql.push({
+                "sql": "SELECT \n" +
+                    "  d1.value_data AS less_sate,\n" +
+                    "  d2.value_data AS less,\n" +
+                    "  d2.uuid_data AS less_uuid,\n" +
+                    "  d3.uuid_data AS serial_uuid,\n" +
+                    "  d3.value_data AS serial\n" +
+                    "FROM data d1\n" +
+                    "INNER JOIN data d2 ON d1.parent_uuid_data = d2.uuid_data\n" +
+                    "INNER JOIN data d3 ON d2.parent_uuid_data = d3.uuid_data\n" +
+                    "  WHERE 1 = 1\n" +
+                    "  AND d1.uuid_data = ? \n" +
+                    "  AND d1.key_data = ?",
+                "args": [bridge.contextMap["inputSerialData"]["serialState"]["startLessState"], "LessState"]
+            });
+        }
+
+        if (listSql.length > 0) {
             bridge.call("DbQuery", {
-                "multiple": [
-                    {
-                        "sql": "SELECT d2.* FROM data d1 \n" +
-                            "INNER JOIN data d2 ON d2.parent_uuid_data = d1.uuid_data\n" +
-                            "WHERE 1 = 1\n" +
-                            "  AND d1.parent_uuid_data = ?\n" +
-                            "  AND d1.key_data = ?\n" +
-                            "  AND d2.key_data = ?\n",
-                        "args": [bridge.pageArgs["link"]["data"], "Less", "LessState"]
-                    },
-                    {
-                        "sql": "SELECT \n" +
-                            "  d1.value_data AS less_sate,\n" +
-                            "  d2.value_data AS less,\n" +
-                            "  d2.uuid_data AS less_uuid,\n" +
-                            "  d3.uuid_data AS serial_uuid,\n" +
-                            "  d3.value_data AS serial\n" +
-                            "FROM data d1\n" +
-                            "INNER JOIN data d2 ON d1.parent_uuid_data = d2.uuid_data\n" +
-                            "INNER JOIN data d3 ON d2.parent_uuid_data = d3.uuid_data\n" +
-                            "  WHERE 1 = 1\n" +
-                            "  AND d1.uuid_data = ? \n" +
-                            "  AND d1.key_data = ?",
-                        "args": [bridge.contextMap["inputSerialData"]["serialState"]["startLessState"], "LessState"]
-                    }
-                ],
+                "multiple": listSql,
                 "onFetch": {
                     "jsInvoke": "Serial.js",
                     "args": {
@@ -44,7 +53,7 @@ if (bridge.args["switch"] === "onContextUpdate") {
 }
 
 function createStartCard(fetchDb) {
-    if (fetchDb.length > 0) {
+    if (fetchDb != undefined && fetchDb.length > 0) {
         var lessSate = JSON.parse(fetchDb[0]["less_sate"]);
         var less = JSON.parse(fetchDb[0]["less"]);
         var serial = JSON.parse(fetchDb[0]["serial"]);
@@ -69,6 +78,7 @@ function createStartCard(fetchDb) {
 }
 
 if (bridge.args["switch"] === "selectLessState") {
+    bridge.log(bridge.args["fetchDb"]);
     var showButtonResetScore = false;
     var seasonList = bridge.contextMap["inputSerialData"]["data"]["seasonList"];
     var listLessState = bridge.args["fetchDb"][0];
