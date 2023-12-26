@@ -2,7 +2,6 @@
   "flutterType": "Scaffold",
   "body": {
     "flutterType": "CustomScrollView",
-    "onStateDataUpdate": true,
     "padding": "10,20,10,0",
     "appBar": {
       "flutterType": "SliverAppBar",
@@ -33,124 +32,108 @@
         "height": 20
       },
       {
-        "ChildrenExtension": "Iterator",
-        "dataType": "state",
-        "key": "listLess",
-        "startCard": {
-          "flutterType": "Container",
-          "decoration": {
-            "flutterType": "BoxDecoration",
-            "color": "schema:onBackground",
-            "borderRadius": 10
-          },
-          "padding": 15,
-          "child": {
-            "flutterType": "Column",
-            "crossAxisAlignment": "start",
-            "children": [
-              {
-                "flutterType": "Text",
-                "style": {
-                  "flutterType": "TextStyle",
-                  "fontWeight": "bold"
-                },
-                "label": "${serialName} - ${lessName}"
+        "flutterType": "Column",
+        "onStateDataUpdate": true,
+        "crossAxisAlignment": "start",
+        "children": [
+          {
+            "ChildrenExtension": "Iterator",
+            "onStateDataUpdate": true,
+            "dataType": "state",
+            "key": "listLess",
+            "startCard": {
+              "flutterType": "Container",
+              "decoration": {
+                "flutterType": "BoxDecoration",
+                "color": "schema:onBackground",
+                "borderRadius": 10
               },
-              {
-                "flutterType": "SizedBox",
-                "height": 5
-              },
-              {
-                "flutterType": "Text",
-                "style": {
-                  "flutterType": "TextStyle",
-                  "color": "schema:secondary"
-                },
-                "label": "${serialGroup}\r\n${lastScore}%"
-              },
-              {
-                "flutterType": "SizedBox",
-                "height": 5
-              },
-              {
-                "flutterType": "LinearProgressIndicator",
-                "valueIsPercent": true,
-                "value": "${lastScore}",
-                "backgroundColor": "schema:primaryContainer",
-                "color": "schema:onPrimary",
-                "semanticsLabel": "semanticsLabel",
-                "semanticsValue": "semanticsValue"
-              },
-              {
-                "flutterType": "SizedBox",
-                "height": 20
-              },
-              {
-                "flutterType": "Button",
-                "onPressed": "${onTap|jsonEncode()}",
-                "child": {
-                  "flutterType": "Text",
-                  "label": "Продолжить обучение",
-                  "textAlign": "center",
-                  "style": {
-                    "flutterType": "TextStyle",
-                    "fontSize": 15,
-                    "color": "white"
+              "padding": 15,
+              "child": {
+                "flutterType": "Column",
+                "crossAxisAlignment": "start",
+                "children": [
+                  {
+                    "flutterType": "Text",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "fontWeight": "bold"
+                    },
+                    "label": "${serialName} - ${lessName}"
+                  },
+                  {
+                    "flutterType": "SizedBox",
+                    "height": 5
+                  },
+                  {
+                    "flutterType": "Text",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "schema:secondary"
+                    },
+                    "label": "${serialGroup}\r\n${lastScore}%"
+                  },
+                  {
+                    "flutterType": "SizedBox",
+                    "height": 5
+                  },
+                  {
+                    "flutterType": "LinearProgressIndicator",
+                    "valueIsPercent": true,
+                    "value": "${lastScore}",
+                    "backgroundColor": "schema:primaryContainer",
+                    "color": "schema:onPrimary",
+                    "semanticsLabel": "semanticsLabel",
+                    "semanticsValue": "semanticsValue"
+                  },
+                  {
+                    "flutterType": "SizedBox",
+                    "height": 20
+                  },
+                  {
+                    "flutterType": "Button",
+                    "onPressed": "${onTap|jsonEncode()}",
+                    "child": {
+                      "flutterType": "Text",
+                      "label": "Продолжить обучение",
+                      "textAlign": "center",
+                      "style": {
+                        "flutterType": "TextStyle",
+                        "fontSize": 15,
+                        "color": "white"
+                      }
+                    }
                   }
+                ]
+              }
+            },
+            "emptyStartCard": {
+              "flutterType": "SizedBox"
+            },
+            "templateSeason": {
+              "flutterType": "Padding",
+              "padding": "5,15,0,15",
+              "child": {
+                "flutterType": "Text",
+                "label": "${label}",
+                "style": {
+                  "flutterType": "TextStyle",
+                  "fontSize": 17,
+                  "fontWeight": "bold",
+                  "color": "schema:secondary"
                 }
               }
-            ]
-          }
-        },
-        "emptyStartCard": {
-          "flutterType": "SizedBox"
-        },
-        "templateSeason": {
-          "flutterType": "Padding",
-          "padding": "5,15,0,15",
-          "child": {
-            "flutterType": "Text",
-            "label": "${label}",
-            "style": {
-              "flutterType": "TextStyle",
-              "fontSize": 17,
-              "fontWeight": "bold",
-              "color": "schema:secondary"
-            }
-          }
-        },
-        "templateLess": {
-          "flutterType": "Button",
-          "alignment": "centerStart",
-          "buttonStyle": "Text",
-          "onPressed": "${onPressed|jsonEncode()}",
-          "child": {
-            "flutterType": "Padding",
-            "padding": "15,3,0,3",
-            "child": {
-              "flutterType": "Text",
-              "label": "${label}",
-              "textAlign": "start",
-              "style": {
-                "flutterType": "TextStyle",
-                "fontSize": 15,
-                "color": "schema:inversePrimary"
-              }
-            }
-          }
-        },
-        "templateLessStat": {
-          "flutterType": "Button",
-          "alignment": "centerStart",
-          "buttonStyle": "Text",
-          "onPressed": "${onPressed|jsonEncode()}",
-          "child": {
-            "flutterType": "Padding",
-            "padding": "15,3,0,3",
-            "child": {
-              "flutterType": "Row",
-              "children": [
-                {
+            },
+            "templateLess": {
+              "flutterType": "Button",
+              "width": "infinity",
+              "alignment": "centerStart",
+              "buttonStyle": "Text",
+              "onPressed": "${onPressed|jsonEncode()}",
+              "child": {
+                "flutterType": "Padding",
+                "padding": "15,3,0,3",
+                "child": {
                   "flutterType": "Text",
                   "label": "${label}",
                   "textAlign": "start",
@@ -159,107 +142,132 @@
                     "fontSize": 15,
                     "color": "schema:inversePrimary"
                   }
-                },
-                {
-                  "flutterType": "Expanded"
-                },
-                {
-                  "flutterType": "Container",
-                  "padding": "10,4,10,4",
-                  "margin": "0,0,10,0",
-                  "decoration": {
-                    "color": "schema:onBackground",
-                    "flutterType": "BoxDecoration",
-                    "borderRadius": "15"
-                  },
-                  "child": {
-                    "flutterType": "Text",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "fontSize": 12,
-                      "fontWeight": "bold"
-                    },
-                    "label": "${lastScore}%"
-                  }
-                },
-                {
-                  "flutterType": "Container",
-                  "padding": "7,4,5,4",
-                  "margin": "0,0,0,0",
-                  "decoration": {
-                    "color": "schema:onBackground",
-                    "flutterType": "BoxDecoration",
-                    "borderRadius": "15,0,0,15"
-                  },
-                  "child": {
-                    "flutterType": "Text",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "fontSize": 12,
-                      "fontWeight": "bold"
-                    },
-                    "label": "${countFail}"
-                  }
-                },
-                {
-                  "flutterType": "Container",
-                  "padding": "5,4,7,4",
-                  "decoration": {
-                    "color": "green",
-                    "flutterType": "BoxDecoration",
-                    "borderRadius": "0,15,15,0"
-                  },
-                  "child": {
-                    "flutterType": "Text",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "color": "white",
-                      "fontSize": 12,
-                      "fontWeight": "bold"
-                    },
-                    "label": "${countSuccess}"
-                  }
                 }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "flutterType": "SizedBox",
-        "height": 30
-      },
-      {
-        "ChildrenExtension": "Iterator",
-        "theme": "ButtonGroup",
-        "dataType": "list",
-        "list": [
-          {
-            "visibility": "${state(main,showButtonResetScore,false)}",
-            "currentRenderTemplateList": [
-              "visibility"
-            ],
-            "label": "Сбросить результат",
-            "iconSrc": "remove_circle_outline",
-            "iconSize": 20,
-            "iconColor": "schema:inversePrimary",
-            "templateWidgetSrc": "Text",
-            "textAlign": "center",
-            "onTap": {
-              "sysInvoke": "Alert",
-              "args": {
-                "confirmRemove": true,
-                "actionLabel": "Сбросить",
-                "backgroundColor": "schema:onBackground",
-                "onPressed": {
-                  "jsInvoke": "Serial.js",
-                  "args": {
-                    "includeAll": true,
-                    "switch": "resetLessState"
-                  }
+              }
+            },
+            "templateLessStat": {
+              "flutterType": "Button",
+              "alignment": "centerStart",
+              "buttonStyle": "Text",
+              "onPressed": "${onPressed|jsonEncode()}",
+              "child": {
+                "flutterType": "Padding",
+                "padding": "15,3,0,3",
+                "child": {
+                  "flutterType": "Row",
+                  "children": [
+                    {
+                      "flutterType": "Text",
+                      "label": "${label}",
+                      "textAlign": "start",
+                      "style": {
+                        "flutterType": "TextStyle",
+                        "fontSize": 15,
+                        "color": "schema:inversePrimary"
+                      }
+                    },
+                    {
+                      "flutterType": "Expanded"
+                    },
+                    {
+                      "flutterType": "Container",
+                      "padding": "10,4,10,4",
+                      "margin": "0,0,10,0",
+                      "decoration": {
+                        "color": "schema:onBackground",
+                        "flutterType": "BoxDecoration",
+                        "borderRadius": "15"
+                      },
+                      "child": {
+                        "flutterType": "Text",
+                        "style": {
+                          "flutterType": "TextStyle",
+                          "fontSize": 12,
+                          "fontWeight": "bold"
+                        },
+                        "label": "${lastScore}%"
+                      }
+                    },
+                    {
+                      "flutterType": "Container",
+                      "padding": "7,4,5,4",
+                      "margin": "0,0,0,0",
+                      "decoration": {
+                        "color": "schema:onBackground",
+                        "flutterType": "BoxDecoration",
+                        "borderRadius": "15,0,0,15"
+                      },
+                      "child": {
+                        "flutterType": "Text",
+                        "style": {
+                          "flutterType": "TextStyle",
+                          "fontSize": 12,
+                          "fontWeight": "bold"
+                        },
+                        "label": "${countFail}"
+                      }
+                    },
+                    {
+                      "flutterType": "Container",
+                      "padding": "5,4,7,4",
+                      "decoration": {
+                        "color": "green",
+                        "flutterType": "BoxDecoration",
+                        "borderRadius": "0,15,15,0"
+                      },
+                      "child": {
+                        "flutterType": "Text",
+                        "style": {
+                          "flutterType": "TextStyle",
+                          "color": "white",
+                          "fontSize": 12,
+                          "fontWeight": "bold"
+                        },
+                        "label": "${countSuccess}"
+                      }
+                    }
+                  ]
                 }
               }
             }
+          },
+          {
+            "flutterType": "SizedBox",
+            "height": 30
+          },
+          {
+            "ChildrenExtension": "Iterator",
+            "theme": "ButtonGroup",
+            "dataType": "list",
+            "list": [
+              {
+                "visibility": "${state(main,showButtonResetScore,false)}",
+                "currentRenderTemplateList": [
+                  "visibility"
+                ],
+                "label": "Сбросить результат",
+                "iconSrc": "remove_circle_outline",
+                "iconSize": 20,
+                "iconColor": "schema:inversePrimary",
+                "templateWidgetSrc": "Text",
+                "textAlign": "center",
+                "onTap": {
+                  "sysInvoke": "Alert",
+                  "args": {
+                    "confirmRemove": true,
+                    "actionLabel": "Сбросить",
+                    "backgroundColor": "schema:onBackground",
+                    "onPressed": {
+                      "jsInvoke": "Serial.js",
+                      "args": {
+                        "includeAll": true,
+                        "switch": "resetLessState"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         ]
       }

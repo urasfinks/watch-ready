@@ -12,7 +12,8 @@
     "subscribeToRefresh": {
       "listKey": [
         "SerialState",
-        "LessState"
+        "LessState",
+        "Serial"
       ]
     },
     "context": {
