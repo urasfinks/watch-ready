@@ -85,7 +85,7 @@
                   "flutterType": "TextStyle",
                   "color": "schema:secondary"
                 },
-                "label": "${serialGroup}\r\n${lastScore}%"
+                "label": "${lastScore}%"
               },
               {
                 "flutterType": "SizedBox",
