@@ -68,7 +68,8 @@
                 "height": 35,
                 "decoration": {
                   "flutterType": "BoxDecoration",
-                  "color": "${context(overlayDirection,none)|map(left,red,schema:onBackground)}",
+                  "_color": "${context(overlayDirection,none)|map(left,red,schema:onBackground)}",
+                  "color": "schema:onBackground",
                   "borderRadius": "0,15,15,0"
                 },
                 "child": {
@@ -94,7 +95,8 @@
                 "height": 35,
                 "decoration": {
                   "flutterType": "BoxDecoration",
-                  "color": "${context(overlayDirection,none)|map(right,schema:projectPrimary,schema:onBackground)}",
+                  "_color": "${context(overlayDirection,none)|map(right,schema:projectPrimary,schema:onBackground)}",
+                  "color": "schema:onBackground",
                   "borderRadius": "15,0,0,15"
                 },
                 "child": {
@@ -133,6 +135,35 @@
                 "left",
                 "right"
               ],
+              "overlay": {
+                "flutterType": "Opacity",
+                "opacity": "${state(sw,overlayOpacity)}",
+                "child": {
+                  "flutterType": "Row",
+                  "mainAxisAlignment": "${state(sw,overlayDirection)|map(right,end,left,start,center)}",
+                  "crossAxisAlignment": "start",
+                  "children": [
+                    {
+                      "flutterType": "Container",
+                      "width": 80,
+                      "height": 44,
+                      "margin": 10,
+                      "decoration": {
+                        "flutterType": "BoxDecoration",
+                        "color": "${state(sw,overlayDirection)|map(right,schema:projectPrimary,left,red,schema:background)}",
+                        "borderRadius": 10
+                      },
+                      "child": {
+                        "flutterType": "Center",
+                        "child": {
+                          "flutterType": "Text",
+                          "label": "${state(sw,overlayDirection)|map(right,Знаю,left,Не знаю)}"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
               "children": [
                 {
                   "ChildrenExtension": "Iterator",
