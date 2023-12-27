@@ -57,7 +57,7 @@
         "context": {
           "key": "serial",
           "data": {
-            "placeholder": "Name of serial",
+            "placeholder": "Название сериала",
             "key": "serial",
             "data": "${pageArgs(message,)}"
           }
