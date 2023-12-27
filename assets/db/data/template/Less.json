@@ -79,7 +79,8 @@
                     "label": "${state(sw,swiped.left,0)}",
                     "style": {
                       "flutterType": "TextStyle",
-                      "color": "${context(overlayDirection,none)|map(left,white,schema:primary)}",
+                      "_color": "${context(overlayDirection,none)|map(left,white,schema:primary)}",
+                      "color": "white",
                       "fontWeight": "bold",
                       "fontSize": 14
                     }
@@ -106,7 +107,8 @@
                     "label": "${state(sw,swiped.right,0)}",
                     "style": {
                       "flutterType": "TextStyle",
-                      "color": "${context(overlayDirection,none)|map(right,white,schema:primary)}",
+                      "_color": "${context(overlayDirection,none)|map(right,white,schema:primary)}",
+                      "color": "white",
                       "fontWeight": "bold",
                       "fontSize": 14
                     }
@@ -147,7 +149,7 @@
                       "flutterType": "Container",
                       "width": 80,
                       "height": 44,
-                      "margin": 10,
+                      "margin": 30,
                       "decoration": {
                         "flutterType": "BoxDecoration",
                         "color": "${state(sw,overlayDirection)|map(right,schema:projectPrimary,left,red,schema:background)}",
@@ -221,12 +223,18 @@
               {
                 "flutterType": "Expanded",
                 "child": {
-                  "flutterType": "Text",
-                  "textAlign": "center",
-                  "label": "Коснитесь карточки, что бы перевернуть её",
-                  "style": {
-                    "flutterType": "TextStyle",
-                    "color": "schema:primary|opacity(0.5)"
+                  "flutterType": "Opacity",
+                  "opacity": "${state(flip,flipOpacity,1)}",
+                  "onStateDataUpdate": true,
+                  "onStateDataUpdateKey": "flip",
+                  "child": {
+                    "flutterType": "Text",
+                    "textAlign": "center",
+                    "label": "Коснитесь карточки, что бы перевернуть её",
+                    "style": {
+                      "flutterType": "TextStyle",
+                      "color": "schema:primary|opacity(0.5)"
+                    }
                   }
                 }
               },

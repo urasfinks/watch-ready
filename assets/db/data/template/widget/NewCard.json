@@ -110,5 +110,12 @@
         }
       ]
     }
+  },
+  "onTap": {
+    "jsInvoke": "Less.js",
+    "args": {
+      "includeAll": true,
+      "switch": "onFlip"
+    }
   }
 }

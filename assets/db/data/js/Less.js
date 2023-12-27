@@ -77,6 +77,15 @@ function saveLessState(lastScore) {
     });
 }
 
+if (bridge.args["switch"] == "onFlip") {
+    bridge.call("SetStateData", {
+        "state": "flip",
+        "map": {
+            "flipOpacity": 0
+        }
+    });
+}
+
 if (bridge.args["switch"] == "onFetchLessState") {
     var lastValue = bridge.args["fetchDb"].length > 0 ? bridge.args["fetchDb"][0]["value_data"] : {};
     if (typeof lastValue === "string") {
@@ -199,6 +208,12 @@ if (bridge.args["switch"] == "onSwipeCompleted") {
         });
         setNewLessState(lessStateUuid, gUuid["serialUuid"]);
     }
+    bridge.call("SetStateData", {
+        "state": "flip",
+        "map": {
+            "flipOpacity": 0
+        }
+    });
 }
 
 function setNewLessState(newLessStateUUid, serialUuid) {
