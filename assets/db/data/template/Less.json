@@ -88,7 +88,46 @@
                 }
               },
               {
-                "flutterType": "Expanded"
+                "flutterType": "Expanded",
+                "child": {
+                  "flutterType": "Center",
+                  "child": {
+                    "flutterType": "Switch",
+                    "state": "autoPlay",
+                    "name": "autoPlay",
+                    "activeColor": "schema:projectPrimary",
+                    "activeTrackColor": "schema:onBackground",
+                    "inactiveThumbColor": "schema:inversePrimary",
+                    "inactiveTrackColor": "schema:onBackground",
+                    "value": "${storage(autoPlay,true)}",
+                    "currentRenderTemplateList": [
+                      "value"
+                    ],
+                    "thumbIcon": {
+                      "selected": {
+                        "src": "volume_up"
+                      },
+                      "disabled": {
+                        "src": "volume_off"
+                      }
+                    },
+                    "trackOutlineColor": {
+                      "selected": {
+                        "color": "schema:onBackground"
+                      },
+                      "disabled": {
+                        "color": "schema:onBackground"
+                      }
+                    },
+                    "onChanged": {
+                      "jsInvoke": "Less.js",
+                      "args": {
+                        "includeAll": true,
+                        "switch": "onChangeAutoplay"
+                      }
+                    }
+                  }
+                }
               },
               {
                 "flutterType": "Container",
@@ -248,7 +287,7 @@
                 "onStateDataUpdateKey": "speech",
                 "child": {
                   "flutterType": "AudioButton",
-                  "autoPlayOnLoad": "false",
+                  "autoPlayOnLoad": "${storage(autoPlay,true)}",
                   "key": "AudioButton${state(speech,speech)}",
                   "type": "db",
                   "uuid": "${state(speech,speech)}",

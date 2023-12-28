@@ -77,6 +77,15 @@ function saveLessState(lastScore) {
     });
 }
 
+if (bridge.args["switch"] == "onChangeAutoplay") {
+    var autoPlay = bridge.selector(bridge.state, ["autoPlay", "autoPlay"], true);
+    bridge.call("SetStorage", {
+        "map": {
+            "autoPlay": autoPlay.toString()
+        }
+    });
+}
+
 if (bridge.args["switch"] == "onFlip") {
     bridge.call("SetStateData", {
         "state": "flip",
