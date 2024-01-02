@@ -64,27 +64,34 @@
             "children": [
               {
                 "flutterType": "Container",
-                "width": 50,
-                "height": 35,
+                "width": 120,
+                "height": 32,
                 "decoration": {
                   "flutterType": "BoxDecoration",
-                  "_color": "${context(overlayDirection,none)|map(left,red,schema:onBackground)}",
-                  "color": "schema:onBackground",
+                  "color": "red",
                   "borderRadius": "0,15,15,0"
                 },
                 "child": {
-                  "flutterType": "Center",
-                  "child": {
-                    "flutterType": "Text",
-                    "label": "${state(sw,swiped.left,0)}",
-                    "style": {
-                      "flutterType": "TextStyle",
-                      "_color": "${context(overlayDirection,none)|map(left,white,schema:primary)}",
-                      "color": "white",
-                      "fontWeight": "bold",
-                      "fontSize": 14
+                  "flutterType": "Row",
+                  "mainAxisAlignment": "center",
+                  "children": [
+                    {
+                      "flutterType": "Icon",
+                      "src": "arrow_back_ios",
+                      "size": 14
+                    },
+                    {
+                      "flutterType": "Text",
+                      "label": "Не знаю: ${state(sw,swiped.left,0)}",
+                      "style": {
+                        "flutterType": "TextStyle",
+                        "_color": "${context(overlayDirection,none)|map(left,white,schema:primary)}",
+                        "color": "white",
+                        "fontWeight": "bold",
+                        "fontSize": 14
+                      }
                     }
-                  }
+                  ]
                 }
               },
               {
@@ -131,15 +138,36 @@
               },
               {
                 "flutterType": "Container",
-                "width": 50,
-                "height": 35,
+                "width": 120,
+                "height": 32,
                 "decoration": {
                   "flutterType": "BoxDecoration",
-                  "_color": "${context(overlayDirection,none)|map(right,schema:projectPrimary,schema:onBackground)}",
-                  "color": "schema:onBackground",
+                  "color": "schema:projectPrimary",
                   "borderRadius": "15,0,0,15"
                 },
                 "child": {
+                  "flutterType": "Row",
+                  "mainAxisAlignment": "center",
+                  "children": [
+                    {
+                      "flutterType": "Text",
+                      "label": "Знаю: ${state(sw,swiped.right,0)}",
+                      "style": {
+                        "flutterType": "TextStyle",
+                        "_color": "${context(overlayDirection,none)|map(right,white,schema:primary)}",
+                        "color": "white",
+                        "fontWeight": "bold",
+                        "fontSize": 14
+                      }
+                    },
+                    {
+                      "flutterType": "Icon",
+                      "src": "arrow_forward_ios",
+                      "size": 14
+                    }
+                  ]
+                },
+                "child2": {
                   "flutterType": "Center",
                   "child": {
                     "flutterType": "Text",
