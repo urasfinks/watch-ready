@@ -2,12 +2,17 @@
   "name": "main",
   "tab": {
     "flutterType": "BottomNavigationBarItem",
-    "icon": {"flutterType": "Icon", "src": "crop_5_4"},
+    "icon": {
+      "flutterType": "Icon",
+      "src": "crop_5_4"
+    },
     "label": "Home"
   },
   "content": {
     "flutterType": "Notify",
-    "link": {"template": "Main.json"},
+    "link": {
+      "template": "Main.json"
+    },
     "reloadBackground": true,
     "subscribeToRefresh": {
       "listKey": [
@@ -23,7 +28,10 @@
           "flutterType": "Scaffold",
           "appBar": {
             "flutterType": "AppBar",
-            "title": {"flutterType": "Text", "label": "WatchReady"}
+            "title": {
+              "flutterType": "Text",
+              "label": "WatchReady"
+            }
           }
         }
       }
