@@ -19,7 +19,7 @@
         "flutterType": "ImageTitled",
         "label": "",
         "image": {
-          "flutterType": "ImageBase64",
+          "flutterType": "Image",
           "height": 230,
           "width": "infinity",
           "fit": "cover",
@@ -258,10 +258,10 @@
                     "actionLabel": "Сбросить",
                     "backgroundColor": "schema:onBackground",
                     "onPressed": {
-                      "jsInvoke": "Serial.js",
+                      "jsRouter": "Serial.ai.js",
                       "args": {
                         "includeAll": true,
-                        "switch": "resetLessState"
+                        "method": "resetLessState"
                       }
                     }
                   }

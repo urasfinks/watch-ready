@@ -36,17 +36,17 @@
       }
     },
     "constructor": {
-      "jsInvoke": "Account.js",
+      "jsRouter": "Account.ai.js",
       "args": {
         "includeAll": true,
-        "switch": "constructor"
+        "method": "constructor"
       }
     },
     "onActive": {
-      "jsInvoke": "Account.js",
+      "jsRouter": "Account.ai.js",
       "args": {
         "includeAll": true,
-        "switch": "onActive"
+        "method": "onActive"
       }
     }
   }

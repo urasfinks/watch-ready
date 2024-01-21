@@ -23,17 +23,17 @@
       }
     },
     "constructor": {
-      "jsInvoke": "Less.js",
+      "jsRouter": "Less.ai.js",
       "args": {
         "includeStateData": true,
-        "switch": "constructor"
+        "method": "constructor"
       }
     },
     "onContextUpdate": {
-      "jsInvoke": "Less.js",
+      "jsRouter": "Less.ai.js",
       "args": {
         "includeAll": true,
-        "switch": "onContextUpdate"
+        "method": "onContextUpdate"
       }
     }
   }

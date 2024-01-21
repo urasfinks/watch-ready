@@ -37,10 +37,10 @@
       }
     },
     "constructor": {
-      "jsInvoke": "Main.js",
+      "jsRouter": "Main.ai.js",
       "args": {
         "includeStateData": true,
-        "switch": "constructor"
+        "method": "constructor"
       }
     }
   }

@@ -77,10 +77,10 @@
             "flutterType": "Button",
             "height": 44,
             "onPressed": {
-              "jsInvoke": "SerialRequest.js",
+              "jsRouter": "SerialRequest.ai.js",
               "args": {
                 "includeAll": true,
-                "switch": "request"
+                "method": "request"
               }
             },
             "child": {

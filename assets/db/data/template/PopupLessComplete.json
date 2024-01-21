@@ -48,13 +48,13 @@
           "height": 44,
           "width": 200,
           "onPressed": {
-            "jsInvoke": "Less.js",
+            "jsRouter": "Less.ai.js",
             "args": {
               "includeAll": true,
               "nextLessUuid": "${pageArgs(nextLessUuid,)}",
               "serialUuid": "${pageArgs(serialUuid,)}",
               "windowLabel": "${pageArgs(windowLabel,)}",
-              "switch": "nextLess"
+              "method": "nextLess"
             }
           },
           "currentRenderTemplateList": [

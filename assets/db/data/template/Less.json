@@ -127,10 +127,10 @@
                       }
                     },
                     "onChanged": {
-                      "jsInvoke": "Less.js",
+                      "jsRouter": "Less.ai.js",
                       "args": {
                         "includeAll": true,
-                        "switch": "onChangeAutoplay"
+                        "method": "onChangeAutoplay"
                       }
                     }
                   }
@@ -242,17 +242,17 @@
                 }
               ],
               "onSwipeCompleted": {
-                "jsInvoke": "Less.js",
+                "jsRouter": "Less.ai.js",
                 "args": {
                   "includeAll": true,
-                  "switch": "onSwipeCompleted"
+                  "method": "onSwipeCompleted"
                 }
               },
               "onFinish": {
-                "jsInvoke": "Less.js",
+                "jsRouter": "Less.ai.js",
                 "args": {
                   "includeAll": true,
-                  "switch": "onFinish"
+                  "method": "onFinish"
                 }
               }
             }
@@ -271,10 +271,10 @@
                 "height": 44,
                 "backgroundColor": "transparent",
                 "onPressed": {
-                  "jsInvoke": "Less.js",
+                  "jsRouter": "Less.ai.js",
                   "args": {
                     "includeAll": true,
-                    "switch": "prev"
+                    "method": "prev"
                   }
                 },
                 "child": {

@@ -112,10 +112,10 @@
     }
   },
   "onTap": {
-    "jsInvoke": "Less.js",
+    "jsRouter": "Less.ai.js",
     "args": {
       "includeAll": true,
-      "switch": "onFlip"
+      "method": "onFlip"
     }
   }
 }
