@@ -78,7 +78,8 @@
                     {
                       "flutterType": "Icon",
                       "src": "arrow_back_ios",
-                      "size": 14
+                      "size": 14,
+                      "color": "white"
                     },
                     {
                       "flutterType": "Text",
@@ -104,7 +105,7 @@
                     "name": "autoPlay",
                     "activeColor": "schema:projectPrimary",
                     "activeTrackColor": "schema:onBackground",
-                    "inactiveThumbColor": "schema:inversePrimary",
+                    "inactiveThumbColor": "schema:onSecondary",
                     "inactiveTrackColor": "schema:onBackground",
                     "value": "${storage(autoPlay,true)}",
                     "currentRenderTemplateList": [
@@ -112,10 +113,12 @@
                     ],
                     "thumbIcon": {
                       "selected": {
-                        "src": "volume_up"
+                        "src": "volume_up",
+                        "color": "white"
                       },
                       "disabled": {
-                        "src": "volume_off"
+                        "src": "volume_off",
+                        "color": "white"
                       }
                     },
                     "trackOutlineColor": {
@@ -163,7 +166,8 @@
                     {
                       "flutterType": "Icon",
                       "src": "arrow_forward_ios",
-                      "size": 14
+                      "size": 14,
+                      "color": "white"
                     }
                   ]
                 },
