@@ -10,6 +10,8 @@ function SerialRouter() {
                         "WHERE 1 = 1\n" +
                         "  AND d1.parent_uuid_data = ?\n" +
                         "  AND d1.key_data = ?\n" +
+                        "  AND d1.is_remove_data = 0\n" +
+                        "  AND d2.is_remove_data = 0\n" +
                         "  AND d2.key_data = ?\n",
                     "args": [bridge.pageArgs["link"]["data"], "Less", "LessState"]
                 });
@@ -33,6 +35,9 @@ function SerialRouter() {
                         "INNER JOIN data d3 ON d2.parent_uuid_data = d3.uuid_data\n" +
                         "  WHERE 1 = 1\n" +
                         "  AND d1.uuid_data = ? \n" +
+                        "  AND d1.is_remove_data = 0\n" +
+                        "  AND d2.is_remove_data = 0\n" +
+                        "  AND d3.is_remove_data = 0\n" +
                         "  AND d1.key_data = ?",
                     "args": [bridge.contextMap["inputSerialData"]["serialState"]["startLessState"], "LessState"]
                 });
@@ -118,7 +123,7 @@ function SerialRouter() {
 
     this.resetLessState = function () {
         bridge.call("DbQuery", {
-            "sql": "UPDATE data SET value_data = ?, revision_data = 0 WHERE key_data = ? AND parent_uuid_data IN (SELECT uuid_data FROM data WHERE key_data = ? AND parent_uuid_data = ?)",
+            "sql": "UPDATE data SET value_data = ?, revision_data = 0 WHERE key_data = ? AND parent_uuid_data IN (SELECT uuid_data FROM data WHERE key_data = ? AND parent_uuid_data = ? AND is_remove_data = 0)",
             "args": [
                 JSON.stringify({"lastScore": -1, "countSuccess": 0, "countFail": 0}),
                 "LessState",

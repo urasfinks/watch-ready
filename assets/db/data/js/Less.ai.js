@@ -74,6 +74,7 @@ function LessRouter() {
                     " WHERE 1 = 1\n" +
                     "  AND parent_uuid_data = ?\n" +
                     "  AND key_data = ?\n" +
+                    "  AND is_remove_data = 0\n" +
                     " ORDER BY meta_data\n" +
                     ")\n" +
                     "SELECT uuid_data, type_data, value_data FROM sq1 WHERE row_num > (SELECT row_num FROM sq1 WHERE uuid_data = ?) LIMIT 1",
@@ -295,7 +296,7 @@ function saveLessState(lastScore) {
     var gUuid = getGeneralUuid();
     var lessStateUuid = "LessState-" + gUuid["lessUuid"];
     bridge.call("DbQuery", {
-        "sql": "select * from data where uuid_data = ?",
+        "sql": "select * from data where uuid_data = ? and is_remove_data = 0",
         "args": [lessStateUuid],
         "onFetch": {
             "jsRouter": "Less.ai.js",

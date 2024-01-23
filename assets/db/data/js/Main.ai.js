@@ -18,7 +18,10 @@ function MainRouter(){
                         "INNER JOIN data d2 ON d1.parent_uuid_data = d2.uuid_data\n" +
                         "INNER JOIN data d3 ON d2.parent_uuid_data = d3.uuid_data\n" +
                         "  WHERE 1 = 1\n" +
-                        "  AND d1.uuid_data = ? \n" +
+                        "  AND d1.uuid_data = ?\n" +
+                        "  AND d1.is_remove_data = 0\n" +
+                        "  AND d2.is_remove_data = 0\n" +
+                        "  AND d3.is_remove_data = 0\n" +
                         "  AND d1.key_data = ?",
                     "args": [startLessState, "LessState"]
                 }
