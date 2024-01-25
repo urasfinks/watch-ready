@@ -20,6 +20,7 @@
         "label": "",
         "image": {
           "flutterType": "Image",
+          "animation": true,
           "height": 230,
           "width": "infinity",
           "fit": "cover",

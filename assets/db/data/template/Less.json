@@ -108,7 +108,7 @@
                     "inactiveThumbColor": "schema:onSecondary",
                     "inactiveTrackColor": "schema:onBackground",
                     "value": "${storage(autoPlay,true)}",
-                    "currentRenderTemplateList": [
+                    "compileTemplateList": [
                       "value"
                     ],
                     "thumbIcon": {
@@ -323,7 +323,7 @@
                   "key": "AudioButton${state(speech,speech)}",
                   "type": "db",
                   "uuid": "${state(speech,speech)}",
-                  "currentRenderTemplateList": [
+                  "compileTemplateList": [
                     "key",
                     "uuid",
                     "autoPlayOnLoad"
