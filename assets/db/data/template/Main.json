@@ -153,13 +153,14 @@
                   "onTap": "${onTap1|jsonEncode()}",
                   "image": {
                     "flutterType": "Image",
+                    "animation": true,
                     "height": 130,
                     "width": "infinity",
                     "fit": "cover",
                     "src": "${src1}",
                     "controller": "${contextKey()}_1column"
                   },
-                  "currentRenderTemplateList": [
+                  "compileTemplateList": [
                     "image.controller"
                   ],
                   "templateLockScreen": {
@@ -191,13 +192,14 @@
                   "onTap": "${onTap2|jsonEncode()}",
                   "image": {
                     "flutterType": "Image",
+                    "animation": true,
                     "height": 130,
                     "width": "infinity",
                     "fit": "cover",
                     "src": "${src2}",
                     "controller": "${contextKey()}_2column"
                   },
-                  "currentRenderTemplateList": [
+                  "compileTemplateList": [
                     "image.controller"
                   ],
                   "templateLockScreen": {

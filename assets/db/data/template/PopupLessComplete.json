@@ -57,7 +57,7 @@
               "method": "nextLess"
             }
           },
-          "currentRenderTemplateList": [
+          "compileTemplateList": [
             "onPressed.args.nextLessUuid",
             "onPressed.args.serialUuid",
             "onPressed.args.windowLabel"

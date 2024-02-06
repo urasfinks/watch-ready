@@ -43,7 +43,7 @@
             "data": "${storage(mail,)}"
           }
         },
-        "childRenderTemplateList": [
+        "compileTemplateList": [
           "context.data.data"
         ]
       },
@@ -62,7 +62,7 @@
             "data": "${pageArgs(message,)}"
           }
         },
-        "childRenderTemplateList": [
+        "compileTemplateList": [
           "context.data.data"
         ]
       },
