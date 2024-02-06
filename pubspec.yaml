@@ -67,7 +67,7 @@ flutter:
   assets:
     - assets/db/data/js/
     - assets/db/data/template/
-    - assets/db/data/template/widget/
+    - assets/db/data/template/TemplateWidget/
     - assets/db/data/systemData/
     - assets/images/
 
