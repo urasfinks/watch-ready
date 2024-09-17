@@ -1,0 +1,39 @@
+{
+  "group": "Детективные сериалы",
+  "label": "Парижская полиция 1905",
+  "srcPoster": "pp1905.jpg",
+  "active": true,
+  "seasonList": [
+    {
+      "label": "Season 1",
+      "episodeList": [
+        {
+          "label": "Eposode 1 Kapkan",
+          "uuid": "tst1"
+        },
+        {
+          "label": "Eposode 2 Dima",
+          "uuid": "tst2"
+        }
+      ]
+    },
+    {
+      "label": "Season 2",
+      "episodeList": [
+        {
+          "label": "Eposode 3 Kapkan",
+          "uuid": "tst3"
+        }
+      ]
+    },
+    {
+      "label": "Сезон 3. Гоблин Пучков",
+      "episodeList": [
+        {
+          "label": "Лучший — не значит хороший",
+          "uuid": "LessonS1_Season3_Episode1"
+        }
+      ]
+    }
+  ]
+}
