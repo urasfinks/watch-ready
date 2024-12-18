@@ -230,7 +230,11 @@
                         "flutterType": "Center",
                         "child": {
                           "flutterType": "Text",
-                          "label": "${state(sw,overlayDirection)|map(right,Знаю,left,Не знаю)}"
+                          "label": "${state(sw,overlayDirection)|map(right,Знаю,left,Не знаю)}",
+                          "style": {
+                            "flutterType": "TextStyle",
+                            "color": "white"
+                          }
                         }
                       }
                     }
